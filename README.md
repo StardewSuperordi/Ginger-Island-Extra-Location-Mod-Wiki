@@ -1,3 +1,12 @@
+# 🌴 Ginger Island Extra Locations (GiEX) Mod Wiki
+> **Comprehensive Guide & Database for the Stardew Valley Expansion Mod**
+
+[![Language: French](https://img.shields.io/badge/Language-French-blue.svg)](#fr-version-française) 
+[![Language: English](https://img.shields.io/badge/Language-English-red.svg)](#en-english-version)
+[![Game: Stardew Valley](https://img.shields.io/badge/Game-Stardew_Valley-brightgreen.svg)](https://www.stardewvalley.net/)
+
+---
+
 ## [EN] English Version
 
 Welcome to the unofficial wiki for **Ginger Island Extra Locations (GiEX)**. This project aims to document every detail of this massive expansion for Ginger Island.
@@ -26,14 +35,6 @@ All data provided is extracted directly from the mod's technical files (`Objects
 
 ---
 
-# 🌴 Ginger Island Extra Locations (GiEX) Mod Wiki
-> **Comprehensive Guide & Database for the Stardew Valley Expansion Mod**
-
-[![Language: French](https://img.shields.io/badge/Language-French-blue.svg)](#fr-version-française) 
-[![Language: English](https://img.shields.io/badge/Language-English-red.svg)](#en-english-version)
-[![Game: Stardew Valley](https://img.shields.io/badge/Game-Stardew_Valley-brightgreen.svg)](https://www.stardewvalley.net/)
-
----
 
 ## [FR] Version Française
 
