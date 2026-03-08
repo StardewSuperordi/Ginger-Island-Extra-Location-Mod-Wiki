@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki GiEX - Objets & Ressources</title>
+    <style>
+        :root { --sd-brown: #3d2b1f; --sd-yellow: #ffcc00; --sd-green: #2e7d32; --sd-light-green: #e8f5e9; --sd-accent: #fbc02d; --sd-bg: #f4f1ea; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 1400px; margin: 0 auto; display: flex; background: var(--sd-bg); }
+        nav { width: 280px; background: var(--sd-brown); color: white; padding: 20px; height: 100vh; position: sticky; top: 0; box-shadow: 2px 0 10px rgba(0,0,0,0.3); overflow-y: auto; }
+        nav h2 { color: var(--sd-yellow); font-size: 1.4em; border-bottom: 2px solid #5d4037; padding-bottom: 10px; text-align: center; }
+        nav ul { list-style: none; padding: 0; }
+        nav li { margin: 10px 0; }
+        nav a { color: #ddd; text-decoration: none; transition: 0.3s; display: block; padding: 8px; border-radius: 4px; }
+        nav a:hover { color: #fff; background: rgba(255,255,255,0.1); padding-left: 15px; }
+        nav a.active { background: var(--sd-green); color: white; }
+        main { flex: 1; padding: 40px; background: white; box-shadow: -5px 0 15px rgba(0,0,0,0.1); min-height: 100vh; position: relative; }
+        .lang-switch { position: absolute; top: 20px; right: 20px; display: flex; gap: 10px; }
+        .lang-btn { background: var(--sd-light-green); border: 2px solid var(--sd-green); color: var(--sd-green); padding: 5px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+        .lang-btn.active { background: var(--sd-green); color: white; }
+        h1 { color: var(--sd-green); border-bottom: 3px solid #81c784; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: var(--sd-light-green); color: var(--sd-green); }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+<nav>
+    <h2 id="nav-title">GiEX REDUX WIKI</h2>
+    <ul>
+        <li><a href="index.html" id="nav-accueil">🏠 Accueil</a></li>
+        <li><a href="wiki_lieux.html" id="nav-lieux">🗺️ Nouvelles Zones</a></li>
+        <li><a href="wiki_javi.html" id="nav-pnj">👤 Javi (PNJ)</a></li>
+        <li><a href="wiki_bundles.html" id="nav-bundles">🏛️ Lots du Temple</a></li>
+        <li><a href="wiki_animaux.html" id="nav-animaux">🐄 Nouveaux Animaux</a></li>
+        <li><a href="wiki_peche.html" id="nav-peche">🐠 Guide de Pêche</a></li>
+        <li><a href="wiki_outils.html" id="nav-outils">🛠️ Outils & Équipement</a></li>
+        <li><a href="wiki_objets.html" class="active" id="nav-objets">✨ Objets & Ressources</a></li>
+        <li><a href="wiki_boutiques.html" id="nav-boutiques">💰 Boutiques</a></li>
+        <li><a href="wiki_secrets.html" id="nav-secrets">🤫 Secrets</a></li>
+    </ul>
+</nav>
+<main>
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
+        <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+    </div>
+    <h1 data-key="nav-objets">Encyclopédie des Objets & Ressources</h1>
+
+    <!-- CATEGORIE 1: ALCHIMIE -->
+    <h2 data-key="sec_magic">✨ Objets Magiques & Alchimie</h2>
+    <table>
+        <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Usage / Effets</th></tr>
+        <tr><td data-key="GoldDust.Name">Poussière d'or</td><td data-key="how_shop_rec">Boutique (Recette)</td><td data-key="use_gold_dust">Transforme un animal en sa version <strong>Dorée</strong>.</td></tr>
+        <tr><td data-key="VoidDust.Name">Poussière du Néant</td><td data-key="how_shop_rec">Boutique (Recette)</td><td data-key="use_void_dust">Transforme un animal en sa version <strong>du Néant</strong>.</td></tr>
+        <tr><td data-key="PurifyDust.Name">Poussière purifiante</td><td data-key="how_shop">Boutique (Achat)</td><td data-key="use_purify">Redonne à un animal sa forme <strong>normale</strong>.</td></tr>
+        <tr><td data-key="GrowDust.Name">Poussière de croissance</td><td data-key="how_shop">Boutique / Lots</td><td data-key="use_grow">Fait mûrir les cultures instantanément.</td></tr>
+        <tr><td data-key="RevivalDust.Name">Poussière de résurrection</td><td data-key="how_shop">Boutique / Lots</td><td data-key="use_revive">Réanime les cultures mortes.</td></tr>
+    </table>
+
+    <!-- CATEGORIE 2: PRODUITS ANIMAUX -->
+    <h2 data-key="sec_produce">🐄 Produits Animaux Spéciaux</h2>
+    <h3><span class="badge bg-gold" data-key="golden_variants_title">Série Dorée</span></h3>
+    <table>
+        <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Source</th><th data-key="usage_label">Usage</th></tr>
+        <tr><td data-key="Milk_G.Name">Lait doré</td><td>Vache Dorée</td><td>Vente (prix élevé), Fromage doré.</td></tr>
+        <tr><td data-key="GoatMilk_G.Name">Lait de chèvre doré</td><td>Chèvre Dorée</td><td>Vente, Fromage de chèvre doré.</td></tr>
+        <tr><td data-key="Wool_G.Name">Laine dorée</td><td>Mouton Doré</td><td>Fil doré.</td></tr>
+        <tr><td data-key="DinoEgg_G.Name">Œuf de dinosaure doré</td><td>Dinosaure Doré</td><td>Vente, Mayonnaise dorée.</td></tr>
+        <tr><td data-key="DuckEgg_G.Name">Œuf de canard doré</td><td>Canard Doré</td><td>Vente, Mayonnaise dorée.</td></tr>
+    </table>
+    <h3><span class="badge bg-void" data-key="void_variants_title">Série du Néant</span></h3>
+    <table>
+        <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Source</th><th data-key="usage_label">Usage</th></tr>
+        <tr><td data-key="Milk_V.Name">Lait du Néant</td><td>Vache du Néant</td><td>Fromage du Néant (odeur de brûlé).</td></tr>
+        <tr><td data-key="GoatMilk_V.Name">Lait de chèvre du Néant</td><td>Chèvre du Néant</td><td>Fromage de chèvre du Néant.</td></tr>
+        <tr><td data-key="Wool_V.Name">Laine du Néant</td><td>Mouton du Néant</td><td>Fil du Néant.</td></tr>
+        <tr><td data-key="DuckEgg_V.Name">Œuf de canard du Néant</td><td>Canard du Néant</td><td>Mayonnaise du Néant.</td></tr>
+    </table>
+    <h3><span class="badge bg-iridium" data-key="iridium_chicken_desc">Série Iridium & Fruits</span></h3>
+    <table>
+        <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Source</th><th data-key="usage_label">Usage</th></tr>
+        <tr><td data-key="IridiumEgg.Name">Œuf en iridium</td><td>Poulet d'Iridium</td><td>Vente (Extrêmement cher).</td></tr>
+        <tr><td data-key="Milk_B.Name">Lait de banane</td><td>Vache Banane</td><td>Pudding à la banane.</td></tr>
+        <tr><td data-key="Milk_C.Name">Lait de coco</td><td>Vache Coco</td><td>Piña Colada, Curry.</td></tr>
+        <tr><td data-key="Milk_M.Name">Lait de mangue</td><td>Vache Mangue</td><td>Salade mangue-crevette.</td></tr>
+    </table>
+
+    <!-- CATEGORIE 3: CUISINE -->
+    <h2 data-key="sec_cooking">🍲 Plats & Boissons Exotiques</h2>
+    <table>
+        <tr><th data-key="name_label">Plat</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Effets / Buffs</th></tr>
+        <tr><td data-key="MagicIceCream.Name">Glace magique</td><td>Boutique (Recette)</td><td>Buffs : Minage, Chance, Vitesse, Défense, Attaque.</td></tr>
+        <tr><td data-key="StardropCake.Name">Gâteau Stardrop</td><td>Temple (Lot Cuisine)</td><td>Buff : <strong>Résistant</strong> (Récupère de l'énergie).</td></tr>
+        <tr><td data-key="AncientJuice.Name">Jus ancien</td><td>Boutique (Achat)</td><td>Buff : Force.</td></tr>
+        <tr><td data-key="AncientCobbler.Name">Cobbler ancien</td><td>Recette secrète</td><td>Buff : Energie max.</td></tr>
+        <tr><td data-key="MushroomPizza.Name">Pizza aux champignons</td><td>Recette</td><td>Buff : <strong>Régénération</strong> (Santé sur le temps).</td></tr>
+        <tr><td data-key="OmniBurger.Name">Omni burger</td><td>Boutique (Recette)</td><td>Buff : Défense ++.</td></tr>
+    </table>
+
+    <!-- CATEGORIE 4: ARTEFACTS -->
+    <h2 data-key="sec_artifacts">🏛️ Artefacts & Musée</h2>
+    <table>
+        <tr><th data-key="name_label">Artefact</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Utilité</th></tr>
+        <tr><td data-key="PearlNecklace.Name">Collier de perles</td><td>Abysses (Forage)</td><td>Musée, Cadeau (Birdie/Javi).</td></tr>
+        <tr><td data-key="AncientTablet.Name">Tablette ancienne</td><td>Pêche profonde</td><td>Musée, Lore de l'île.</td></tr>
+        <tr><td data-key="WaterOrb.Name">Orbe d'eau</td><td>Épave Engloutie</td><td>Musée, Artisanat magique.</td></tr>
+        <tr><td data-key="FishFlute.Name">Flûte-poisson</td><td>Forage sous-marin</td><td>Musée, Cadeau adoré (Javi).</td></tr>
+        <tr><td data-key="LumiRose.Name">Rose lumineuse</td><td>Forage Abysses</td><td>Musée, Décoration.</td></tr>
+        <tr><td data-key="DeepClam.Name">Palourde omnisciente</td><td>Abysses (Rare)</td><td>Musée, Vente.</td></tr>
+    </table>
+
+    <!-- CATEGORIE 5: OUTILS & EQUIPEMENT -->
+    <h2 data-key="sec_tools">🛠️ Outils & Équipement Spécial</h2>
+    <table>
+        <tr><th data-key="name_label">Outil</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Utilité</th></tr>
+        <tr><td data-key="LumiRod.Name">Canne lumineuse</td><td>Statue Narval (99 Éclats)</td><td>Permet de pêcher dans les Abysses sombres.</td></tr>
+        <tr><td data-key="AncientKey.Name">Clé ancienne</td><td>Événement Javi (10 cœurs)</td><td>Ouvre la salle du capitaine (Épave).</td></tr>
+        <tr><td data-key="LumiBait.Name">Appât lumineux</td><td>Craft / Boutique</td><td>Attire les poissons abyssaux.</td></tr>
+        <tr><td data-key="FlameSword.Name">Épée de flammes</td><td>Lot de Combat</td><td>Arme infligeant des dégâts de feu.</td></tr>
+        <tr><td data-key="IslandScepter.Name">Sceptre de l'île</td><td>Boutique (Rare)</td><td>Téléportation instantanée vers Ginger Island.</td></tr>
+        <tr><td data-key="FireRing.Name">Anneau de feu</td><td>Récompense Temple</td><td>Immunité totale contre le feu et la lave.</td></tr>
+    </table>
+
+    <!-- CATEGORIE 6: RESSOURCES -->
+    <h2 data-key="sec_resources">💎 Ressources de Base</h2>
+    <table>
+        <tr><th data-key="name_label">Ressource</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Utilité</th></tr>
+        <tr><td data-key="LumiShard.Name">Éclat lumineux</td><td>Abysses (Minerais)</td><td>Échange Statue Narval, Cadeau Javi.</td></tr>
+        <tr><td data-key="FireEssence.Name">Essence de feu</td><td>Monstres (Antre/Volcan)</td><td>Craft Alchimique, Lots du Temple.</td></tr>
+        <tr><td data-key="VoidShard.Name">Éclat du Néant</td><td>Abysses / Épave</td><td>Craft de la Poussière du Néant.</td></tr>
+        <tr><td data-key="LavaSnail.Name">Escargot de lave</td><td>Antre Éteint (Forage)</td><td>Cuisine, Vente.</td></tr>
+        <tr><td data-key="StarDropSeeds.Name">Graines de Stardrop</td><td>Boutique (Vendredi)</td><td>Objet mystérieux (très rare).</td></tr>
+    </table>
+</main>
+<script>
+    const translations = {
+        fr: {
+            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Accueil", "nav-lieux": "🗺️ Nouvelles Zones", "nav-pnj": "👤 Javi (PNJ)", "nav-bundles": "🏛️ Lots du Temple", "nav-animaux": "🐄 Nouveaux Animaux", "nav-peche": "🐠 Guide de Pêche", "nav-outils": "🛠️ Outils & Équipement", "nav-objets": "✨ Objets & Ressources", "nav-boutiques": "💰 Boutiques", "nav-secrets": "🤫 Secrets",
+            "name_label": "Nom", "how_to_get_label": "Obtention", "usage_label": "Usage / Utilité",
+            "sec_magic": "✨ Objets Magiques (Alchimie)", "sec_produce": "🐄 Produits Animaux Spéciaux", "sec_cooking": "🍲 Plats & Boissons Exotiques", "sec_artifacts": "🏛️ Artefacts & Musée", "sec_tools": "🛠️ Outils & Équipement Spécial", "sec_resources": "💎 Ressources de Base",
+            "GoldDust.Name": "Poussière d'or", "VoidDust.Name": "Poussière du Néant", "PurifyDust.Name": "Poussière purifiante", "GrowDust.Name": "Poussière de croissance", "RevivalDust.Name": "Poussière de résurrection",
+            "use_gold_dust": "Transforme un animal en version Dorée.", "use_void_dust": "Transforme un animal en version du Néant.", "use_purify": "Retour à la forme normale.", "use_grow": "Mûrit les cultures instantanément.", "use_revive": "Réanime les cultures mortes.",
+            "golden_variants_title": "Série Dorée", "void_variants_title": "Série du Néant", "iridium_chicken_desc": "Série Iridium & Fruits",
+            "Milk_G.Name": "Lait doré", "GoatMilk_G.Name": "Lait de chèvre doré", "Wool_G.Name": "Laine dorée", "DinoEgg_G.Name": "Œuf de dinosaure doré", "DuckEgg_G.Name": "Œuf de canard doré",
+            "Milk_V.Name": "Lait du Néant", "GoatMilk_V.Name": "Lait de chèvre du Néant", "Wool_V.Name": "Laine du Néant", "DuckEgg_V.Name": "Œuf de canard du Néant",
+            "IridiumEgg.Name": "Œuf en iridium", "Milk_B.Name": "Lait de banane", "Milk_C.Name": "Lait de coco", "Milk_M.Name": "Lait de mangue",
+            "MagicIceCream.Name": "Glace magique", "StardropCake.Name": "Gâteau Stardrop", "AncientJuice.Name": "Jus ancien", "AncientCobbler.Name": "Cobbler ancien", "MushroomPizza.Name": "Pizza aux champignons", "OmniBurger.Name": "Omni burger",
+            "PearlNecklace.Name": "Collier de perles", "AncientTablet.Name": "Tablette ancienne", "WaterOrb.Name": "Orbe d'eau", "FishFlute.Name": "Flûte-poisson", "LumiRose.Name": "Rose lumineuse", "DeepClam.Name": "Palourde omnisciente",
+            "LumiRod.Name": "Canne lumineuse", "AncientKey.Name": "Clé ancienne", "LumiBait.Name": "Appât lumineux", "FlameSword.Name": "Épée de flammes", "IslandScepter.Name": "Sceptre de l'île", "FireRing.Name": "Anneau de feu",
+            "LumiShard.Name": "Éclat lumineux", "FireEssence.Name": "Essence de feu", "VoidShard.Name": "Éclat du Néant", "LavaSnail.Name": "Escargot de lave", "StarDropSeeds.Name": "Graines de Stardrop",
+            "how_shop_rec": "Boutique (Recette)", "how_shop": "Boutique (Achat)", "how_abyss": "Abysses (Forage)", "how_lava": "Antre / Volcan (Drops)", "how_narval": "Statue Narval (99 Éclats)", "how_javi": "Événement Javi (10 cœurs)"
+        },
+        en: {
+            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Home", "nav-lieux": "🗺️ New Zones", "nav-pnj": "👤 Javi (NPC)", "nav-bundles": "🏛️ Temple Bundles", "nav-animaux": "🐄 New Animals", "nav-peche": "🐠 Fishing Guide", "nav-outils": "🛠️ Tools & Equipment", "nav-objets": "✨ Items & Resources", "nav-boutiques": "💰 Shops", "nav-secrets": "🤫 Secrets",
+            "name_label": "Name", "how_to_get_label": "Obtainment", "usage_label": "Usage / Utility",
+            "sec_magic": "✨ Magic Items (Alchemy)", "sec_produce": "🐄 Special Animal Produce", "sec_cooking": "🍲 Exotic Dishes & Drinks", "sec_artifacts": "🏛️ Artifacts & Museum", "sec_tools": "🛠️ Special Tools & Equipment", "sec_resources": "💎 Base Resources",
+            "GoldDust.Name": "Gold Dust", "VoidDust.Name": "Void Dust", "PurifyDust.Name": "Purifying Dust", "GrowDust.Name": "Growing Dust", "RevivalDust.Name": "Revival Dust",
+            "use_gold_dust": "Transforms animal into Golden version.", "use_void_dust": "Transforms animal into Void version.", "use_purify": "Returns to normal form.", "use_grow": "Matures crops instantly.", "use_revive": "Revives dead crops.",
+            "golden_variants_title": "Golden Series", "void_variants_title": "Void Series", "iridium_chicken_desc": "Iridium & Fruit Series",
+            "Milk_G.Name": "Golden milk", "GoatMilk_G.Name": "Golden goat milk", "Wool_G.Name": "Golden wool", "DinoEgg_G.Name": "Golden dinosaur egg", "DuckEgg_G.Name": "Golden duck egg",
+            "Milk_V.Name": "Void milk", "GoatMilk_V.Name": "Void goat milk", "Wool_V.Name": "Void wool", "DuckEgg_V.Name": "Void duck egg",
+            "IridiumEgg.Name": "Iridium egg", "Milk_B.Name": "Banana milk", "Milk_C.Name": "Coconut milk", "Milk_M.Name": "Mango milk",
+            "MagicIceCream.Name": "Magic ice cream", "StardropCake.Name": "Stardrop cake", "AncientJuice.Name": "Ancient juice", "AncientCobbler.Name": "Ancient cobbler", "MushroomPizza.Name": "Mushroom pizza", "OmniBurger.Name": "Omni burger",
+            "PearlNecklace.Name": "Pearl necklace", "AncientTablet.Name": "Ancient tablet", "WaterOrb.Name": "Water orb", "FishFlute.Name": "Fish flute", "LumiRose.Name": "Luminous rose", "DeepClam.Name": "Omniscient clam",
+            "LumiRod.Name": "Luminous rod", "AncientKey.Name": "Ancient key", "LumiBait.Name": "Luminous bait", "FlameSword.Name": "Flame sword", "IslandScepter.Name": "Island scepter", "FireRing.Name": "Fire ring",
+            "LumiShard.Name": "Luminous shard", "FireEssence.Name": "Fire essence", "VoidShard.Name": "Void shard", "LavaSnail.Name": "Lava snail", "StarDropSeeds.Name": "Stardrop seeds",
+            "how_shop_rec": "Shop (Recipe)", "how_shop": "Shop (Purchase)", "how_abyss": "Abyss (Drilling)", "how_lava": "Lair / Volcano (Drops)", "how_narval": "Narwhal Statue (99 Shards)", "how_javi": "Javi Event (10 hearts)"
+        }
+    };
+    function setLanguage(lang) {
+        localStorage.setItem('giex_wiki_lang', lang);
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.lang-btn[onclick="setLanguage('${lang}')"]`).classList.add('active');
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (translations[lang][key]) el.innerHTML = translations[lang][key];
+        });
+        document.getElementById('nav-title').innerHTML = translations[lang]['nav-title'];
+        document.getElementById('nav-accueil').innerHTML = translations[lang]['nav-accueil'];
+        document.getElementById('nav-lieux').innerHTML = translations[lang]['nav-lieux'];
+        document.getElementById('nav-pnj').innerHTML = translations[lang]['nav-pnj'];
+        document.getElementById('nav-bundles').innerHTML = translations[lang]['nav-bundles'];
+        document.getElementById('nav-animaux').innerHTML = translations[lang]['nav-animaux'];
+        document.getElementById('nav-peche').innerHTML = translations[lang]['nav-peche'];
+        document.getElementById('nav-outils').innerHTML = translations[lang]['nav-outils'];
+        document.getElementById('nav-objets').innerHTML = translations[lang]['nav-objets'];
+        document.getElementById('nav-boutiques').innerHTML = translations[lang]['nav-boutiques'];
+        document.getElementById('nav-secrets').innerHTML = translations[lang]['nav-secrets'];
+    }
+    const savedLang = localStorage.getItem('giex_wiki_lang') || 'fr';
+    setLanguage(savedLang);
+</script>
+</body>
+</html>

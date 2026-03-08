@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki GiEX - Guide de Pêche</title>
+    <style>
+        :root { --sd-brown: #3d2b1f; --sd-yellow: #ffcc00; --sd-green: #2e7d32; --sd-light-green: #e8f5e9; --sd-accent: #fbc02d; --sd-bg: #f4f1ea; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 1400px; margin: 0 auto; display: flex; background: var(--sd-bg); }
+        nav { width: 280px; background: var(--sd-brown); color: white; padding: 20px; height: 100vh; position: sticky; top: 0; box-shadow: 2px 0 10px rgba(0,0,0,0.3); overflow-y: auto; }
+        nav h2 { color: var(--sd-yellow); font-size: 1.4em; border-bottom: 2px solid #5d4037; padding-bottom: 10px; text-align: center; }
+        nav ul { list-style: none; padding: 0; }
+        nav li { margin: 10px 0; }
+        nav a { color: #ddd; text-decoration: none; transition: 0.3s; display: block; padding: 8px; border-radius: 4px; }
+        nav a:hover { color: #fff; background: rgba(255,255,255,0.1); padding-left: 15px; }
+        nav a.active { background: var(--sd-green); color: white; }
+        main { flex: 1; padding: 40px; background: white; box-shadow: -5px 0 15px rgba(0,0,0,0.1); min-height: 100vh; position: relative; }
+        .lang-switch { position: absolute; top: 20px; right: 20px; display: flex; gap: 10px; }
+        .lang-btn { background: var(--sd-light-green); border: 2px solid var(--sd-green); color: var(--sd-green); padding: 5px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+        .lang-btn.active { background: var(--sd-green); color: white; }
+        h1 { color: var(--sd-green); border-bottom: 3px solid #81c784; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: var(--sd-light-green); color: var(--sd-green); }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .badge { padding: 4px 8px; border-radius: 4px; color: white; font-size: 0.9em; font-weight: bold; }
+        .bg-lava { background: #ff5722; }
+        .bg-deep { background: #1a237e; }
+        .bg-rare { background: #fbc02d; }
+    </style>
+</head>
+<body>
+<nav>
+    <h2 id="nav-title">GiEX REDUX WIKI</h2>
+    <ul>
+        <li><a href="index.html" id="nav-accueil">🏠 Accueil</a></li>
+        <li><a href="wiki_lieux.html" id="nav-lieux">🗺️ Nouvelles Zones</a></li>
+        <li><a href="wiki_javi.html" id="nav-pnj">👤 Javi (PNJ)</a></li>
+        <li><a href="wiki_bundles.html" id="nav-bundles">🏛️ Lots du Temple</a></li>
+        <li><a href="wiki_animaux.html" id="nav-animaux">🐄 Nouveaux Animaux</a></li>
+        <li><a href="wiki_peche.html" class="active" id="nav-peche">🐠 Guide de Pêche</a></li>
+        <li><a href="wiki_outils.html" id="nav-outils">🛠️ Outils & Équipement</a></li>
+        <li><a href="wiki_objets.html" id="nav-objets">✨ Objets & Ressources</a></li>
+        <li><a href="wiki_boutiques.html" id="nav-boutiques">💰 Boutiques</a></li>
+        <li><a href="wiki_secrets.html" id="nav-secrets">🤫 Secrets</a></li>
+    </ul>
+</nav>
+<main>
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
+        <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+    </div>
+    <h1 data-key="fishing_guide_title">Encyclopédie de la Pêche</h1>
+    
+    <div class="warning">
+        <p data-key="warning_fishing_deep"><strong>Note :</strong> Pour les poissons des <strong>Abysses (Deep Sea)</strong>, vous devez impérativement utiliser une <strong>Canne Lumineuse</strong>, un <strong>Leurre Lumineux</strong> ou des <strong>Appâts Lumineux</strong>, sinon vous ne pêcherez que des déchets.</p>
+    </div>
+
+    <!-- POISSONS DE LAVE -->
+    <h2 data-key="sec_lava_fish">🔥 Poissons de Lave (Antre Éteint)</h2>
+    <table>
+        <tr><th data-key="name_label">Nom</th><th data-key="time_label">Heure</th><th data-key="diff_label">Diff.</th><th data-key="usage_label">Utilité en Étang</th></tr>
+        <tr><td><span class="badge bg-lava" data-key="DragonFish.Name">Poisson-dragon</span></td><td>6h - 22h</td><td>70 (Sinker)</td><td data-key="use_dragon_pond">Dent de Dragon, Minerai d'Iridium</td></tr>
+        <tr><td><span class="badge bg-lava" data-key="CinderFish.Name">Poisson braise</span></td><td>16h - 2h</td><td>30 (Floater)</td><td data-key="use_cinder_pond">Éclats de Cendre, Rubis</td></tr>
+    </table>
+
+    <!-- POISSONS ABYSSAUX -->
+    <h2 data-key="sec_deep_fish">🌊 Poissons Abyssaux (Profondeurs)</h2>
+    <table>
+        <tr><th data-key="name_label">Nom</th><th data-key="time_label">Heure</th><th data-key="diff_label">Diff.</th><th data-key="cond_label">Condition</th></tr>
+        <tr><td><span class="badge bg-deep" data-key="FacelessFish.Name">Poisson sans visage</span></td><td>6h - 2h</td><td>65 (Floater)</td><td>-</td></tr>
+        <tr><td><span class="badge bg-deep" data-key="AtollaJellyfish.Name">Méduse Atolla</span></td><td>6h - 2h</td><td>55 (Floater)</td><td>-</td></tr>
+        <tr><td><span class="badge bg-deep" data-key="VampSquid.Name">Calmar Vampire</span></td><td>6h - 2h</td><td>60 (Sinker)</td><td>-</td></tr>
+        <tr><td><span class="badge bg-deep" data-key="Viperfish.Name">Poisson-vipère</span></td><td>6h - 2h</td><td>45 (Dart)</td><td data-key="cond_sunny">Temps Clair</td></tr>
+        <tr><td><span class="badge bg-deep" data-key="ToothFish.Name">Légine australe</span></td><td>6h - 2h</td><td>70 (Mixed)</td><td>-</td></tr>
+        <tr><td><span class="badge bg-deep" data-key="WhaleFish.Name">Poisson-baleine</span></td><td>6h - 2h</td><td>70 (Mixed)</td><td>Niveau 4 Requis</td></tr>
+        <tr><td><span class="badge bg-deep" data-key="SeaAngel.Name">Ange de mer</span></td><td>6h - 16h</td><td>35 (Mixed)</td><td data-key="cond_sunny">Temps Clair</td></tr>
+    </table>
+
+    <!-- POISSONS D'EAU DOUCE ET MIXTES -->
+    <h2 data-key="sec_fresh_fish">🏝️ Poissons de l'Île (Forêt/Étang)</h2>
+    <table>
+        <tr><th data-key="name_label">Nom</th><th data-key="time_label">Heure</th><th data-key="diff_label">Diff.</th><th data-key="location_label">Lieu</th></tr>
+        <tr><td><span data-key="ParrotFish.Name">Poisson-perroquet</span></td><td>6h - 2h</td><td>20 (Smooth)</td><td data-key="loc_quarry">Forêt de la Carrière</td></tr>
+        <tr><td><span data-key="OstrichFish.Name">Poisson-autruche</span></td><td>6h - 2h</td><td>45 (Dart)</td><td data-key="loc_quarry_pond">Étang de la Carrière</td></tr>
+        <tr><td><span data-key="SkeletonFish.Name">Poisson squelette</span></td><td>6h - 2h</td><td>30 (Mixed)</td><td data-key="locations.ExtinctLair">Antre Éteint</td></tr>
+        <tr><td><span class="badge bg-rare" data-key="PirateFish.Name">Poisson pirate</span></td><td>6h - 2h</td><td>15 (Dart)</td><td data-key="sunken_ship_title">Navire Englouti</td></tr>
+    </table>
+
+    <!-- CASIER A CRABE -->
+    <h2 data-key="sec_pot_fish">🦀 Casier à Crabe</h2>
+    <table>
+        <tr><th data-key="name_label">Nom</th><th data-key="location_label">Lieu</th><th data-key="usage_label">Utilité</th></tr>
+        <tr><td data-key="LavaSnail.Name">Escargot de lave</td><td data-key="locations.ExtinctLair">Antre Éteint (Lave)</td><td data-key="use_lava_snail">Cuisine, Étang (Obsidienne)</td></tr>
+        <tr><td data-key="Squidworm.Name">Ver-calmar</td><td data-key="locations.Sea_West">Abysses</td><td>-</td></tr>
+        <tr><td data-key="BritStar.Name">Ophiure</td><td data-key="locations.Sea_West">Abysses</td><td>-</td></tr>
+        <tr><td data-key="Amphipoda.Name">Amphipode</td><td data-key="locations.Sea_West">Abysses</td><td>-</td></tr>
+        <tr><td data-key="Chiton.Name">Chiton</td><td data-key="locations.Sea_West">Abysses</td><td>-</td></tr>
+    </table>
+</main>
+<script>
+    const translations = {
+        fr: {
+            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Accueil", "nav-lieux": "🗺️ Nouvelles Zones", "nav-pnj": "👤 Javi (PNJ)", "nav-bundles": "🏛️ Lots du Temple", "nav-animaux": "🐄 Nouveaux Animaux", "nav-peche": "🐠 Guide de Pêche", "nav-outils": "🛠️ Outils & Équipement", "nav-objets": "✨ Objets & Ressources", "nav-boutiques": "💰 Boutiques", "nav-secrets": "🤫 Secrets",
+            "fishing_guide_title": "Encyclopédie de la Pêche", "warning_fishing_deep": "Note : Pour les poissons des Abysses, vous devez impérativement utiliser une Canne Lumineuse ou des Appâts Lumineux.",
+            "sec_lava_fish": "🔥 Poissons de Lave (Antre Éteint)", "sec_deep_fish": "🌊 Poissons Abyssaux (Profondeurs)", "sec_fresh_fish": "🏝️ Poissons de l'Île (Forêt/Étang)", "sec_pot_fish": "🦀 Casier à Crabe",
+            "name_label": "Nom", "time_label": "Heure", "diff_label": "Diff.", "usage_label": "Utilité en Étang", "cond_label": "Condition", "location_label": "Lieu",
+            "DragonFish.Name": "Poisson-dragon", "CinderFish.Name": "Poisson braise", "use_dragon_pond": "Dent de Dragon, Minerai d'Iridium", "use_cinder_pond": "Éclats de Cendre, Rubis",
+            "FacelessFish.Name": "Poisson sans visage", "AtollaJellyfish.Name": "Méduse Atolla", "VampSquid.Name": "Calmar Vampire", "Viperfish.Name": "Poisson-vipère", "ToothFish.Name": "Légine australe", "WhaleFish.Name": "Poisson-baleine", "SeaAngel.Name": "Ange de mer",
+            "cond_sunny": "Temps Clair", "ParrotFish.Name": "Poisson-perroquet", "OstrichFish.Name": "Poisson-autruche", "SkeletonFish.Name": "Poisson squelette", "PirateFish.Name": "Poisson pirate",
+            "loc_quarry": "Forêt de la Carrière", "loc_quarry_pond": "Étang de la Carrière", "locations.ExtinctLair": "Antre Éteint", "sunken_ship_title": "Navire Englouti",
+            "LavaSnail.Name": "Escargot de lave", "Squidworm.Name": "Ver-calmar", "BritStar.Name": "Ophiure", "Amphipoda.Name": "Amphipode", "Chiton.Name": "Chiton", "use_lava_snail": "Cuisine, Étang (Obsidienne)", "locations.Sea_West": "Abysses"
+        },
+        en: {
+            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Home", "nav-lieux": "🗺️ New Zones", "nav-pnj": "👤 Javi (NPC)", "nav-bundles": "🏛️ Temple Bundles", "nav-animaux": "🐄 New Animals", "nav-peche": "🐠 Fishing Guide", "nav-outils": "🛠️ Tools & Equipment", "nav-objets": "✨ Items & Resources", "nav-boutiques": "💰 Shops", "nav-secrets": "🤫 Secrets",
+            "fishing_guide_title": "Fishing Encyclopedia", "warning_fishing_deep": "Note: For deep-sea fish, you must use a Luminous Rod or Luminous Bait.",
+            "sec_lava_fish": "🔥 Lava Fish (Extinct Lair)", "sec_deep_fish": "🌊 Abyssal Fish (Depths)", "sec_fresh_fish": "🏝️ Island Fish (Forest/Pond)", "sec_pot_fish": "🦀 Crab Pot",
+            "name_label": "Name", "time_label": "Time", "diff_label": "Diff.", "usage_label": "Pond Utility", "cond_label": "Condition", "location_label": "Location",
+            "DragonFish.Name": "Dragonfish", "CinderFish.Name": "Cinderfish", "use_dragon_pond": "Dragon Tooth, Iridium Ore", "use_cinder_pond": "Cinder Shards, Ruby",
+            "FacelessFish.Name": "Faceless Fish", "AtollaJellyfish.Name": "Atolla Jellyfish", "VampSquid.Name": "Vampire Squid", "Viperfish.Name": "Viperfish", "ToothFish.Name": "Patagonian Toothfish", "WhaleFish.Name": "Flabby Whalefish", "SeaAngel.Name": "Sea Angel",
+            "cond_sunny": "Sunny Weather", "ParrotFish.Name": "Parrotfish", "OstrichFish.Name": "Ostrich Fish", "SkeletonFish.Name": "Skeletonfish", "PirateFish.Name": "Pirate Fish",
+            "loc_quarry": "Quarry Forest", "loc_quarry_pond": "Quarry Pond", "locations.ExtinctLair": "Extinct Lair", "sunken_ship_title": "Sunken Ship",
+            "LavaSnail.Name": "Lava Snail", "Squidworm.Name": "Squidworm", "BritStar.Name": "Brittle Star", "Amphipoda.Name": "Amphipod", "Chiton.Name": "Chiton", "use_lava_snail": "Cooking, Pond (Obsidian)", "locations.Sea_West": "Deep Sea"
+        }
+    };
+    function setLanguage(lang) {
+        localStorage.setItem('giex_wiki_lang', lang);
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.lang-btn[onclick="setLanguage('${lang}')"]`).classList.add('active');
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (translations[lang][key]) el.innerHTML = translations[lang][key];
+        });
+        document.getElementById('nav-title').innerHTML = translations[lang]['nav-title'];
+        document.getElementById('nav-accueil').innerHTML = translations[lang]['nav-accueil'];
+        document.getElementById('nav-lieux').innerHTML = translations[lang]['nav-lieux'];
+        document.getElementById('nav-pnj').innerHTML = translations[lang]['nav-pnj'];
+        document.getElementById('nav-bundles').innerHTML = translations[lang]['nav-bundles'];
+        document.getElementById('nav-animaux').innerHTML = translations[lang]['nav-animaux'];
+        document.getElementById('nav-peche').innerHTML = translations[lang]['nav-peche'];
+        document.getElementById('nav-outils').innerHTML = translations[lang]['nav-outils'];
+        document.getElementById('nav-objets').innerHTML = translations[lang]['nav-objets'];
+        document.getElementById('nav-boutiques').innerHTML = translations[lang]['nav-boutiques'];
+        document.getElementById('nav-secrets').innerHTML = translations[lang]['nav-secrets'];
+    }
+    const savedLang = localStorage.getItem('giex_wiki_lang') || 'fr';
+    setLanguage(savedLang);
+</script>
+</body>
+</html>

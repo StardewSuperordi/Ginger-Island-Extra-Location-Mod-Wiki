@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki GiEX - Nouveaux Animaux</title>
+    <style>
+        :root { --sd-brown: #3d2b1f; --sd-yellow: #ffcc00; --sd-green: #2e7d32; --sd-light-green: #e8f5e9; --sd-accent: #fbc02d; --sd-bg: #f4f1ea; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 1400px; margin: 0 auto; display: flex; background: var(--sd-bg); }
+        nav { width: 280px; background: var(--sd-brown); color: white; padding: 20px; height: 100vh; position: sticky; top: 0; box-shadow: 2px 0 10px rgba(0,0,0,0.3); overflow-y: auto; }
+        nav h2 { color: var(--sd-yellow); font-size: 1.4em; border-bottom: 2px solid #5d4037; padding-bottom: 10px; text-align: center; }
+        nav ul { list-style: none; padding: 0; }
+        nav li { margin: 10px 0; }
+        nav a { color: #ddd; text-decoration: none; transition: 0.3s; display: block; padding: 8px; border-radius: 4px; }
+        nav a:hover { color: #fff; background: rgba(255,255,255,0.1); padding-left: 15px; }
+        nav a.active { background: var(--sd-green); color: white; }
+        main { flex: 1; padding: 40px; background: white; box-shadow: -5px 0 15px rgba(0,0,0,0.1); min-height: 100vh; position: relative; }
+        .lang-switch { position: absolute; top: 20px; right: 20px; display: flex; gap: 10px; }
+        .lang-btn { background: var(--sd-light-green); border: 2px solid var(--sd-green); color: var(--sd-green); padding: 5px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+        .lang-btn.active { background: var(--sd-green); color: white; }
+        h1 { color: var(--sd-green); border-bottom: 3px solid #81c784; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: var(--sd-light-green); color: var(--sd-green); }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+<nav>
+    <h2 id="nav-title">GiEX REDUX WIKI</h2>
+    <ul>
+        <li><a href="index.html" id="nav-accueil">🏠 Accueil</a></li>
+        <li><a href="wiki_lieux.html" id="nav-lieux">🗺️ Nouvelles Zones</a></li>
+        <li><a href="wiki_javi.html" id="nav-pnj">👤 Javi (PNJ)</a></li>
+        <li><a href="wiki_bundles.html" id="nav-bundles">🏛️ Lots du Temple</a></li>
+        <li><a href="wiki_animaux.html" class="active" id="nav-animaux">🐄 Nouveaux Animaux</a></li>
+        <li><a href="wiki_peche.html" id="nav-peche">🐠 Guide de Pêche</a></li>
+        <li><a href="wiki_outils.html" id="nav-outils">🛠️ Outils & Équipement</a></li>
+        <li><a href="wiki_objets.html" id="nav-objets">✨ Objets & Ressources</a></li>
+        <li><a href="wiki_boutiques.html" id="nav-boutiques">💰 Boutiques</a></li>
+        <li><a href="wiki_secrets.html" id="nav-secrets">🤫 Secrets</a></li>
+    </ul>
+</nav>
+<main>
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
+        <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+    </div>
+    <h1 data-key="nav-animaux">Nouveaux Animaux</h1>
+    
+    <h2 data-key="lava_dragon_title">Mini Dragon de Lave</h2>
+    <div class="card" style="border-left: 5px solid #ff5722;">
+        <p data-key="lava_dragon_guide"><strong>Obtention :</strong> Récompense du Lot de Combat du Temple. Une fois débloqué, achetable pour 50 000g à la Boutique Mystérieuse.<br>
+        <strong>Production :</strong> Rubis, Quartz de feu, Obsidienne, Éclat de cendre.</p>
+    </div>
+
+    <h2 data-key="fruit_cows_title">Vaches à Fruits</h2>
+    <p data-key="fruit_cows_desc">Ces vaches exotiques se nourrissent des fruits de l'île. Elles sont achetables à la Boutique Mystérieuse après avoir complété le lot d'Agriculture.</p>
+    <table>
+        <tr><th data-key="animal_label">Animal</th><th data-key="produce_label">Production</th><th data-key="usage_label">Usage / Recette</th></tr>
+        <tr><td><strong>Vache Banane</strong></td><td data-key="Milk_B.Name">Lait de banane</td><td>Pudding à la banane, Vente</td></tr>
+        <tr><td><strong>Vache Coco</strong></td><td data-key="Milk_C.Name">Lait de coco</td><td>Curry tropical, Piña Colada</td></tr>
+        <tr><td><strong>Vache Mangue</strong></td><td data-key="Milk_M.Name">Lait de mangue</td><td>Salade mangue-crevette, Vente</td></tr>
+    </table>
+
+    <h2 data-key="transformation_title">Variantes Dorées & du Néant</h2>
+    <p data-key="trans_desc">Utilisez la <strong>Poussière d'Or</strong> ou la <strong>Poussière du Néant</strong> pour transformer vos animaux adultes.</p>
+    <div class="grid">
+        <div class="card">
+            <h3 class="badge bg-gold" data-key="golden_variants_title">Variantes Dorées</h3>
+            <ul>
+                <li><strong>Vache Dorée</strong> (Blanche ou Brune)</li>
+                <li><strong>Chèvre Dorée</strong></li>
+                <li><strong>Mouton Doré</strong></li>
+                <li><strong>Canard Doré</strong></li>
+                <li><strong>Dinosaure Doré</strong></li>
+                <li><strong>Autruche Doré</strong></li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3 class="badge bg-void" data-key="void_variants_title">Variantes du Néant</h3>
+            <ul>
+                <li><strong>Vache du Néant</strong> (Blanche ou Brune)</li>
+                <li><strong>Chèvre du Néant</strong></li>
+                <li><strong>Mouton du Néant</strong></li>
+                <li><strong>Lapin du Néant</strong></li>
+                <li><strong>Canard du Néant</strong></li>
+                <li><strong>Dinosaure du Néant</strong></li>
+                <li><strong>Autruche du Néant</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 data-key="iridium_chicken_title">Poulet d'Iridium</h2>
+    <div class="card" style="border-left: 5px solid #b000ff;">
+        <p data-key="iridium_chicken_desc">Un poulet d'élite produisant des œufs d'iridium. Déblocable uniquement si le mode <strong>Perfectionniste</strong> est activé ou en fin de partie.</p>
+    </div>
+</main>
+<script>
+    const translations = {
+        fr: {
+            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Accueil", "nav-lieux": "🗺️ Nouvelles Zones", "nav-pnj": "👤 Javi (PNJ)", "nav-bundles": "🏛️ Lots du Temple", "nav-animaux": "🐄 Nouveaux Animaux", "nav-peche": "🐠 Guide de Pêche", "nav-outils": "🛠️ Outils & Équipement", "nav-objets": "✨ Objets & Ressources", "nav-boutiques": "💰 Boutiques", "nav-secrets": "🤫 Secrets",
+            "lava_dragon_title": "Mini Dragon de Lave", "lava_dragon_guide": "Obtention : Récompense du Lot de Combat du Temple. Une fois débloqué, achetable pour 50 000g à la Boutique Mystérieuse. Production : Rubis, Quartz de feu, Obsidienne, Éclat de cendre.",
+            "fruit_cows_title": "Vaches à Fruits", "fruit_cows_desc": "Ces vaches exotiques se nourrissent des fruits de l'île. Elles sont achetables à la Boutique Mystérieuse après avoir complété le lot d'Agriculture.",
+            "animal_label": "Animal", "produce_label": "Production", "usage_label": "Usage / Recette",
+            "transformation_title": "Variantes Dorées & du Néant", "trans_desc": "Utilisez la Poussière d'Or ou la Poussière du Néant pour transformer vos animaux adultes.",
+            "golden_variants_title": "Variantes Dorées", "void_variants_title": "Variantes du Néant",
+            "iridium_chicken_title": "Poulet d'Iridium", "iridium_chicken_desc": "Un poulet d'élite produisant des œufs d'iridium. Déblocable uniquement si le mode Perfectionniste est activé ou en fin de partie."
+        },
+        en: {
+            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Home", "nav-lieux": "🗺️ New Zones", "nav-pnj": "👤 Javi (NPC)", "nav-bundles": "🏛️ Temple Bundles", "nav-animaux": "🐄 New Animals", "nav-peche": "🐠 Fishing Guide", "nav-outils": "🛠️ Tools & Equipment", "nav-objets": "✨ Items & Resources", "nav-boutiques": "💰 Shops", "nav-secrets": "🤫 Secrets",
+            "lava_dragon_title": "Mini Lava Dragon", "lava_dragon_guide": "Obtainment: Combat Bundle reward. Once unlocked, buy for 50,000g at Mysterious Store. Production: Ruby, Fire Quartz, Obsidian, Cinder Shard.",
+            "fruit_cows_title": "Fruit Cows", "fruit_cows_desc": "These exotic cows feed on island fruits. Purchasable at Mysterious Store after Farming bundle.",
+            "animal_label": "Animal", "produce_label": "Production", "usage_label": "Usage / Recipe",
+            "transformation_title": "Golden & Void Variants", "trans_desc": "Use Golden Dust or Void Dust to transform your adult animals.",
+            "golden_variants_title": "Golden Variants", "void_variants_title": "Void Variants",
+            "iridium_chicken_title": "Iridium Chicken", "iridium_chicken_desc": "An elite chicken producing iridium eggs. Unlocked only if Perfectionist mode is enabled or in late game."
+        }
+    };
+    function setLanguage(lang) {
+        localStorage.setItem('giex_wiki_lang', lang);
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.lang-btn[onclick="setLanguage('${lang}')"]`).classList.add('active');
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (translations[lang][key]) el.innerHTML = translations[lang][key];
+        });
+        document.getElementById('nav-title').innerHTML = translations[lang]['nav-title'];
+        document.getElementById('nav-accueil').innerHTML = translations[lang]['nav-accueil'];
+        document.getElementById('nav-lieux').innerHTML = translations[lang]['nav-lieux'];
+        document.getElementById('nav-pnj').innerHTML = translations[lang]['nav-pnj'];
+        document.getElementById('nav-bundles').innerHTML = translations[lang]['nav-bundles'];
+        document.getElementById('nav-animaux').innerHTML = translations[lang]['nav-animaux'];
+        document.getElementById('nav-peche').innerHTML = translations[lang]['nav-peche'];
+        document.getElementById('nav-outils').innerHTML = translations[lang]['nav-outils'];
+        document.getElementById('nav-objets').innerHTML = translations[lang]['nav-objets'];
+        document.getElementById('nav-boutiques').innerHTML = translations[lang]['nav-boutiques'];
+        document.getElementById('nav-secrets').innerHTML = translations[lang]['nav-secrets'];
+    }
+    const savedLang = localStorage.getItem('giex_wiki_lang') || 'fr';
+    setLanguage(savedLang);
+</script>
+</body>
+</html>

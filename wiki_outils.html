@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki GiEX - Outils & Équipement</title>
+    <style>
+        :root { --sd-brown: #3d2b1f; --sd-yellow: #ffcc00; --sd-green: #2e7d32; --sd-light-green: #e8f5e9; --sd-accent: #fbc02d; --sd-bg: #f4f1ea; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 1400px; margin: 0 auto; display: flex; background: var(--sd-bg); }
+        nav { width: 280px; background: var(--sd-brown); color: white; padding: 20px; height: 100vh; position: sticky; top: 0; box-shadow: 2px 0 10px rgba(0,0,0,0.3); overflow-y: auto; }
+        nav h2 { color: var(--sd-yellow); font-size: 1.4em; border-bottom: 2px solid #5d4037; padding-bottom: 10px; text-align: center; }
+        nav ul { list-style: none; padding: 0; }
+        nav li { margin: 10px 0; }
+        nav a { color: #ddd; text-decoration: none; transition: 0.3s; display: block; padding: 8px; border-radius: 4px; }
+        nav a:hover { color: #fff; background: rgba(255,255,255,0.1); padding-left: 15px; }
+        nav a.active { background: var(--sd-green); color: white; }
+        main { flex: 1; padding: 40px; background: white; box-shadow: -5px 0 15px rgba(0,0,0,0.1); min-height: 100vh; position: relative; }
+        .lang-switch { position: absolute; top: 20px; right: 20px; display: flex; gap: 10px; }
+        .lang-btn { background: var(--sd-light-green); border: 2px solid var(--sd-green); color: var(--sd-green); padding: 5px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+        .lang-btn.active { background: var(--sd-green); color: white; }
+        h1 { color: var(--sd-green); border-bottom: 3px solid #81c784; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: var(--sd-light-green); color: var(--sd-green); }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+<nav>
+    <h2 id="nav-title">GiEX REDUX WIKI</h2>
+    <ul>
+        <li><a href="index.html" id="nav-accueil">🏠 Accueil</a></li>
+        <li><a href="wiki_lieux.html" id="nav-lieux">🗺️ Nouvelles Zones</a></li>
+        <li><a href="wiki_javi.html" id="nav-pnj">👤 Javi (PNJ)</a></li>
+        <li><a href="wiki_bundles.html" id="nav-bundles">🏛️ Lots du Temple</a></li>
+        <li><a href="wiki_animaux.html" id="nav-animaux">🐄 Nouveaux Animaux</a></li>
+        <li><a href="wiki_peche.html" id="nav-peche">🐠 Guide de Pêche</a></li>
+        <li><a href="wiki_outils.html" class="active" id="nav-outils">🛠️ Outils & Équipement</a></li>
+        <li><a href="wiki_objets.html" id="nav-objets">✨ Objets & Ressources</a></li>
+        <li><a href="wiki_boutiques.html" id="nav-boutiques">💰 Boutiques</a></li>
+        <li><a href="wiki_secrets.html" id="nav-secrets">🤫 Secrets</a></li>
+    </ul>
+</nav>
+<main>
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
+        <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+    </div>
+    <h1 data-key="nav-outils">Outils & Équipement</h1>
+
+    <h2 data-key="sec_primary_tools">🔦 Outils Principaux</h2>
+    <table>
+        <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Usage / Effet</th></tr>
+        <tr><td data-key="LumiRod.Name">Canne lumineuse</td><td data-key="how_narval">Statue Narval (99 Éclats Lumineux)</td><td data-key="use_lumi_rod">Permet de pêcher dans les Abysses. Sans elle, vous ne pêchez que des déchets.</td></tr>
+        <tr><td data-key="IslandScepter.Name">Sceptre de l'île</td><td data-key="how_shop_rare">Boutique Mystérieuse (Rare)</td><td data-key="use_scepter">Téléporte instantanément le joueur à Ginger Island depuis n'importe où.</td></tr>
+        <tr><td data-key="Helmet">Casque de plongée</td><td data-key="how_fishing_bundle">Récompense : Lot de Pêche</td><td data-key="use_helmet">Permet de plonger sous l'eau aux points de transition. S'ajoute à l'onglet "Pouvoirs".</td></tr>
+        <tr><td data-key="AncientKey.Name">Clé ancienne</td><td data-key="how_javi_10h">Cadeau de Javi (Événement 10 cœurs)</td><td data-key="use_ancient_key">Ouvre la porte scellée de la salle du capitaine dans l'Épave Engloutie.</td></tr>
+    </table>
+
+    <h2 data-key="sec_combat_gear">⚔️ Équipement de Combat</h2>
+    <table>
+        <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Usage / Effet</th></tr>
+        <tr><td data-key="FlameSword.Name">Épée de flammes</td><td data-key="how_combat_bundle">Récompense : Lot de Combat</td><td data-key="use_flame_sword">Arme de type épée infligeant des dégâts de feu bonus.</td></tr>
+        <tr><td data-key="FireRing.Name">Anneau de feu</td><td data-key="how_temple_reward">Récompense de progression du Temple</td><td data-key="use_fire_ring">Immunise le porteur contre les dégâts de feu et de lave.</td></tr>
+    </table>
+
+    <h2 data-key="sec_fishing_gear">🎣 Matériel de Pêche spécialisé</h2>
+    <table>
+        <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Usage / Effet</th></tr>
+        <tr><td data-key="LumiBait.Name">Appât lumineux</td><td data-key="how_craft_shop">Artisanat ou Boutique de Javi</td><td data-key="use_lumi_bait">Attire spécifiquement les poissons des profondeurs.</td></tr>
+        <tr><td data-key="LumiTackle.Name">Leurre lumineux</td><td data-key="how_narval_small">Statue Narval (Échange mineur)</td><td data-key="use_lumi_tackle">Augmente les chances de capture dans les zones sombres.</td></tr>
+    </table>
+
+    <h2 data-key="sec_misc_tools">🎨 Autres Outils</h2>
+    <table>
+        <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Usage / Effet</th></tr>
+        <tr><td data-key="PaintBrush.Name">Pinceau</td><td data-key="how_shop">Boutique Mystérieuse</td><td data-key="use_paintbrush">Utilise de l'encre de seiche (Squid Ink) pour des activités créatives.</td></tr>
+    </table>
+</main>
+<script>
+    const translations = {
+        fr: {
+            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Accueil", "nav-lieux": "🗺️ Nouvelles Zones", "nav-pnj": "👤 Javi (PNJ)", "nav-bundles": "🏛️ Lots du Temple", "nav-animaux": "🐄 Nouveaux Animaux", "nav-peche": "🐠 Guide de Pêche", "nav-outils": "🛠️ Outils & Équipement", "nav-objets": "✨ Objets & Ressources", "nav-boutiques": "💰 Boutiques", "nav-secrets": "🤫 Secrets",
+            "sec_primary_tools": "🔦 Outils Principaux", "sec_combat_gear": "⚔️ Équipement de Combat", "sec_fishing_gear": "🎣 Matériel de Pêche spécialisé", "sec_misc_tools": "🎨 Autres Outils",
+            "name_label": "Nom", "how_to_get_label": "Obtention", "usage_label": "Usage / Effet",
+            "LumiRod.Name": "Canne lumineuse", "how_narval": "Statue Narval (99 Éclats Lumineux)", "use_lumi_rod": "Permet de pêcher dans les Abysses. Sans elle, vous ne pêchez que des déchets.",
+            "IslandScepter.Name": "Sceptre de l'île", "how_shop_rare": "Boutique Mystérieuse (Rare)", "use_scepter": "Téléporte instantanément le joueur à Ginger Island.",
+            "Helmet": "Casque de plongée", "how_fishing_bundle": "Récompense : Lot de Pêche", "use_helmet": "Permet de plonger sous l'eau. S'ajoute à l'onglet 'Pouvoirs'.",
+            "AncientKey.Name": "Clé ancienne", "how_javi_10h": "Cadeau de Javi (10 cœurs)", "use_ancient_key": "Ouvre la salle du capitaine dans l'Épave.",
+            "FlameSword.Name": "Épée de flammes", "how_combat_bundle": "Récompense : Lot de Combat", "use_flame_sword": "Épée infligeant des dégâts de feu.",
+            "FireRing.Name": "Anneau de feu", "how_temple_reward": "Récompense du Temple", "use_fire_ring": "Immunité contre le feu et la lave.",
+            "LumiBait.Name": "Appât lumineux", "how_craft_shop": "Artisanat ou Boutique", "use_lumi_bait": "Attire les poissons des profondeurs.",
+            "LumiTackle.Name": "Leurre lumineux", "how_narval_small": "Statue Narval (Échange)", "use_lumi_tackle": "Aide à la pêche sous-marine.",
+            "PaintBrush.Name": "Pinceau", "how_shop": "Boutique Mystérieuse", "use_paintbrush": "Utilise de l'encre de seiche."
+        },
+        en: {
+            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Home", "nav-lieux": "🗺️ New Zones", "nav-pnj": "👤 Javi (NPC)", "nav-bundles": "🏛️ Temple Bundles", "nav-animaux": "🐄 New Animals", "nav-peche": "🐠 Fishing Guide", "nav-outils": "🛠️ Tools & Equipment", "nav-objets": "✨ Items & Resources", "nav-boutiques": "💰 Shops", "nav-secrets": "🤫 Secrets",
+            "sec_primary_tools": "🔦 Primary Tools", "sec_combat_gear": "⚔️ Combat Gear", "sec_fishing_gear": "🎣 Specialized Fishing Gear", "sec_misc_tools": "🎨 Other Tools",
+            "name_label": "Name", "how_to_get_label": "Obtainment", "usage_label": "Usage / Effect",
+            "LumiRod.Name": "Luminous Rod", "how_narval": "Narwhal Statue (99 Luminous Shards)", "use_lumi_rod": "Allows fishing in the Deep Sea. Without it, you only catch trash.",
+            "IslandScepter.Name": "Island Scepter", "how_shop_rare": "Mysterious Store (Rare)", "use_scepter": "Instantly teleports the player to Ginger Island.",
+            "Helmet": "Diving Helmet", "how_fishing_bundle": "Reward: Fishing Bundle", "use_helmet": "Allows diving underwater. Added to the 'Powers' tab.",
+            "AncientKey.Name": "Ancient Key", "how_javi_10h": "Javi Gift (10 hearts)", "use_ancient_key": "Opens the captain's room in the Wreck.",
+            "FlameSword.Name": "Flame Sword", "how_combat_bundle": "Reward: Combat Bundle", "use_flame_sword": "Sword dealing bonus fire damage.",
+            "FireRing.Name": "Fire Ring", "how_temple_reward": "Temple Reward", "use_fire_ring": "Immunity to fire and lava.",
+            "LumiBait.Name": "Luminous Bait", "how_craft_shop": "Crafting or Shop", "use_lumi_bait": "Attracts deep sea fish.",
+            "LumiTackle.Name": "Luminous Tackle", "how_narval_small": "Narwhal Statue (Trade)", "use_lumi_tackle": "Helps with underwater fishing.",
+            "PaintBrush.Name": "Paint Brush", "how_shop": "Mysterious Store", "use_paintbrush": "Uses squid ink."
+        }
+    };
+    function setLanguage(lang) {
+        localStorage.setItem('giex_wiki_lang', lang);
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.lang-btn[onclick="setLanguage('${lang}')"]`).classList.add('active');
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (translations[lang][key]) el.innerHTML = translations[lang][key];
+        });
+        document.getElementById('nav-title').innerHTML = translations[lang]['nav-title'];
+        document.getElementById('nav-accueil').innerHTML = translations[lang]['nav-accueil'];
+        document.getElementById('nav-lieux').innerHTML = translations[lang]['nav-lieux'];
+        document.getElementById('nav-pnj').innerHTML = translations[lang]['nav-pnj'];
+        document.getElementById('nav-bundles').innerHTML = translations[lang]['nav-bundles'];
+        document.getElementById('nav-animaux').innerHTML = translations[lang]['nav-animaux'];
+        document.getElementById('nav-peche').innerHTML = translations[lang]['nav-peche'];
+        document.getElementById('nav-outils').innerHTML = translations[lang]['nav-outils'];
+        document.getElementById('nav-objets').innerHTML = translations[lang]['nav-objets'];
+        document.getElementById('nav-boutiques').innerHTML = translations[lang]['nav-boutiques'];
+        document.getElementById('nav-secrets').innerHTML = translations[lang]['nav-secrets'];
+    }
+    const savedLang = localStorage.getItem('giex_wiki_lang') || 'fr';
+    setLanguage(savedLang);
+</script>
+</body>
+</html>

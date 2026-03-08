@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki GiEX - Javi (PNJ)</title>
+    <style>
+        :root { --sd-brown: #3d2b1f; --sd-yellow: #ffcc00; --sd-green: #2e7d32; --sd-light-green: #e8f5e9; --sd-accent: #fbc02d; --sd-bg: #f4f1ea; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 1400px; margin: 0 auto; display: flex; background: var(--sd-bg); }
+        nav { width: 280px; background: var(--sd-brown); color: white; padding: 20px; height: 100vh; position: sticky; top: 0; box-shadow: 2px 0 10px rgba(0,0,0,0.3); overflow-y: auto; }
+        nav h2 { color: var(--sd-yellow); font-size: 1.4em; border-bottom: 2px solid #5d4037; padding-bottom: 10px; text-align: center; }
+        nav ul { list-style: none; padding: 0; }
+        nav li { margin: 10px 0; }
+        nav a { color: #ddd; text-decoration: none; transition: 0.3s; display: block; padding: 8px; border-radius: 4px; }
+        nav a:hover { color: #fff; background: rgba(255,255,255,0.1); padding-left: 15px; }
+        nav a.active { background: var(--sd-green); color: white; }
+        main { flex: 1; padding: 40px; background: white; box-shadow: -5px 0 15px rgba(0,0,0,0.1); min-height: 100vh; position: relative; }
+        .lang-switch { position: absolute; top: 20px; right: 20px; display: flex; gap: 10px; }
+        .lang-btn { background: var(--sd-light-green); border: 2px solid var(--sd-green); color: var(--sd-green); padding: 5px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+        .lang-btn.active { background: var(--sd-green); color: white; }
+        h1 { color: var(--sd-green); border-bottom: 3px solid #81c784; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: var(--sd-light-green); color: var(--sd-green); }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .infobox { width: 300px; float: right; margin-left: 20px; background: #fffde7; border: 2px solid var(--sd-yellow); border-radius: 8px; padding: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .infobox h3 { margin-top: 0; color: var(--sd-brown); text-align: center; border-bottom: 1px solid var(--sd-yellow); padding-bottom: 5px; }
+        .infobox hr { border: 0; border-top: 1px solid var(--sd-yellow); margin: 10px 0; }
+        .event-choice { background: #f1f8e9; border-left: 4px solid var(--sd-green); padding: 10px; margin: 15px 0; border-radius: 0 4px 4px 0; }
+        .choice-positive { color: #2e7d32; font-weight: bold; }
+        .choice-negative { color: #c62828; font-weight: bold; }
+        .good-end { border: 2px solid #ffd700; padding: 15px; border-radius: 8px; background: #fff9c4; margin-top: 20px; }
+        .bad-end { border: 2px solid #5d4037; padding: 15px; border-radius: 8px; background: #efebe9; margin-top: 20px; }
+    </style>
+</head>
+<body>
+<nav>
+    <h2 id="nav-title">GiEX REDUX WIKI</h2>
+    <ul>
+        <li><a href="index.html" id="nav-accueil">🏠 Accueil</a></li>
+        <li><a href="wiki_lieux.html" id="nav-lieux">🗺️ Nouvelles Zones</a></li>
+        <li><a href="wiki_javi.html" class="active" id="nav-pnj">👤 Javi (PNJ)</a></li>
+        <li><a href="wiki_bundles.html" id="nav-bundles">🏛️ Lots du Temple</a></li>
+        <li><a href="wiki_animaux.html" id="nav-animaux">🐄 Nouveaux Animaux</a></li>
+        <li><a href="wiki_peche.html" id="nav-peche">🐠 Guide de Pêche</a></li>
+        <li><a href="wiki_outils.html" id="nav-outils">🛠️ Outils & Équipement</a></li>
+        <li><a href="wiki_objets.html" id="nav-objets">✨ Objets & Ressources</a></li>
+        <li><a href="wiki_boutiques.html" id="nav-boutiques">💰 Boutiques</a></li>
+        <li><a href="wiki_secrets.html" id="nav-secrets">🤫 Secrets</a></li>
+    </ul>
+</nav>
+<main>
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
+        <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+    </div>
+    <h1 data-key="nav-pnj">Javi (PNJ)</h1>
+    
+    <div class="infobox">
+        <h3 data-key="identity_card">Fiche d'identité</h3>
+        <p><strong data-key="birthday_label">Anniversaire :</strong> 21 Hiver</p>
+        <p><strong data-key="gender_label">Genre :</strong> Non-binaire</p>
+        <p><strong data-key="location_label">Lieu :</strong> Cabane de Javi (Sud-Ouest)</p>
+        <hr>
+        <h4 data-key="loved_gifts">🎁 Cadeaux Adorés</h4>
+        <p data-key="loved_list">Bière, Vin, Hydromel, Ginger Ale, Piña Colada, Curiosity Lure, Leurre Lumineux, Viande, Dent de Dragon, Éclat Lumineux</p>
+        <h4 data-key="liked_gifts">👍 Cadeaux Aimés</h4>
+        <p data-key="liked_list">Truffe, Huile de Truffe, Pudding à l'Écume, Cuillère Garnie, Hameçon Barbelé, Bobber de Qualité</p>
+        <h4 data-key="hated_gifts">❌ Cadeaux Horribles</h4>
+        <p data-key="hated_list">Roue Rouillée, Crochet de Pirate, Épée Ancienne, Champignon Rouge, Ancre</p>
+    </div>
+
+    <h2 data-key="javi_history_title">L'Histoire de Javi : Du Sang et du Sel</h2>
+    <p data-key="javi_history_desc1">Javi n'a pas toujours été le "fantôme" solitaire de Ginger Island. Son passé est intimement lié à l'épave que l'on voit au large de l'île.</p>
+    <p data-key="javi_history_desc2"><strong>Le Passé Militaire :</strong> Né(e) Javiera, il/elle a été recruté(e) de force dans la Marine Royale. Après une mutinerie pour échapper à la cruauté des officiers, Javiera a rejoint la piraterie par nécessité.</p>
+    <p data-key="javi_history_desc3"><strong>Le Drame du Naufrage :</strong> Quartier-maître du mari de Birdie, Javi a survécu seul au naufrage du navire lors d'une tempête surnaturelle. Dévoré par la culpabilité d'avoir survécu alors que son Capitaine s'est sacrifié pour lui, il vit caché depuis lors.</p>
+
+    <h2 data-key="javi_events_detail">Guide des Événements de Cœur</h2>
+    
+    <h3 data-key="ev0_title">0 Cœur : Rencontre au Volcan</h3>
+    <p data-key="ev0_desc">Se déclenche en entrant dans le volcan. Javi vous sauve d'une embuscade.</p>
+    <div class="event-choice">
+        <strong data-key="choice_label">Choix :</strong>
+        <ul>
+            <li><span class="choice-positive" data-key="ev0_cA">Remercier Javi :</span> +10 Amitié</li>
+            <li><span class="choice-negative" data-key="ev0_cB">Se méfier :</span> -20 Amitié</li>
+            <li><span data-key="ev0_cC">Rester silencieux :</span> 0 Amitié</li>
+        </ul>
+    </div>
+
+    <h3 data-key="ev2_title">2 Cœurs : Récits de Jeunesse</h3>
+    <p data-key="ev2_long">Crique des Pirates (Soir, jours pairs, beau temps). Javi raconte sa vie avant l'île.</p>
+
+    <h3 data-key="ev4_title">4 Cœurs : Le Journal Intime</h3>
+    <p data-key="ev4_long">Après avoir reçu son courrier. Vous trouvez son journal dans sa cabane.</p>
+    <div class="event-choice">
+        <strong data-key="choice_label">Choix :</strong> Lire ou ne pas lire le journal affectera les dialogues futurs.
+    </div>
+
+    <h3 data-key="ev10_title">10 Cœurs : Le Destin Final</h3>
+    <p data-key="ev10_long">Plage Sud (Après courrier). Javi vous demande conseil sur son avenir.</p>
+
+    <h2 data-key="javi_endings_title">Les Deux Fins de Javi</h2>
+    <div class="good-end">
+        <h3 data-key="good_end_label">🌟 La Vérité (Bonne Fin)</h3>
+        <p data-key="good_how">Dites-lui de tout révéler à Birdie. Il acceptera de faire face à son passé.</p>
+        <p data-key="good_consequences">Javi reste sur l'île, Birdie et lui se réconcilient. Il devient plus heureux et ses prix en boutique baissent.</p>
+    </div>
+    <div class="bad-end">
+        <h3 data-key="bad_end_label">💀 Le Silence (Mauvaise Fin)</h3>
+        <p data-key="bad_how">Dites-lui que ses crimes sont trop graves ou qu'il doit rester caché.</p>
+        <p data-key="bad_consequences">Javi sombre dans la dépression et quitte l'île pour se rendre à la Marine. <strong>Il disparaît définitivement du jeu.</strong></p>
+    </div>
+</main>
+<script>
+    const translations = {
+        fr: {
+            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Accueil", "nav-lieux": "🗺️ Nouvelles Zones", "nav-pnj": "👤 Javi (PNJ)", "nav-bundles": "🏛️ Lots du Temple", "nav-animaux": "🐄 Nouveaux Animaux", "nav-peche": "🐠 Guide de Pêche", "nav-outils": "🛠️ Outils & Équipement", "nav-objets": "✨ Objets & Ressources", "nav-boutiques": "💰 Boutiques", "nav-secrets": "🤫 Secrets",
+            "identity_card": "Fiche d'identité", "birthday_label": "Anniversaire :", "gender_label": "Genre :", "location_label": "Lieu :",
+            "loved_gifts": "🎁 Cadeaux Adorés", "loved_list": "Bière, Vin, Hydromel, Ginger Ale, Piña Colada, Curiosity Lure, Leurre Lumineux, Viande, Dent de Dragon, Éclat Lumineux",
+            "liked_gifts": "👍 Cadeaux Aimés", "liked_list": "Truffe, Huile de Truffe, Pudding à l'Écume, Cuillère Garnie, Hameçon Barbelé, Bobber de Qualité",
+            "hated_gifts": "❌ Cadeaux Horribles", "hated_list": "Roue Rouillée, Crochet de Pirate, Épée Ancienne, Champignon Rouge, Ancre",
+            "javi_history_title": "Histoire de Javi", "javi_history_desc1": "Ancien pirate solitaire. Passé lié à l'épave.", "javi_history_desc2": "Forcé dans la Marine, mutinerie, piraterie.", "javi_history_desc3": "Seul survivant du naufrage, vit caché par culpabilité.",
+            "javi_events_detail": "Guide des Événements", "ev0_title": "0 Cœur : Rencontre", "ev0_desc": "Rencontre au Volcan.", "choice_label": "Conséquences des Choix :",
+            "ev0_cA": "Remercier Javi (+10)", "ev0_cB": "Se méfier (-20)", "ev0_cC": "Silence (0)",
+            "ev2_title": "2 Cœurs : Jeunesse", "ev2_long": "Crique des Pirates (Soir). Récit de sa vie passée.",
+            "ev4_title": "4 Cœurs : Le Journal", "ev4_long": "Cabane de Javi. Découverte de ses secrets.",
+            "ev10_title": "10 Cœurs : Le Destin", "ev10_long": "Plage Sud. Le choix final irréversible.",
+            "javi_endings_title": "Fins de Javi", "good_end_label": "🌟 Bonne Fin", "bad_end_label": "💀 Mauvaise Fin",
+            "good_how": "Conseillez-lui la vérité auprès de Birdie.", "good_consequences": "Javi reste sur l'île et trouve la paix.",
+            "bad_how": "Conseillez-lui de rester caché ou jugez ses crimes.", "bad_consequences": "Javi quitte l'île et disparaît à jamais."
+        },
+        en: {
+            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Home", "nav-lieux": "🗺️ New Zones", "nav-pnj": "👤 Javi (NPC)", "nav-bundles": "🏛️ Temple Bundles", "nav-animaux": "🐄 New Animals", "nav-peche": "🐠 Fishing Guide", "nav-outils": "🛠️ Tools & Equipment", "nav-objets": "✨ Items & Resources", "nav-boutiques": "💰 Shops", "nav-secrets": "🤫 Secrets",
+            "identity_card": "Identity Card", "birthday_label": "Birthday:", "gender_label": "Gender:", "location_label": "Location:",
+            "loved_gifts": "🎁 Loved Gifts", "loved_list": "Beer, Wine, Mead, Ginger Ale, Piña Colada, Curiosity Lure, Luminous Tackle, Meat, Dragon Tooth, Luminous Shard",
+            "liked_gifts": "👍 Liked Gifts", "liked_list": "Truffle, Truffle Oil, Seafoam Pudding, Dressed Spinner, Barbed Hook, Quality Bobber",
+            "hated_gifts": "❌ Hated Gifts", "hated_list": "Rusty Wheel, Pirate Hook, Ancient Sword, Red Mushroom, Anchor",
+            "javi_history_title": "Javi's History", "javi_history_desc1": "Former solitary pirate. Past linked to the wreck.", "javi_history_desc2": "Pressed into the Navy, mutiny, piracy.", "javi_history_desc3": "Sole survivor of the wreck, lives in hiding due to guilt.",
+            "javi_events_detail": "Heart Events Guide", "ev0_title": "0 Hearts: Encounter", "ev0_desc": "Meeting at the Volcano.", "choice_label": "Choice Consequences:",
+            "ev0_cA": "Thank Javi (+10)", "ev0_cB": "Be suspicious (-20)", "ev0_cC": "Stay silent (0)",
+            "ev2_title": "2 Hearts: Youth", "ev2_long": "Pirate Cove (Evening). Story of their past life.",
+            "ev4_title": "4 Hearts: The Journal", "ev4_long": "Javi's Hut. Discovery of secrets.",
+            "ev10_title": "10 Hearts: Destiny", "ev10_long": "South Beach. The irreversible final choice.",
+            "javi_endings_title": "Javi's Endings", "good_end_label": "🌟 Good Ending", "bad_end_label": "💀 Bad Ending",
+            "good_how": "Advise them to tell the truth to Birdie.", "good_consequences": "Javi stays on the island and finds peace.",
+            "bad_how": "Advise them to stay hidden or judge their crimes.", "bad_consequences": "Javi leaves the island and disappears forever."
+        }
+    };
+    function setLanguage(lang) {
+        localStorage.setItem('giex_wiki_lang', lang);
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.lang-btn[onclick="setLanguage('${lang}')"]`).classList.add('active');
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (translations[lang][key]) el.innerHTML = translations[lang][key];
+        });
+        document.getElementById('nav-title').innerHTML = translations[lang]['nav-title'];
+        document.getElementById('nav-accueil').innerHTML = translations[lang]['nav-accueil'];
+        document.getElementById('nav-lieux').innerHTML = translations[lang]['nav-lieux'];
+        document.getElementById('nav-pnj').innerHTML = translations[lang]['nav-pnj'];
+        document.getElementById('nav-bundles').innerHTML = translations[lang]['nav-bundles'];
+        document.getElementById('nav-animaux').innerHTML = translations[lang]['nav-animaux'];
+        document.getElementById('nav-peche').innerHTML = translations[lang]['nav-peche'];
+        document.getElementById('nav-outils').innerHTML = translations[lang]['nav-outils'];
+        document.getElementById('nav-objets').innerHTML = translations[lang]['nav-objets'];
+        document.getElementById('nav-boutiques').innerHTML = translations[lang]['nav-boutiques'];
+        document.getElementById('nav-secrets').innerHTML = translations[lang]['nav-secrets'];
+    }
+    const savedLang = localStorage.getItem('giex_wiki_lang') || 'fr';
+    setLanguage(savedLang);
+</script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki GiEX - Boutiques</title>
+    <style>
+        :root { --sd-brown: #3d2b1f; --sd-yellow: #ffcc00; --sd-green: #2e7d32; --sd-light-green: #e8f5e9; --sd-accent: #fbc02d; --sd-bg: #f4f1ea; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 1400px; margin: 0 auto; display: flex; background: var(--sd-bg); }
+        nav { width: 280px; background: var(--sd-brown); color: white; padding: 20px; height: 100vh; position: sticky; top: 0; box-shadow: 2px 0 10px rgba(0,0,0,0.3); overflow-y: auto; }
+        nav h2 { color: var(--sd-yellow); font-size: 1.4em; border-bottom: 2px solid #5d4037; padding-bottom: 10px; text-align: center; }
+        nav ul { list-style: none; padding: 0; }
+        nav li { margin: 10px 0; }
+        nav a { color: #ddd; text-decoration: none; transition: 0.3s; display: block; padding: 8px; border-radius: 4px; }
+        nav a:hover { color: #fff; background: rgba(255,255,255,0.1); padding-left: 15px; }
+        nav a.active { background: var(--sd-green); color: white; }
+        main { flex: 1; padding: 40px; background: white; box-shadow: -5px 0 15px rgba(0,0,0,0.1); min-height: 100vh; position: relative; }
+        .lang-switch { position: absolute; top: 20px; right: 20px; display: flex; gap: 10px; }
+        .lang-btn { background: var(--sd-light-green); border: 2px solid var(--sd-green); color: var(--sd-green); padding: 5px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+        .lang-btn.active { background: var(--sd-green); color: white; }
+        h1 { color: var(--sd-green); border-bottom: 3px solid #81c784; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: var(--sd-light-green); color: var(--sd-green); }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+<nav>
+    <h2 id="nav-title">GiEX REDUX WIKI</h2>
+    <ul>
+        <li><a href="index.html" id="nav-accueil">🏠 Accueil</a></li>
+        <li><a href="wiki_lieux.html" id="nav-lieux">🗺️ Nouvelles Zones</a></li>
+        <li><a href="wiki_javi.html" id="nav-pnj">👤 Javi (PNJ)</a></li>
+        <li><a href="wiki_bundles.html" id="nav-bundles">🏛️ Lots du Temple</a></li>
+        <li><a href="wiki_animaux.html" id="nav-animaux">🐄 Nouveaux Animaux</a></li>
+        <li><a href="wiki_peche.html" id="nav-peche">🐠 Guide de Pêche</a></li>
+        <li><a href="wiki_outils.html" id="nav-outils">🛠️ Outils & Équipement</a></li>
+        <li><a href="wiki_objets.html" id="nav-objets">✨ Objets & Ressources</a></li>
+        <li><a href="wiki_boutiques.html" class="active" id="nav-boutiques">💰 Boutiques</a></li>
+        <li><a href="wiki_secrets.html" id="nav-secrets">🤫 Secrets</a></li>
+    </ul>
+</nav>
+<main>
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
+        <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+    </div>
+    <h1 data-key="nav-boutiques">Boutiques</h1>
+    
+    <h2 data-key="MagicShop">Boutique Mystérieuse</h2>
+    <p data-key="trader_long_desc">La Boutique Mystérieuse est tenue par un marchand pirate masqué. Elle se situe à l'Est de l'entrée du Volcan et n'est accessible qu'après avoir complété le <strong>Lot d'Agriculture</strong> au Temple de l'Île.</p>
+    
+    <div class="warning">
+        <p data-key="shop_warning">Les prix indiqués ci-dessous correspondent au mode <strong>Normal</strong>. Ils sont divisés par 2 en mode Facile et multipliés par 1.5 ou plus en mode Difficile.</p>
+    </div>
+
+    <h3 data-key="sec_recipes">📜 Recettes de Poussières</h3>
+    <table>
+        <tr><th data-key="name_label">Recette</th><th data-key="price_label">Prix (Normal)</th><th data-key="condition_label">Condition</th></tr>
+        <tr><td data-key="GoldDust.Name">Poussière d'or</td><td>300 000g</td><td data-key="cond_perfection">Si Perfectionniste : nécessite Perfection</td></tr>
+        <tr><td data-key="VoidDust.Name">Poussière du Néant</td><td>150 000g</td><td>-</td></tr>
+        <tr><td data-key="PurifyDust.Name">Poussière purifiante</td><td>75 000g</td><td>-</td></tr>
+        <tr><td data-key="GrowDust.Name">Poussière de croissance</td><td>10 000g</td><td>-</td></tr>
+        <tr><td data-key="RevivalDust.Name">Poussière de résurrection</td><td>10 000g</td><td>-</td></tr>
+    </table>
+
+    <h3 data-key="sec_consumables">✨ Objets & Poussières</h3>
+    <table>
+        <tr><th data-key="name_label">Objet</th><th data-key="price_label">Prix / Échange</th><th data-key="condition_label">Disponibilité</th></tr>
+        <tr><td data-key="GoldDust.Name">Poussière d'or</td><td>100 000g</td><td data-key="cond_gold">Limitée (1 par jour)</td></tr>
+        <tr><td data-key="VoidDust.Name">Poussière du Néant</td><td>50 000g</td><td>-</td></tr>
+        <tr><td data-key="PurifyDust.Name">Poussière purifiante</td><td>25 000g</td><td>-</td></tr>
+        <tr><td data-key="StarDropSeeds.Name">Graines de Stardrop</td><td>1 Perle</td><td data-key="cond_friday">Uniquement le Vendredi</td></tr>
+        <tr><td>Auto-Petter</td><td>2-3 Coffres au trésor</td><td data-key="cond_autopetter">Rare (10% de chance)</td></tr>
+    </table>
+
+    <h3 data-key="sec_fruits">🍎 Fruits Géants (Stock : 3)</h3>
+    <table>
+        <tr><th data-key="name_label">Fruit</th><th data-key="price_label">Prix / Échange</th><th data-key="condition_label">Jours</th></tr>
+        <tr><td data-key="HugeBanana.Name">Banane géante</td><td>1500g ou 3 Bananes</td><td data-key="days_mon_tue">Lundi, Mardi</td></tr>
+        <tr><td data-key="HugeCoconut.Name">Noix de coco géante</td><td>1500g ou 3 Noix de coco</td><td data-key="days_wed_thu">Mercredi, Jeudi</td></tr>
+        <tr><td data-key="HugeMango.Name">Mangue géante</td><td>1500g ou 3 Mangues</td><td data-key="days_fri_sun">Vendredi, Samedi, Dimanche</td></tr>
+    </table>
+
+    <h3 data-key="sec_special">💎 Offres Spéciales</h3>
+    <table>
+        <tr><th data-key="name_label">Objet</th><th data-key="price_label">Prix / Échange</th><th data-key="condition_label">Condition</th></tr>
+        <tr><td data-key="IridiumEgg.Name">Œuf en iridium</td><td>200 000g ou 3 Magmas Géodes</td><td data-key="cond_iridium_egg">Le 28 du mois (Si débloqué)</td></tr>
+        <tr><td data-key="MiniLavaDragon">Dragon de lave</td><td>50 000g</td><td data-key="cond_lava_dragon">Après Lot de Combat</td></tr>
+    </table>
+</main>
+<script>
+    const translations = {
+        fr: {
+            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Accueil", "nav-lieux": "🗺️ Nouvelles Zones", "nav-pnj": "👤 Javi (PNJ)", "nav-bundles": "🏛️ Lots du Temple", "nav-animaux": "🐄 Nouveaux Animaux", "nav-peche": "🐠 Guide de Pêche", "nav-outils": "🛠️ Outils & Équipement", "nav-objets": "✨ Objets & Ressources", "nav-boutiques": "💰 Boutiques", "nav-secrets": "🤫 Secrets",
+            "MagicShop": "Boutique Mystérieuse", "trader_long_desc": "La Boutique Mystérieuse est tenue par un marchand pirate masqué. Elle se situe à l'Est de l'entrée du Volcan et n'est accessible qu'après avoir complété le Lot d'Agriculture au Temple de l'Île.",
+            "shop_warning": "Les prix indiqués ci-dessous correspondent au mode Normal. Ils sont divisés par 2 en mode Facile et multipliés par 1.5 ou plus en mode Difficile.",
+            "sec_recipes": "📜 Recettes de Poussières", "sec_consumables": "✨ Objets & Poussières", "sec_fruits": "🍎 Fruits Géants (Stock : 3)", "sec_special": "💎 Offres Spéciales",
+            "name_label": "Objet", "price_label": "Prix / Échange", "condition_label": "Condition / Disponibilité",
+            "GoldDust.Name": "Poussière d'or", "VoidDust.Name": "Poussière du Néant", "PurifyDust.Name": "Poussière purifiante", "GrowDust.Name": "Poussière de croissance", "RevivalDust.Name": "Poussière de résurrection",
+            "cond_perfection": "Si Perfectionniste : nécessite Perfection", "cond_gold": "Limitée (1 par jour)", "StarDropSeeds.Name": "Graines de Stardrop", "cond_friday": "Uniquement le Vendredi (contre 1 Perle)",
+            "cond_autopetter": "Rare (10% de chance, contre 2-3 Coffres au trésor)", "HugeBanana.Name": "Banane géante", "HugeCoconut.Name": "Noix de coco géante", "HugeMango.Name": "Mangue géante",
+            "days_mon_tue": "Lundi, Mardi", "days_wed_thu": "Mercredi, Jeudi", "days_fri_sun": "Vendredi, Samedi, Dimanche",
+            "IridiumEgg.Name": "Œuf en iridium", "cond_iridium_egg": "Le 28 du mois (Si Poulet Iridium débloqué)", "MiniLavaDragon": "Dragon de lave", "cond_lava_dragon": "Après avoir complété le Lot de Combat",
+            "days_label": "Jours"
+        },
+        en: {
+            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Home", "nav-lieux": "🗺️ New Zones", "nav-pnj": "👤 Javi (NPC)", "nav-bundles": "🏛️ Temple Bundles", "nav-animaux": "🐄 New Animals", "nav-peche": "🐠 Fishing Guide", "nav-outils": "🛠️ Tools & Equipment", "nav-objets": "✨ Items & Resources", "nav-boutiques": "💰 Shops", "nav-secrets": "🤫 Secrets",
+            "MagicShop": "Mysterious Store", "trader_long_desc": "The Mysterious Store is operated by a masked pirate trader. Located East of the Volcano entrance, it unlocks after completing the Farming bundle at the Island Temple.",
+            "shop_warning": "Prices shown below are for Normal mode. They are halved in Easy mode and increased by 1.5x or more in Hard mode.",
+            "sec_recipes": "📜 Dust Recipes", "sec_consumables": "✨ Items & Dusts", "sec_fruits": "🍎 Giant Fruits (Stock: 3)", "sec_special": "💎 Special Offers",
+            "name_label": "Item", "price_label": "Price / Trade", "condition_label": "Condition / Availability",
+            "GoldDust.Name": "Gold Dust", "VoidDust.Name": "Void Dust", "PurifyDust.Name": "Purifying Dust", "GrowDust.Name": "Growing Dust", "RevivalDust.Name": "Revival Dust",
+            "cond_perfection": "If Perfectionist: requires Perfection", "cond_gold": "Limited (1 per day)", "StarDropSeeds.Name": "Stardrop Seeds", "cond_friday": "Fridays only (for 1 Pearl)",
+            "cond_autopetter": "Rare (10% chance, for 2-3 Treasure Chests)", "HugeBanana.Name": "Giant Banana", "HugeCoconut.Name": "Giant Coconut", "HugeMango.Name": "Giant Mango",
+            "days_mon_tue": "Monday, Tuesday", "days_wed_thu": "Wednesday, Thursday", "days_fri_sun": "Friday, Saturday, Sunday",
+            "IridiumEgg.Name": "Iridium Egg", "cond_iridium_egg": "28th of the month (If Iridium Chicken unlocked)", "MiniLavaDragon": "Lava Dragon", "cond_lava_dragon": "After completing Combat Bundle",
+            "days_label": "Days"
+        }
+    };
+    function setLanguage(lang) {
+        localStorage.setItem('giex_wiki_lang', lang);
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.lang-btn[onclick="setLanguage('${lang}')"]`).classList.add('active');
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (translations[lang][key]) el.innerHTML = translations[lang][key];
+        });
+        document.getElementById('nav-title').innerHTML = translations[lang]['nav-title'];
+        document.getElementById('nav-accueil').innerHTML = translations[lang]['nav-accueil'];
+        document.getElementById('nav-lieux').innerHTML = translations[lang]['nav-lieux'];
+        document.getElementById('nav-pnj').innerHTML = translations[lang]['nav-pnj'];
+        document.getElementById('nav-bundles').innerHTML = translations[lang]['nav-bundles'];
+        document.getElementById('nav-animaux').innerHTML = translations[lang]['nav-animaux'];
+        document.getElementById('nav-peche').innerHTML = translations[lang]['nav-peche'];
+        document.getElementById('nav-outils').innerHTML = translations[lang]['nav-outils'];
+        document.getElementById('nav-objets').innerHTML = translations[lang]['nav-objets'];
+        document.getElementById('nav-boutiques').innerHTML = translations[lang]['nav-boutiques'];
+        document.getElementById('nav-secrets').innerHTML = translations[lang]['nav-secrets'];
+    }
+    const savedLang = localStorage.getItem('giex_wiki_lang') || 'fr';
+    setLanguage(savedLang);
+</script>
+</body>
+</html>
