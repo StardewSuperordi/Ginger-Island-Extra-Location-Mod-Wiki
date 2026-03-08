@@ -1,3 +1,31 @@
+## [EN] English Version
+
+Welcome to the unofficial wiki for **Ginger Island Extra Locations (GiEX)**. This project aims to document every detail of this massive expansion for Ginger Island.
+
+### 🔍 Why this Wiki?
+All data provided is extracted directly from the mod's technical files (`Objects.json`, `FishData.json`, `Maps.json`), ensuring 100% accuracy for stats you won't find anywhere else.
+
+### 📖 Wiki Content
+* **The Boss: Lava Dragon** - Combat stats (15,000 HP), attack patterns, and unique drops.
+* **Abyss Fishing Guide** - Schedules and locations for legendary deep-sea fish (Cosmic Jelly, Hadal Fish).
+* **NPC Javi** - Full guide for loved gifts and heart events.
+* **Temple Bundles** - Detailed solutions to repair the island and unlock secret areas.
+* **Alchemy** - How to use Magic Dusts (Gold, Void, Revival Dust) for transformations.
+
+### 🚀 Access the Wiki
+👉 **[CLICK HERE TO VIEW THE WIKI ONLINE](https://github.com/StardewSuperordi/Ginger-Island-Extra-Location-Mod-Wiki/)**
+
+---
+
+### 🛠️ Technical Info / Infos Techniques
+* **Built with:** HTML5, CSS3, JavaScript (Dynamic JSON Fetching).
+* **Original Mod:** [Ginger Island Extra Locations on Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/1073).
+* **Author:** [Ton Nom/Pseudo]
+
+*Disclaimer: This is a fan-made project. Stardew Valley is owned by ConcernedApe. The GiEX mod is owned by its respective creator.*
+
+---
+
 # 🌴 Ginger Island Extra Locations (GiEX) Mod Wiki
 > **Comprehensive Guide & Database for the Stardew Valley Expansion Mod**
 
@@ -22,32 +50,4 @@ Toutes les données présentées ici sont extraites directement des fichiers tec
 * **Alchimie** - Guide d'utilisation des Poussières Magiques (Gold, Void, Revival Dust).
 
 ### 🚀 Accéder au Wiki
-👉 **[CLIQUEZ ICI POUR CONSULTER LE WIKI EN LIGNE](https://ton-pseudo.github.io/Ginger-Island-Extra-Location-Mod-Wiki/)**
-
----
-
-## [EN] English Version
-
-Welcome to the unofficial wiki for **Ginger Island Extra Locations (GiEX)**. This project aims to document every detail of this massive expansion for Ginger Island.
-
-### 🔍 Why this Wiki?
-All data provided is extracted directly from the mod's technical files (`Objects.json`, `FishData.json`, `Maps.json`), ensuring 100% accuracy for stats you won't find anywhere else.
-
-### 📖 Wiki Content
-* **The Boss: Lava Dragon** - Combat stats (15,000 HP), attack patterns, and unique drops.
-* **Abyss Fishing Guide** - Schedules and locations for legendary deep-sea fish (Cosmic Jelly, Hadal Fish).
-* **NPC Javi** - Full guide for loved gifts and heart events.
-* **Temple Bundles** - Detailed solutions to repair the island and unlock secret areas.
-* **Alchemy** - How to use Magic Dusts (Gold, Void, Revival Dust) for transformations.
-
-### 🚀 Access the Wiki
-👉 **[CLICK HERE TO VIEW THE WIKI ONLINE](https://ton-pseudo.github.io/Ginger-Island-Extra-Location-Mod-Wiki/)**
-
----
-
-### 🛠️ Technical Info / Infos Techniques
-* **Built with:** HTML5, CSS3, JavaScript (Dynamic JSON Fetching).
-* **Original Mod:** [Ginger Island Extra Locations on Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/1073).
-* **Author:** [Ton Nom/Pseudo]
-
-*Disclaimer: This is a fan-made project. Stardew Valley is owned by ConcernedApe. The GiEX mod is owned by its respective creator.*
+👉 **[CLIQUEZ ICI POUR CONSULTER LE WIKI EN LIGNE](https://github.com/StardewSuperordi/Ginger-Island-Extra-Location-Mod-Wiki/)**
