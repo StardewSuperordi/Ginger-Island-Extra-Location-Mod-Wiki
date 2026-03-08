@@ -74,8 +74,8 @@ Toutes les données présentées ici sont extraites directement des fichiers tec
 
 *Disclaimer: This is a fan-made project. Stardew Valley is owned by ConcernedApe. The GiEX mod is owned by its respective creator.*
 
-**English:** If you are the mod creator (**MistySpring**), I have sent you a private message on Nexus Mods regarding this Wiki. Please check your inbox! You can reach me here: [stardewSuperordi on Nexus](https://www.nexusmods.com/users/stardewSuperordi).
+**English:** If you are the mod creator (**MistySpring**), I have sent you a private message on Nexus Mods regarding this Wiki. Please check your inbox! You can reach me here: [stardewSuperordi on Nexus](https://www.nexusmods.com/profile/stardewSuperordi).
 
-**Français :** Si vous êtes le créateur du mod (**MistySpring**), je vous ai envoyé un message privé sur Nexus Mods concernant ce Wiki. Merci de consulter votre boîte de réception ! Vous pouvez me joindre ici : [stardewSuperordi sur Nexus](https://www.nexusmods.com/users/stardewSuperordi).
+**Français :** Si vous êtes le créateur du mod (**MistySpring**), je vous ai envoyé un message privé sur Nexus Mods concernant ce Wiki. Merci de consulter votre boîte de réception ! Vous pouvez me joindre ici : [stardewSuperordi sur Nexus](https://www.nexusmods.com/profile/stardewSuperordi).
 
 ---
