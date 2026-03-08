@@ -21,6 +21,16 @@
         h1 { color: var(--sd-green); border-bottom: 3px solid #81c784; padding-bottom: 10px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
         .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .badge { padding: 4px 10px; border-radius: 4px; color: white; font-size: 0.9em; font-weight: bold; display: inline-block; }
+        .bg-gold { background: #fbc02d; border: 2px solid #d4af37; color: #3d2b1f; }
+        .bg-void { background: #1a1a1a; border: 2px solid #000; color: #eee; }
+        .bg-iridium { background: #b000ff; border: 2px solid #4a148c; color: white; }
+
+        /* Card Series Styles */
+        .card.gold { border: 3px solid #fbc02d; box-shadow: 0 4px 10px rgba(251, 192, 45, 0.1); }
+        .card.void { border: 3px solid #000; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
+        .card.iridium { border: 3px solid #b000ff; box-shadow: 0 4px 10px rgba(176, 0, 255, 0.1); }
+
         table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
         th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         th { background-color: var(--sd-light-green); color: var(--sd-green); }
@@ -68,7 +78,7 @@
     <h2 data-key="transformation_title">Variantes Dorées & du Néant</h2>
     <p data-key="trans_desc">Utilisez la <strong>Poussière d'Or</strong> ou la <strong>Poussière du Néant</strong> pour transformer vos animaux adultes.</p>
     <div class="grid">
-        <div class="card">
+        <div class="card gold">
             <h3 class="badge bg-gold" data-key="golden_variants_title">Variantes Dorées</h3>
             <ul>
                 <li><strong>Vache Dorée</strong> (Blanche ou Brune)</li>
@@ -79,7 +89,7 @@
                 <li><strong>Autruche Doré</strong></li>
             </ul>
         </div>
-        <div class="card">
+        <div class="card void">
             <h3 class="badge bg-void" data-key="void_variants_title">Variantes du Néant</h3>
             <ul>
                 <li><strong>Vache du Néant</strong> (Blanche ou Brune)</li>
@@ -93,8 +103,8 @@
         </div>
     </div>
 
-    <h2 data-key="iridium_chicken_title">Poulet d'Iridium</h2>
-    <div class="card" style="border-left: 5px solid #b000ff;">
+    <h2 class="badge bg-iridium" data-key="iridium_chicken_title">Poulet d'Iridium</h2>
+    <div class="card iridium">
         <p data-key="iridium_chicken_desc">Un poulet d'élite produisant des œufs d'iridium. Déblocable uniquement si le mode <strong>Perfectionniste</strong> est activé ou en fin de partie.</p>
     </div>
 </main>

@@ -18,9 +18,24 @@
         .lang-switch { position: absolute; top: 20px; right: 20px; display: flex; gap: 10px; }
         .lang-btn { background: var(--sd-light-green); border: 2px solid var(--sd-green); color: var(--sd-green); padding: 5px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
         .lang-btn.active { background: var(--sd-green); color: white; }
-        h1 { color: var(--sd-green); border-bottom: 3px solid #81c784; padding-bottom: 10px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
-        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        h1 { color: var(--sd-green); border-bottom: 3px solid #81c784; padding-bottom: 10px; margin-top: 0; }
+        .intro-text { font-size: 1.1em; color: #555; margin-bottom: 25px; line-height: 1.6; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
+        .card { border: 1px solid #ddd; padding: 20px; border-radius: 12px; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; border-top: 5px solid var(--sd-green); }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        
+        .card.prog { border-top-color: var(--sd-yellow); }
+        .card.expl { border-top-color: #2196f3; }
+        .card.anim { border-top-color: #ff4081; }
+
+        .steps { margin-top: 40px; background: #fffde7; padding: 30px; border-radius: 12px; border: 1px solid var(--sd-yellow); }
+        .step-item { display: flex; align-items: flex-start; margin-bottom: 20px; }
+        .step-num { background: var(--sd-yellow); color: var(--sd-brown); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0; }
+        .step-content h4 { margin: 0 0 5px 0; color: var(--sd-brown); }
+        .step-content p { margin: 0; font-size: 0.95em; }
+
+        .stat-badge { display: inline-block; background: var(--sd-light-green); color: var(--sd-green); padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9em; margin-right: 10px; margin-bottom: 10px; border: 1px solid var(--sd-green); }
     </style>
 </head>
 <body>
@@ -44,42 +59,83 @@
         <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
         <button class="lang-btn" onclick="setLanguage('en')">EN</button>
     </div>
+
     <h1 data-key="welcome_title">Ginger Island Extra Locations - Redux</h1>
-    <p data-key="welcome_desc">Bienvenue dans le guide non officiel du mod GiEX Redux. Ce mod étend considérablement Ginger Island avec de nouveaux biomes, des systèmes de progression via des lots (bundles), des animaux exotiques et un PNJ unique.</p>
+    <p class="intro-text" data-key="welcome_desc">Bienvenue dans le guide non officiel du mod GiEX Redux. Ce mod étend considérablement Ginger Island avec de nouveaux biomes, des systèmes de progression via des lots (bundles), des animaux exotiques et un PNJ unique.</p>
+
+    <div class="stats">
+        <span class="stat-badge" data-key="stat_locations">📍 10+ Lieux</span>
+        <span class="stat-badge" data-key="stat_npc">🗣️ 1 Nouveau PNJ</span>
+        <span class="stat-badge" data-key="stat_animals">🐄 15+ Animaux</span>
+        <span class="stat-badge" data-key="stat_bundles">📦 5 Lots Uniques</span>
+        <span class="stat-badge" data-key="stat_items">✨ 250+ Objets</span>
+    </div>
+
     <div class="grid">
-        <div class="card">
+        <div class="card prog">
             <h3 data-key="progression_title">Progression</h3>
             <p data-key="progression_desc">La progression principale se fait au <strong>Temple de l'Île</strong>. Compléter les autels débloque des zones comme l'Antre Éteint ou l'Ascenseur du Volcan.</p>
         </div>
-        <div class="card">
+        <div class="card expl">
             <h3 data-key="exploration_title">Exploration</h3>
             <p data-key="exploration_desc">Découvrez les <strong>Abysses</strong> via le système de plongée, explorez l'<strong>Épave Engloutie</strong> et restaurez l'<strong>Aquarium</strong> géant.</p>
         </div>
-        <div class="card">
+        <div class="card anim">
             <h3 data-key="animals_title">Animaux de l'Île</h3>
             <p data-key="animals_desc">Élevez des vaches à fruits (banane, mangue) ou transformez vos animaux classiques en versions <strong>Dorées</strong> ou du <strong>Néant</strong> grâce à la Poussière Magique.</p>
         </div>
     </div>
-    <h2 data-key="quickstart_title">Démarrage Rapide</h2>
-    <p data-key="quickstart_desc">Pour commencer l'aventure, rendez-vous au nord de Ginger Island, à l'est de l'entrée du Volcan, pour trouver le passage vers le Temple Extérieur.</p>
+
+    <div class="steps">
+        <h2 data-key="quickstart_title">Démarrage Rapide</h2>
+        <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+                <h4 data-key="step1_title">Trouvez le Temple</h4>
+                <p data-key="step1_desc">Rendez-vous au nord de Ginger Island, à l'est de l'entrée du Volcan.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+                <h4 data-key="step2_title">Complétez les Lots</h4>
+                <p data-key="step2_desc">Apportez les ressources nécessaires aux autels pour débloquer les nouvelles zones.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+                <h4 data-key="step3_title">Rencontrez Javi</h4>
+                <p data-key="step3_desc">Explorez l'île pour découvrir l'histoire mystérieuse de ce nouveau naufragé.</p>
+            </div>
+        </div>
+    </div>
 </main>
 <script>
     const translations = {
         fr: {
             "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Accueil", "nav-lieux": "🗺️ Nouvelles Zones", "nav-pnj": "👤 Javi (PNJ)", "nav-bundles": "🏛️ Lots du Temple", "nav-animaux": "🐄 Nouveaux Animaux", "nav-peche": "🐠 Guide de Pêche", "nav-outils": "🛠️ Outils & Équipement", "nav-objets": "✨ Objets & Ressources", "nav-boutiques": "💰 Boutiques", "nav-secrets": "🤫 Secrets",
             "welcome_title": "Ginger Island Extra Locations - Redux", "welcome_desc": "Bienvenue dans le guide non officiel du mod GiEX Redux. Ce mod étend considérablement Ginger Island avec de nouveaux biomes, des systèmes de progression via des lots (bundles), des animaux exotiques et un PNJ unique.",
+            "stat_locations": "📍 10+ Lieux", "stat_npc": "🗣️ 1 Nouveau PNJ", "stat_animals": "🐄 15+ Animaux", "stat_bundles": "📦 5 Lots Uniques", "stat_items": "✨ 250+ Objets",
             "progression_title": "Progression", "progression_desc": "La progression principale se fait au Temple de l'Île. Compléter les autels débloque des zones comme l'Antre Éteint ou l'Ascenseur du Volcan.",
             "exploration_title": "Exploration", "exploration_desc": "Découvrez les Abysses via le système de plongée, explorez l'Épave Engloutie et restaurez l'Aquarium géant.",
             "animals_title": "Animaux de l'Île", "animals_desc": "Élevez des vaches à fruits (banane, mangue) ou transformez vos animaux classiques en versions Dorées ou du Néant grâce à la Poussière Magique.",
-            "quickstart_title": "Démarrage Rapide", "quickstart_desc": "Pour commencer l'aventure, rendez-vous au nord de Ginger Island, à l'est de l'entrée du Volcan, pour trouver le passage vers le Temple Extérieur."
+            "quickstart_title": "Démarrage Rapide", "quickstart_desc": "Pour commencer l'aventure, rendez-vous au nord de Ginger Island, à l'est de l'entrée du Volcan, pour trouver le passage vers le Temple Extérieur.",
+            "step1_title": "Trouvez le Temple", "step1_desc": "Rendez-vous au nord de Ginger Island, à l'est de l'entrée du Volcan.",
+            "step2_title": "Complétez les Lots", "step2_desc": "Apportez les ressources nécessaires aux autels pour débloquer les nouvelles zones.",
+            "step3_title": "Rencontrez Javi", "step3_desc": "Explorez l'île pour découvrir l'histoire mystérieuse de ce nouveau naufragé."
         },
         en: {
             "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Home", "nav-lieux": "🗺️ New Zones", "nav-pnj": "👤 Javi (NPC)", "nav-bundles": "🏛️ Temple Bundles", "nav-animaux": "🐄 New Animals", "nav-peche": "🐠 Fishing Guide", "nav-outils": "🛠️ Tools & Equipment", "nav-objets": "✨ Items & Resources", "nav-boutiques": "💰 Shops", "nav-secrets": "🤫 Secrets",
             "welcome_title": "Ginger Island Extra Locations - Redux", "welcome_desc": "Welcome to the unofficial GiEX Redux guide. This mod adds new biomes, progression systems, exotic animals, and a unique NPC.",
+            "stat_locations": "📍 10+ Locations", "stat_npc": "🗣️ 1 New NPC", "stat_animals": "🐄 15+ Animals", "stat_bundles": "📦 5 Unique Bundles", "stat_items": "✨ 250+ Items",
             "progression_title": "Progression", "progression_desc": "Main progression happens at the Island Temple. Completing altars unlocks zones like the Extinct Lair.",
             "exploration_title": "Exploration", "exploration_desc": "Discover the Deep Sea, explore the Sunken Ship, and restore the giant Aquarium.",
             "animals_title": "Island Animals", "animals_desc": "Raise fruit cows or transform your classic animals into Golden or Void versions.",
-            "quickstart_title": "Quick Start", "quickstart_desc": "To start, head north of Ginger Island, east of the Volcano entrance."
+            "quickstart_title": "Quick Start", "quickstart_desc": "To start your adventure, head to the north of Ginger Island, east of the Volcano entrance.",
+            "step1_title": "Find the Temple", "step1_desc": "Head to the north of Ginger Island, east of the Volcano entrance.",
+            "step2_title": "Complete Bundles", "step2_desc": "Bring the required resources to the altars to unlock new areas.",
+            "step3_title": "Meet Javi", "step3_desc": "Explore the island to discover the mysterious story of this new castaway."
         }
     };
     function setLanguage(lang) {

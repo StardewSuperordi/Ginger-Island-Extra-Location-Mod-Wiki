@@ -20,7 +20,23 @@
         .lang-btn.active { background: var(--sd-green); color: white; }
         h1 { color: var(--sd-green); border-bottom: 3px solid #81c784; padding-bottom: 10px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
-        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .card { border: 1px solid #ddd; padding: 20px; border-radius: 12px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow: 0.2s; margin-bottom: 25px; border-left: 8px solid #ccc; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+        
+        /* Zone Themes */
+        .card.temple { border-left-color: #ffd700; background: linear-gradient(to right, #fffcf0, #fff); }
+        .card.lair { border-left-color: #ff5722; background: linear-gradient(to right, #fff3e0, #fff); }
+        .card.abyss { border-left-color: #1a237e; background: linear-gradient(to right, #e8eaf6, #fff); }
+        .card.ship { border-left-color: #7e57c2; background: linear-gradient(to right, #f3e5f5, #fff); }
+        .card.quarry { border-left-color: #4caf50; background: linear-gradient(to right, #e8f5e9, #fff); }
+
+        .requirement { display: inline-block; background: #333; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold; margin-bottom: 15px; }
+        .loot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; }
+        .loot-list ul { padding-left: 20px; margin: 5px 0; }
+        .loot-list strong { color: var(--sd-brown); display: block; margin-bottom: 5px; font-size: 0.95em; }
+        
+        .warning { background: #fff9c4; border-left: 4px solid #fbc02d; padding: 10px 15px; margin: 15px 0; border-radius: 4px; font-size: 0.9em; }
+
         table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
         th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         th { background-color: var(--sd-light-green); color: var(--sd-green); }
@@ -51,7 +67,7 @@
     <h1 data-key="nav-lieux">Guide des Nouvelles Zones</h1>
 
     <!-- ZONE 1: TEMPLE -->
-    <div class="card">
+    <div class="card temple">
         <h2 data-key="loc_temple_title">Le Temple de l'Île</h2>
         <span class="requirement" data-key="req_temple">Accès : Immédiat (Passage à l'Est du Volcan).</span>
         <p data-key="loc_temple_desc">Le cœur battant du mod. C'est ici que vous progressez en complétant les quatre autels magiques. Une fois restauré, il devient un lieu de rassemblement pour les habitants de l'île.</p>
@@ -67,7 +83,7 @@
     </div>
 
     <!-- ZONE 2: ANTRE ETEINT -->
-    <div class="card">
+    <div class="card lair">
         <h2 data-key="locations.ExtinctLair">Antre Éteint (Lair)</h2>
         <span class="requirement" data-key="req_lair">Accès : Compléter le Lot de Combat au Temple.</span>
         <p data-key="lair_long_desc">Une caverne volcanique majestueuse où résidaient autrefois les dragons. Le sol est jonché de fossiles et la chaleur y est extrême.</p>
@@ -75,23 +91,23 @@
             <div class="loot-list">
                 <strong data-key="loot_label">Forage & Ressources :</strong>
                 <ul>
-                    <li>Dents de Dragon (Forage au sol)</li>
-                    <li>Éclats de Cendre (Minage)</li>
-                    <li>Escargots de Lave (Casiers)</li>
+                    <li data-key="loot_lair_1">Dents de Dragon (Forage au sol)</li>
+                    <li data-key="loot_lair_2">Éclats de Cendre (Minage)</li>
+                    <li data-key="loot_lair_3">Escargots de Lave (Casiers)</li>
                 </ul>
             </div>
             <div class="loot-list">
                 <strong data-key="monsters_label">Monstres & Butin :</strong>
                 <ul>
-                    <li><strong>Dragon de Lave :</strong> Œuf de Dragon de Lave (Rare)</li>
-                    <li><strong>Esprit de Magma :</strong> Essence de Feu</li>
+                    <li data-key="monster_lair_1"><strong>Dragon de Lave :</strong> Œuf de Dragon de Lave (Rare)</li>
+                    <li data-key="monster_lair_2"><strong>Esprit de Magma :</strong> Essence de Feu</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <!-- ZONE 3: ABYSSES -->
-    <div class="card">
+    <div class="card abyss">
         <h2 data-key="deep_sea_title">Les Abysses (Underwater)</h2>
         <span class="requirement" data-key="req_abyss">Accès : Compléter le Lot de Pêche. Nécessite le Casque de Plongée.</span>
         <p data-key="abyss_long_desc">Une vaste zone sous-marine divisée en plusieurs secteurs (Ouest, Maisons de Triton et de la Sirène).</p>
@@ -102,22 +118,22 @@
             <div class="loot-list">
                 <strong data-key="loot_label">Minage Sous-marin :</strong>
                 <ul>
-                    <li>Éclats Lumineux (Lumi Stones)</li>
-                    <li>Cuivre & Fer sous-marin</li>
+                    <li data-key="loot_abyss_1">Éclats Lumineux (Lumi Stones)</li>
+                    <li data-key="loot_abyss_2">Cuivre & Fer sous-marin</li>
                 </ul>
             </div>
             <div class="loot-list">
                 <strong data-key="monsters_label">Monstres Abyssaux :</strong>
                 <ul>
-                    <li><strong>Calmar Bleu :</strong> Orbe d'Eau</li>
-                    <li><strong>Fantôme de Pirate :</strong> Crochet, Clé Ancienne, Bouteille</li>
+                    <li data-key="monster_abyss_1"><strong>Calmar Bleu :</strong> Orbe d'Eau</li>
+                    <li data-key="monster_abyss_2"><strong>Fantôme de Pirate :</strong> Crochet, Clé Ancienne, Bouteille</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <!-- ZONE 4: EPAVE -->
-    <div class="card">
+    <div class="card ship">
         <h2 data-key="sunken_ship_title">Navire Englouti & Salle du Capitaine</h2>
         <span class="requirement" data-key="req_ship">Accès : Via les Abysses. Salle scellée : nécessite la Clé Ancienne.</span>
         <p data-key="ship_long_desc">Le navire de l'ancien équipage de Javi. Hanté par les fantômes des pirates, il renferme les trésors les plus précieux.</p>
@@ -125,16 +141,16 @@
             <div class="loot-list">
                 <strong data-key="artifacts_label">Objets uniques :</strong>
                 <ul>
-                    <li>Orbe d'Eau (Butin)</li>
-                    <li>Bouteille Ancienne</li>
-                    <li>Montre en Or (Fantômes)</li>
+                    <li data-key="loot_ship_1">Orbe d'Eau (Butin)</li>
+                    <li data-key="loot_ship_2">Bouteille Ancienne</li>
+                    <li data-key="loot_ship_3">Montre en Or (Fantômes)</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <!-- ZONE 5: NORD OUEST -->
-    <div class="card">
+    <div class="card quarry">
         <h2 data-key="locations.NorthWest">Forêt & Étang de la Carrière</h2>
         <span class="requirement" data-key="req_nw">Accès : Compléter n'importe quel Lot du Temple.</span>
         <p data-key="nw_long_desc">Une extension de la carrière. Zone riche en minerais rares et fossiles.</p>
@@ -142,16 +158,16 @@
             <div class="loot-list">
                 <strong data-key="loot_label">Minage (Carrière) :</strong>
                 <ul>
-                    <li>Minerai Radioactif (Niveau 10)</li>
-                    <li>Géodes Omni & Iridium</li>
-                    <li>Fossiles variés</li>
+                    <li data-key="loot_nw_1">Minerai Radioactif (Niveau 10)</li>
+                    <li data-key="loot_nw_2">Géodes Omni & Iridium</li>
+                    <li data-key="loot_nw_3">Fossiles variés</li>
                 </ul>
             </div>
             <div class="loot-list">
                 <strong data-key="monsters_label">Monstres :</strong>
                 <ul>
-                    <li><strong>Crabe Radioactif :</strong> Iridium, Minerai radioactif</li>
-                    <li><strong>Crabe Omni :</strong> Géodes Omni</li>
+                    <li data-key="monster_nw_1"><strong>Crabe Radioactif :</strong> Iridium, Minerai radioactif</li>
+                    <li data-key="monster_nw_2"><strong>Crabe Omni :</strong> Géodes Omni</li>
                 </ul>
             </div>
         </div>
@@ -167,10 +183,17 @@
             "warning_diving": "Mécanique : Sous l'eau, votre vitesse est réduite. La pêche y est impossible sans équipement lumineux (Canne ou Appâts).",
             "sunken_ship_title": "Navire Englouti & Salle Secrète", "req_ship": "Accès : Via les Abysses. Salle scellée : nécessite la Clé Ancienne.", "ship_long_desc": "Le navire hanté de Javi. Renferme des artefacts uniques et des fantômes agressifs.",
             "locations.NorthWest": "Forêt & Étang de la Carrière", "req_nw": "Accès : Compléter n'importe quel Lot du Temple.", "nw_long_desc": "Une zone riche en minerais rares et fossiles, idéale pour les mineurs de haut niveau.",
-            "loot_label": "Forage & Ressources :", "monsters_label": "Monstres & Butin :", "features_label": "Points d'intérêt :", "artifacts_label": "Objets uniques :",
-            "feat_altars": "Autels des Lots (Bundles)", "feat_hidden_path": "Passage secret vers le Nord-Ouest"
-        },
-        en: {
+            "loot_label": "Foraging & Ressources :", "monsters_label": "Monstres & Butin :", "features_label": "Points d'intérêt :", "artifacts_label": "Objets uniques :",
+            "feat_altars": "Autels des Lots (Bundles)", "feat_hidden_path": "Passage secret vers le Nord-Ouest",
+            "loot_lair_1": "Dents de Dragon (Forage au sol)", "loot_lair_2": "Éclats de Cendre (Minage)", "loot_lair_3": "Escargots de Lave (Casiers)",
+            "monster_lair_1": "<strong>Dragon de Lave :</strong> Œuf de Dragon de Lave (Rare)", "monster_lair_2": "<strong>Esprit de Magma :</strong> Essence de Feu",
+            "loot_abyss_1": "Éclats Lumineux (Lumi Stones)", "loot_abyss_2": "Cuivre & Fer sous-marin",
+            "monster_abyss_1": "<strong>Calmar Bleu :</strong> Orbe d'Eau", "monster_abyss_2": "<strong>Fantôme de Pirate :</strong> Crochet, Clé Ancienne, Bouteille",
+            "loot_ship_1": "Orbe d'Eau (Butin)", "loot_ship_2": "Bouteille Ancienne", "loot_ship_3": "Montre en Or (Fantômes)",
+            "loot_nw_1": "Minerai Radioactif (Niveau 10)", "loot_nw_2": "Géodes Omni & Iridium", "loot_nw_3": "Fossiles variés",
+            "monster_nw_1": "<strong>Crabe Radioactif :</strong> Iridium, Minerai radioactif", "monster_nw_2": "<strong>Crabe Omni :</strong> Géodes Omni"
+            },
+            en: {
             "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Home", "nav-lieux": "🗺️ New Zones", "nav-pnj": "👤 Javi (NPC)", "nav-bundles": "🏛️ Temple Bundles", "nav-animaux": "🐄 New Animals", "nav-peche": "🐠 Fishing Guide", "nav-outils": "🛠️ Tools & Equipment", "nav-objets": "✨ Items & Resources", "nav-boutiques": "💰 Shops", "nav-secrets": "🤫 Secrets",
             "loc_temple_title": "The Island Temple", "req_temple": "Access: Immediate (Passage East of Volcano).", "loc_temple_desc": "The heart of the mod. Progress by completing the four magical altars.",
             "locations.ExtinctLair": "Extinct Lair", "req_lair": "Access: Complete Combat Bundle at the Temple.", "lair_long_desc": "A majestic volcanic cavern where dragons once lived. The only place to find the Mini Lava Dragon.",
@@ -179,8 +202,15 @@
             "sunken_ship_title": "Sunken Ship & Secret Room", "req_ship": "Access: Via the Abyss. Sealed room: requires Ancient Key.", "ship_long_desc": "Javi's haunted ship. Contains unique artifacts and aggressive ghosts.",
             "locations.NorthWest": "Quarry Forest & Pond", "req_nw": "Access: Complete any Temple Bundle.", "nw_long_desc": "A zone rich in rare ores and fossils, ideal for high-level miners.",
             "loot_label": "Foraging & Resources:", "monsters_label": "Monsters & Loot:", "features_label": "Points of Interest:", "artifacts_label": "Unique Items:",
-            "feat_altars": "Temple Altars (Bundles)", "feat_hidden_path": "Secret path to North-West"
-        }
+            "feat_altars": "Temple Altars (Bundles)", "feat_hidden_path": "Secret path to North-West",
+            "loot_lair_1": "Dragon Teeth (Floor Foraging)", "loot_lair_2": "Cinder Shards (Mining)", "loot_lair_3": "Lava Snails (Crab Pots)",
+            "monster_lair_1": "<strong>Lava Dragon:</strong> Lava Dragon Egg (Rare)", "monster_lair_2": "<strong>Magma Spirit:</strong> Fire Essence",
+            "loot_abyss_1": "Luminous Shards (Lumi Stones)", "loot_abyss_2": "Underwater Copper & Iron",
+            "monster_abyss_1": "<strong>Blue Squid:</strong> Water Orb", "monster_abyss_2": "<strong>Pirate Ghost:</strong> Hook, Ancient Key, Old Bottle",
+            "loot_ship_1": "Water Orb (Loot)", "loot_ship_2": "Old Bottle", "loot_ship_3": "Gold Watch (Ghosts)",
+            "loot_nw_1": "Radioactive Ore (Level 10)", "loot_nw_2": "Omni & Iridium Geodes", "loot_nw_3": "Various Fossils",
+            "monster_nw_1": "<strong>Radioactive Crab:</strong> Iridium, Radioactive Ore", "monster_nw_2": "<strong>Omni Crab:</strong> Omni Geodes"
+            }
     };
     function setLanguage(lang) {
         localStorage.setItem('giex_wiki_lang', lang);

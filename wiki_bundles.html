@@ -19,12 +19,28 @@
         .lang-btn { background: var(--sd-light-green); border: 2px solid var(--sd-green); color: var(--sd-green); padding: 5px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
         .lang-btn.active { background: var(--sd-green); color: white; }
         h1 { color: var(--sd-green); border-bottom: 3px solid #81c784; padding-bottom: 10px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
-        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background-color: var(--sd-light-green); color: var(--sd-green); }
-        tr:nth-child(even) { background-color: #f9f9f9; }
+        .bundle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-top: 20px; }
+        .bundle-card { border: 1px solid #ddd; border-radius: 12px; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; }
+        .bundle-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .bundle-header { padding: 15px; color: white; display: flex; align-items: center; gap: 15px; font-weight: bold; font-size: 1.2em; }
+        .bundle-header.fishing { background: #2196f3; }
+        .bundle-header.farming { background: #4caf50; }
+        .bundle-header.mining { background: #795548; }
+        .bundle-header.combat { background: #f44336; }
+        .bundle-header.cooking { background: #ff9800; }
+        .bundle-header.aquarium { background: #00bcd4; }
+        
+        .bundle-body { padding: 20px; flex: 1; }
+        .bundle-reqs { list-style: none; padding: 0; margin: 0 0 20px 0; }
+        .bundle-reqs li { padding: 8px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .bundle-reqs li:last-child { border-bottom: none; }
+        
+        .bundle-reward { background: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid var(--sd-green); }
+        .bundle-reward strong { color: var(--sd-green); display: block; margin-bottom: 5px; }
+        
+        .difficulty-note { background: #fff9c4; border: 1px solid #fbc02d; padding: 10px 15px; border-radius: 8px; font-size: 0.9em; margin-bottom: 30px; display: flex; align-items: center; gap: 10px; }
+        
+        h2 { margin-top: 40px; border-bottom: 2px solid var(--sd-green); padding-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -49,36 +65,184 @@
         <button class="lang-btn" onclick="setLanguage('en')">EN</button>
     </div>
     <h1 data-key="bundles_title">Lots du Temple (Bundles)</h1>
-    <p data-key="bundles_desc">Compléter ces lots au Temple est essentiel pour débloquer le contenu du mod.</p>
-    <table>
-        <tr><th data-key="name_label">Nom</th><th data-key="items_req_label">Objets requis</th><th data-key="Reward">Récompense</th></tr>
-        <tr><td><strong>Pêche</strong></td><td>Blue Discus, Stingray, Lionfish, Super Cucumber, Pufferfish</td><td data-key="rew_fishing">Système de plongée, Casque, Recettes Lumi</td></tr>
-        <tr><td><strong>Agriculture</strong></td><td>3 Bananes, 3 Mangues, 10 Taro, 3 Coco, 10 Gingembre</td><td data-key="rew_farming">Boutique Mystérieuse</td></tr>
-        <tr><td><strong>Minage</strong></td><td>3 Dents de Dragon, 20 Éclats de Cendre, 5 Géodes Omni, 3 Lingots Iridium</td><td data-key="rew_mining">Ascenseur du Volcan</td></tr>
-        <tr><td><strong>Combat</strong></td><td>Void Essence, Solar Essence, Bat Wing, Slime, Essence de Feu</td><td data-key="rew_combat">Accès à l'Antre Éteint & Dragon de Lave</td></tr>
-        <tr><td><strong>Cuisine</strong></td><td>Ancient Juice, Tropical Curry, Banana Pudding, Mango Sticky Rice, Poi</td><td data-key="rew_cooking">Lot de Recettes Exotiques</td></tr>
-    </table>
+    <p data-key="bundles_desc">Compléter ces lots au Temple est essentiel pour débloquer le contenu du mod. Ils sont accessibles au nord de l'île.</p>
 
-    <div class="card">
-        <h3 data-key="sec_recipes_reward">🍱 Recettes débloquées (Cuisine)</h3>
-        <p data-key="recipes_list">En complétant le lot de Cuisine, Mr. Qi vous envoie les recettes suivantes : Glace Magique, Gâteau Stardrop, Jus Ancien, Cobbler Ancien, Omni Burger, Pizza aux Champignons, et bien d'autres.</p>
+    <div class="difficulty-note">
+        <span>ℹ️</span>
+        <p data-key="diff_note">Les quantités affichées correspondent à la difficulté <strong>Normale</strong>. Elles peuvent varier si vous avez configuré le mod en Facile ou Difficile.</p>
     </div>
-</main>
+
+    <h2 data-key="sec_temple_bundles">🏛️ Autels du Temple</h2>
+    <div class="bundle-grid">
+        <!-- FISHING -->
+        <div class="bundle-card">
+            <div class="bundle-header fishing"><span data-key="Fishing">Pêche</span></div>
+            <div class="bundle-body">
+                <ul class="bundle-reqs">
+                    <li data-key="bundle_fish_1">Blue Discus <span>1</span></li>
+                    <li data-key="bundle_fish_2">Stingray <span>1</span></li>
+                    <li data-key="bundle_fish_3">Lionfish <span>1</span></li>
+                    <li data-key="bundle_fish_4">Super Cucumber <span>1</span></li>
+                    <li data-key="bundle_fish_5">Pufferfish <span>1</span></li>
+                </ul>
+                <div class="bundle-reward">
+                    <strong data-key="Reward">Récompense</strong>
+                    <span data-key="rew_fishing_full">Système de plongée, Casque de plongée, Recettes Lumi (Appâts & Leurres)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- FARMING -->
+        <div class="bundle-card">
+            <div class="bundle-header farming"><span data-key="Farming">Agriculture</span></div>
+            <div class="bundle-body">
+                <ul class="bundle-reqs">
+                    <li data-key="bundle_farm_1">Banana <span>3</span></li>
+                    <li data-key="bundle_farm_2">Mango <span>3</span></li>
+                    <li data-key="bundle_farm_3">Taro Root <span>10</span></li>
+                    <li data-key="bundle_farm_4">Coconut <span>3</span></li>
+                    <li data-key="bundle_farm_5">Ginger <span>10</span></li>
+                </ul>
+                <div class="bundle-reward">
+                    <strong data-key="Reward">Récompense</strong>
+                    <span data-key="rew_farming_full">Restauration de la Boutique Mystérieuse, Ordinateur de ferme, Mini-bac d'expédition</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MINING -->
+        <div class="bundle-card">
+            <div class="bundle-header mining"><span data-key="Mining">Minage</span></div>
+            <div class="bundle-body">
+                <ul class="bundle-reqs">
+                    <li data-key="bundle_mine_1">Dragon Tooth <span>3</span></li>
+                    <li data-key="bundle_mine_2">Cinder Shard <span>20</span></li>
+                    <li data-key="bundle_mine_3">Omni Geode <span>5</span></li>
+                    <li data-key="bundle_mine_4">Iridium Bar <span>3</span></li>
+                    <li data-key="bundle_mine_5">Coal <span>10</span></li>
+                </ul>
+                <div class="bundle-reward">
+                    <strong data-key="Reward">Récompense</strong>
+                    <span data-key="rew_mining_full">Ascenseur du Volcan (accès rapide à la forge), Lingots & Minerai Radioactifs</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMBAT -->
+        <div class="bundle-card">
+            <div class="bundle-header combat"><span data-key="Combat">Combat</span></div>
+            <div class="bundle-body">
+                <ul class="bundle-reqs">
+                    <li data-key="bundle_combat_1">Void Essence <span>10</span></li>
+                    <li data-key="bundle_combat_2">Solar Essence <span>10</span></li>
+                    <li data-key="bundle_combat_3">Bat Wing <span>50</span></li>
+                    <li data-key="bundle_combat_4">Slime <span>99</span></li>
+                    <li data-key="bundle_combat_5">Fire Essence <span>10</span></li>
+                </ul>
+                <div class="bundle-reward">
+                    <strong data-key="Reward">Récompense</strong>
+                    <span data-key="rew_combat_full">Accès à l'Antre Éteint, Épée de Flammes</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- COOKING -->
+        <div class="bundle-card">
+            <div class="bundle-header cooking"><span data-key="Cooking">Cuisine</span></div>
+            <div class="bundle-body">
+                <ul class="bundle-reqs">
+                    <li data-key="bundle_cook_1">Piña Colada <span>1</span></li>
+                    <li data-key="bundle_cook_2">Tropical Curry <span>1</span></li>
+                    <li data-key="bundle_cook_3">Ginger Ale <span>1</span></li>
+                    <li data-key="bundle_cook_4">Banana Pudding <span>1</span></li>
+                    <li data-key="bundle_cook_5">Seafoam Pudding <span>1</span></li>
+                    <li data-key="bundle_cook_6">Truffle Oil <span>2</span></li>
+                </ul>
+                <div class="bundle-reward">
+                    <strong data-key="Reward">Récompense</strong>
+                    <span data-key="rew_cooking_full">Assaisonnement de Qi, Pack de 19 Recettes Exotiques</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 data-key="sec_aquarium_bundles">🐠 Bassins de l'Aquarium</h2>
+    <p data-key="aquarium_desc">Une fois l'Aquarium débloqué, vous pouvez restaurer chaque bassin pour obtenir des récompenses de pêche.</p>
+    <div class="bundle-grid">
+        <div class="bundle-card">
+            <div class="bundle-header aquarium"><span data-key="bundle_aqua_title_1">Pirate Cove</span></div>
+            <div class="bundle-body">
+                <ul class="bundle-reqs">
+                    <li data-key="bundle_aqua_1_1">Stingray (Silver+) <span>1</span></li>
+                </ul>
+                <div class="bundle-reward">
+                    <strong data-key="Reward">Récompense</strong>
+                    <span data-key="rew_aqua_1">Wild Bait (10)</span>
+                </div>
+            </div>
+        </div>
+        <div class="bundle-card">
+            <div class="bundle-header aquarium"><span data-key="bundle_aqua_title_2">Deep Sea</span></div>
+            <div class="bundle-body">
+                <ul class="bundle-reqs">
+                    <li data-key="bundle_aqua_2_1">Atolla Jellyfish (Silver+) <span>1</span></li>
+                    <li data-key="bundle_aqua_2_2">Faceless Fish (Silver+) <span>1</span></li>
+                    <li data-key="bundle_aqua_2_3">Cosmic Jelly (Silver+) <span>1</span></li>
+                    <li data-key="bundle_aqua_2_4">Harp Sponge (Silver+) <span>1</span></li>
+                    <li data-key="bundle_aqua_2_5">Hadal Fish (Silver+) <span>1</span></li>
+                </ul>
+                <div class="bundle-reward">
+                    <strong data-key="Reward">Récompense</strong>
+                    <span data-key="rew_aqua_2">Lumi Bait (10)</span>
+                </div>
+            </div>
+        </div>
+    </div>
 <script>
     const translations = {
         fr: {
             "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Accueil", "nav-lieux": "🗺️ Nouvelles Zones", "nav-pnj": "👤 Javi (PNJ)", "nav-bundles": "🏛️ Lots du Temple", "nav-animaux": "🐄 Nouveaux Animaux", "nav-peche": "🐠 Guide de Pêche", "nav-outils": "🛠️ Outils & Équipement", "nav-objets": "✨ Objets & Ressources", "nav-boutiques": "💰 Boutiques", "nav-secrets": "🤫 Secrets",
-            "bundles_title": "Lots du Temple (Bundles)", "bundles_desc": "Compléter ces lots au Temple est essentiel pour débloquer le contenu du mod.",
-            "name_label": "Nom", "items_req_label": "Objets requis", "Reward": "Récompense",
-            "rew_fishing": "Système de plongée, Casque, Recettes Lumi", "rew_farming": "Boutique Mystérieuse", "rew_mining": "Ascenseur du Volcan", "rew_combat": "Accès à l'Antre Éteint & Dragon de Lave", "rew_cooking": "Lot de Recettes Exotiques",
-            "sec_recipes_reward": "🍱 Recettes débloquées (Cuisine)", "recipes_list": "En complétant le lot de Cuisine, Mr. Qi vous envoie les recettes suivantes : Glace Magique, Gâteau Stardrop, Jus Ancien, Cobbler Ancien, Omni Burger, Pizza aux Champignons, et bien d'autres."
+            "bundles_title": "Lots du Temple (Bundles)", "bundles_desc": "Compléter ces lots au Temple est essentiel pour débloquer le contenu du mod. Ils sont accessibles au nord de l'île.",
+            "diff_note": "Les quantités affichées correspondent à la difficulté <strong>Normale</strong>. Elles peuvent varier si vous avez configuré le mod en Facile ou Difficile.",
+            "sec_temple_bundles": "🏛️ Autels du Temple", "sec_aquarium_bundles": "🐠 Bassins de l'Aquarium",
+            "aquarium_desc": "Une fois l'Aquarium débloqué, vous pouvez restaurer chaque bassin pour obtenir des récompenses de pêche.",
+            "Fishing": "Pêche", "Farming": "Agriculture", "Mining": "Minage", "Combat": "Combat", "Cooking": "Cuisine", "Reward": "Récompense",
+            "rew_fishing_full": "Système de plongée, Casque de plongée, Recettes Lumi (Appâts & Leurres)",
+            "rew_farming_full": "Restauration de la Boutique Mystérieuse, Ordinateur de ferme, Mini-bac d'expédition",
+            "rew_mining_full": "Ascenseur du Volcan (accès rapide à la forge), Lingots & Minerai Radioactifs",
+            "rew_combat_full": "Accès à l'Antre Éteint, Épée de Flammes",
+            "rew_cooking_full": "Assaisonnement de Qi, Pack de 19 Recettes Exotiques",
+            "bundle_fish_1": "Disque bleu", "bundle_fish_2": "Pastenague", "bundle_fish_3": "Rascasse volante", "bundle_fish_4": "Super concombre", "bundle_fish_5": "Poisson-globe",
+            "bundle_farm_1": "Banane", "bundle_farm_2": "Mangue", "bundle_farm_3": "Racine de taro", "bundle_farm_4": "Noix de coco", "bundle_farm_5": "Gingembre",
+            "bundle_mine_1": "Dent de dragon", "bundle_mine_2": "Éclat de cendre", "bundle_mine_3": "Géode omni", "bundle_mine_4": "Lingot d'iridium", "bundle_mine_5": "Charbon",
+            "bundle_combat_1": "Essence noire", "bundle_combat_2": "Essence solaire", "bundle_combat_3": "Aile de chauve-souris", "bundle_combat_4": "Slime", "bundle_combat_5": "Essence de feu",
+            "bundle_cook_1": "Piña Colada", "bundle_cook_2": "Curry tropical", "bundle_cook_3": "Ginger Ale", "bundle_cook_4": "Pudding à la banane", "bundle_cook_5": "Pudding à l'écume de mer", "bundle_cook_6": "Huile de truffe",
+            "bundle_aqua_title_1": "Crique des Pirates", "bundle_aqua_title_2": "Abysses",
+            "bundle_aqua_1_1": "Pastenague (Argent+)", "rew_aqua_1": "Appât sauvage (10)",
+            "bundle_aqua_2_1": "Méduse Atolla (Argent+)", "bundle_aqua_2_2": "Poisson sans visage (Argent+)", "bundle_aqua_2_3": "Méduse cosmique (Argent+)", "bundle_aqua_2_4": "Éponge harpe (Argent+)", "bundle_aqua_2_5": "Poisson hadal (Argent+)",
+            "rew_aqua_2": "Appât lumineux (10)"
         },
         en: {
             "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Home", "nav-lieux": "🗺️ New Zones", "nav-pnj": "👤 Javi (NPC)", "nav-bundles": "🏛️ Temple Bundles", "nav-animaux": "🐄 New Animals", "nav-peche": "🐠 Fishing Guide", "nav-outils": "🛠️ Tools & Equipment", "nav-objets": "✨ Items & Resources", "nav-boutiques": "💰 Shops", "nav-secrets": "🤫 Secrets",
-            "bundles_title": "Temple Bundles", "bundles_desc": "Completing these bundles at the Temple is essential to unlock mod content.",
-            "name_label": "Name", "items_req_label": "Required Items", "Reward": "Reward",
-            "rew_fishing": "Diving System, Helmet, Lumi Recipes", "rew_farming": "Mysterious Store", "rew_mining": "Volcano Elevator", "rew_combat": "Access to Extinct Lair & Lava Dragon", "rew_cooking": "Exotic Recipes Pack",
-            "sec_recipes_reward": "🍱 Unlocked Recipes (Cooking)", "recipes_list": "By completing the Cooking bundle, Mr. Qi sends you the following recipes: Magic Ice Cream, Stardrop Cake, Ancient Juice, Ancient Cobbler, Omni Burger, Mushroom Pizza, and many more."
+            "bundles_title": "Temple Bundles", "bundles_desc": "Completing these bundles at the Temple is essential to unlock mod content. They are located at the north of the island.",
+            "diff_note": "Quantities shown correspond to <strong>Normal</strong> difficulty. They may vary if you have the mod configured to Easy or Hard.",
+            "sec_temple_bundles": "🏛️ Temple Altars", "sec_aquarium_bundles": "🐠 Aquarium Tanks",
+            "aquarium_desc": "Once the Aquarium is unlocked, you can restore each tank to get fishing rewards.",
+            "Fishing": "Fishing", "Farming": "Farming", "Mining": "Mining", "Combat": "Combat", "Cooking": "Cooking", "Reward": "Reward",
+            "rew_fishing_full": "Diving System, Diving Helmet, Lumi Recipes (Bait & Tackle)",
+            "rew_farming_full": "Mysterious Store Restoration, Farm Computer, Mini-Shipping Bin",
+            "rew_mining_full": "Volcano Elevator (fast access to forge), Radioactive Bars & Ore",
+            "rew_combat_full": "Access to Extinct Lair, Flame Sword",
+            "rew_cooking_full": "Qi Seasoning, Pack of 19 Exotic Recipes",
+            "bundle_fish_1": "Blue Discus", "bundle_fish_2": "Stingray", "bundle_fish_3": "Lionfish", "bundle_fish_4": "Super Cucumber", "bundle_fish_5": "Pufferfish",
+            "bundle_farm_1": "Banana", "bundle_farm_2": "Mango", "bundle_farm_3": "Taro Root", "bundle_farm_4": "Coconut", "bundle_farm_5": "Ginger",
+            "bundle_mine_1": "Dragon Tooth", "bundle_mine_2": "Cinder Shard", "bundle_mine_3": "Omni Geode", "bundle_mine_4": "Iridium Bar", "bundle_mine_5": "Coal",
+            "bundle_combat_1": "Void Essence", "bundle_combat_2": "Solar Essence", "bundle_combat_3": "Bat Wing", "bundle_combat_4": "Slime", "bundle_combat_5": "Fire Essence",
+            "bundle_cook_1": "Piña Colada", "bundle_cook_2": "Tropical Curry", "bundle_cook_3": "Ginger Ale", "bundle_cook_4": "Banana Pudding", "bundle_cook_5": "Seafoam Pudding", "bundle_cook_6": "Truffle Oil",
+            "bundle_aqua_title_1": "Pirate Cove", "bundle_aqua_title_2": "Deep Sea",
+            "bundle_aqua_1_1": "Stingray (Silver+)", "rew_aqua_1": "Wild Bait (10)",
+            "bundle_aqua_2_1": "Atolla Jellyfish (Silver+)", "bundle_aqua_2_2": "Faceless Fish (Silver+)", "bundle_aqua_2_3": "Cosmic Jelly (Silver+)", "bundle_aqua_2_4": "Harp Sponge (Silver+)", "bundle_aqua_2_5": "Hadal Fish (Silver+)",
+            "rew_aqua_2": "Lumi Bait (10)"
         }
     };
     function setLanguage(lang) {

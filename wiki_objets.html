@@ -21,10 +21,27 @@
         h1 { color: var(--sd-green); border-bottom: 3px solid #81c784; padding-bottom: 10px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
         .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        .badge { padding: 4px 10px; border-radius: 4px; color: white; font-size: 0.9em; font-weight: bold; display: inline-block; }
+        .bg-gold { background: #fbc02d; border: 2px solid #d4af37; color: #3d2b1f; }
+        .bg-void { background: #1a1a1a; border: 2px solid #000; color: #eee; }
+        .bg-iridium { background: #b000ff; border: 2px solid #4a148c; color: white; }
+
+        /* Table Series Styles */
+        table.gold-series { border: 3px solid #fbc02d; box-shadow: 0 0 10px rgba(251, 192, 45, 0.2); }
+        table.gold-series th { background-color: #fff9c4; color: #d4af37; border-bottom: 2px solid #fbc02d; }
+        
+        table.void-series { border: 3px solid #000; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+        table.void-series th { background-color: #333; color: #eee; border-bottom: 2px solid #000; }
+        
+        table.iridium-series { border: 3px solid #b000ff; box-shadow: 0 0 10px rgba(176, 0, 255, 0.2); }
+        table.iridium-series th { background-color: #f3e5f5; color: #4a148c; border-bottom: 2px solid #b000ff; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; margin-bottom: 40px; }
         th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         th { background-color: var(--sd-light-green); color: var(--sd-green); }
         tr:nth-child(even) { background-color: #f9f9f9; }
+        h2 { margin-top: 30px; border-left: 5px solid var(--sd-green); padding-left: 15px; }
+        h3 { margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -50,125 +67,322 @@
     </div>
     <h1 data-key="nav-objets">Encyclopédie des Objets & Ressources</h1>
 
-    <!-- CATEGORIE 1: ALCHIMIE -->
-    <h2 data-key="sec_magic">✨ Objets Magiques & Alchimie</h2>
+    <!-- CATEGORIE 1: ALCHIMIE & POUSSIERES -->
+    <h2 data-key="sec_alchemy">✨ Alchimie & Poussières</h2>
     <table>
         <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Usage / Effets</th></tr>
-        <tr><td data-key="GoldDust.Name">Poussière d'or</td><td data-key="how_shop_rec">Boutique (Recette)</td><td data-key="use_gold_dust">Transforme un animal en sa version <strong>Dorée</strong>.</td></tr>
-        <tr><td data-key="VoidDust.Name">Poussière du Néant</td><td data-key="how_shop_rec">Boutique (Recette)</td><td data-key="use_void_dust">Transforme un animal en sa version <strong>du Néant</strong>.</td></tr>
-        <tr><td data-key="PurifyDust.Name">Poussière purifiante</td><td data-key="how_shop">Boutique (Achat)</td><td data-key="use_purify">Redonne à un animal sa forme <strong>normale</strong>.</td></tr>
-        <tr><td data-key="GrowDust.Name">Poussière de croissance</td><td data-key="how_shop">Boutique / Lots</td><td data-key="use_grow">Fait mûrir les cultures instantanément.</td></tr>
-        <tr><td data-key="RevivalDust.Name">Poussière de résurrection</td><td data-key="how_shop">Boutique / Lots</td><td data-key="use_revive">Réanime les cultures mortes.</td></tr>
+        <tr><td data-key="GoldDust.Name">Poussière d'or</td><td data-key="how_shop_rec">Boutique (Recette)</td><td data-key="GoldDust.Description">Une poussière mystérieuse qui transforme certains animaux.</td></tr>
+        <tr><td data-key="VoidDust.Name">Poussière du Néant</td><td data-key="how_shop_rec">Boutique (Recette)</td><td data-key="VoidDust.Description">Une poussière mystérieuse qui transforme certains animaux.</td></tr>
+        <tr><td data-key="PurifyDust.Name">Poussière purifiante</td><td data-key="how_shop">Boutique (Achat)</td><td data-key="PurifyDust.Description">Une poussière mystérieuse. Elle révélera la véritable forme d'un animal.</td></tr>
+        <tr><td data-key="GrowDust.Name">Poussière de croissance</td><td data-key="how_shop">Boutique / Lots</td><td data-key="GrowDust.Description">Fait pousser les cultures à maturité.</td></tr>
+        <tr><td data-key="RevivalDust.Name">Poussière de résurrection</td><td data-key="how_shop">Boutique / Lots</td><td data-key="RevivalDust.Description">Réanime les cultures mortes.</td></tr>
     </table>
 
-    <!-- CATEGORIE 2: PRODUITS ANIMAUX -->
-    <h2 data-key="sec_produce">🐄 Produits Animaux Spéciaux</h2>
-    <h3><span class="badge bg-gold" data-key="golden_variants_title">Série Dorée</span></h3>
-    <table>
-        <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Source</th><th data-key="usage_label">Usage</th></tr>
-        <tr><td data-key="Milk_G.Name">Lait doré</td><td>Vache Dorée</td><td>Vente (prix élevé), Fromage doré.</td></tr>
-        <tr><td data-key="GoatMilk_G.Name">Lait de chèvre doré</td><td>Chèvre Dorée</td><td>Vente, Fromage de chèvre doré.</td></tr>
-        <tr><td data-key="Wool_G.Name">Laine dorée</td><td>Mouton Doré</td><td>Fil doré.</td></tr>
-        <tr><td data-key="DinoEgg_G.Name">Œuf de dinosaure doré</td><td>Dinosaure Doré</td><td>Vente, Mayonnaise dorée.</td></tr>
-        <tr><td data-key="DuckEgg_G.Name">Œuf de canard doré</td><td>Canard Doré</td><td>Vente, Mayonnaise dorée.</td></tr>
-    </table>
-    <h3><span class="badge bg-void" data-key="void_variants_title">Série du Néant</span></h3>
-    <table>
-        <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Source</th><th data-key="usage_label">Usage</th></tr>
-        <tr><td data-key="Milk_V.Name">Lait du Néant</td><td>Vache du Néant</td><td>Fromage du Néant (odeur de brûlé).</td></tr>
-        <tr><td data-key="GoatMilk_V.Name">Lait de chèvre du Néant</td><td>Chèvre du Néant</td><td>Fromage de chèvre du Néant.</td></tr>
-        <tr><td data-key="Wool_V.Name">Laine du Néant</td><td>Mouton du Néant</td><td>Fil du Néant.</td></tr>
-        <tr><td data-key="DuckEgg_V.Name">Œuf de canard du Néant</td><td>Canard du Néant</td><td>Mayonnaise du Néant.</td></tr>
-    </table>
-    <h3><span class="badge bg-iridium" data-key="iridium_chicken_desc">Série Iridium & Fruits</span></h3>
-    <table>
-        <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Source</th><th data-key="usage_label">Usage</th></tr>
-        <tr><td data-key="IridiumEgg.Name">Œuf en iridium</td><td>Poulet d'Iridium</td><td>Vente (Extrêmement cher).</td></tr>
-        <tr><td data-key="Milk_B.Name">Lait de banane</td><td>Vache Banane</td><td>Pudding à la banane.</td></tr>
-        <tr><td data-key="Milk_C.Name">Lait de coco</td><td>Vache Coco</td><td>Piña Colada, Curry.</td></tr>
-        <tr><td data-key="Milk_M.Name">Lait de mangue</td><td>Vache Mangue</td><td>Salade mangue-crevette.</td></tr>
+    <!-- CATEGORIE 2: PRODUITS ANIMAUX (Série Dorée) -->
+    <h2 data-key="sec_produce_gold">🐄 Produits Animaux <span class="badge bg-gold">Série Dorée</span></h2>
+    <table class="gold-series">
+        <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Source</th><th data-key="usage_label">Usage / Description</th></tr>
+        <tr><td data-key="Milk_G.Name">Lait doré</td><td data-key="Golden_Cow">Vache dorée</td><td data-key="Milk_G.Description">Un pichet de lait provenant d'une vache très spéciale.</td></tr>
+        <tr><td data-key="LargeMilk_G.Name">Lait doré (L)</td><td data-key="Golden_Cow">Vache dorée</td><td data-key="LargeMilk_G.Description">Un grand pichet de lait rare.</td></tr>
+        <tr><td data-key="GoatMilk_G.Name">Lait de chèvre doré</td><td data-key="Golden_Goat">Chèvre dorée</td><td data-key="GoatMilk_G.Description">Le lait d'une chèvre très spéciale.</td></tr>
+        <tr><td data-key="LargeGoatMilk_G.Name">Lait de chèvre doré (L)</td><td data-key="Golden_Goat">Chèvre dorée</td><td data-key="LargeGoatMilk_G.Description">Un gallon de lait crémeux et brillant provenant d'une chèvre dorée.</td></tr>
+        <tr><td data-key="Cheese_G.Name">Fromage doré</td><td data-key="Cheese_G.Name">Fromage doré</td><td data-key="Cheese_G.Description">Son apparence dorée pourrait vous faire croire que c'est une statue.</td></tr>
+        <tr><td data-key="GoatCheese_G.Name">Fromage de chèvre doré</td><td data-key="GoatCheese_G.Name">Fromage de chèvre doré</td><td data-key="GoatCheese_G.Description">Ce fromage est si brillant qu'il ressemble à un minerai d'or.</td></tr>
+        <tr><td data-key="Wool_G.Name">Laine dorée</td><td data-key="Golden_Sheep">Mouton doré</td><td data-key="Wool_G.Description">Une laine extra douce et moelleuse.</td></tr>
+        <tr><td data-key="Yarn_G.Name">Fil doré</td><td data-key="Yarn_G.Name">Fil doré</td><td data-key="Yarn_G.Description">Une pelote de fil brillante.</td></tr>
+        <tr><td data-key="DinoEgg_G.Name">Œuf de dinosaure doré</td><td data-key="Golden_Dinosaur">Dinosaure doré</td><td data-key="DinoEgg_G.Description">Un œuf de dinosaure géant... il est plus brillant et plus robuste que les autres.</td></tr>
+        <tr><td data-key="OstrichEgg_G.Name">Œuf d'autruche doré</td><td data-key="Golden_Ostrich">Autruche dorée</td><td data-key="OstrichEgg_G.Description">Un gros œuf, brillant comme le soleil.</td></tr>
+        <tr><td data-key="DuckEgg_G.Name">Œuf de canard doré</td><td data-key="Golden_Duck">Canard doré</td><td data-key="DuckEgg_G.Description">Un œuf de canard très rare.</td></tr>
     </table>
 
-    <!-- CATEGORIE 3: CUISINE -->
-    <h2 data-key="sec_cooking">🍲 Plats & Boissons Exotiques</h2>
-    <table>
-        <tr><th data-key="name_label">Plat</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Effets / Buffs</th></tr>
-        <tr><td data-key="MagicIceCream.Name">Glace magique</td><td>Boutique (Recette)</td><td>Buffs : Minage, Chance, Vitesse, Défense, Attaque.</td></tr>
-        <tr><td data-key="StardropCake.Name">Gâteau Stardrop</td><td>Temple (Lot Cuisine)</td><td>Buff : <strong>Résistant</strong> (Récupère de l'énergie).</td></tr>
-        <tr><td data-key="AncientJuice.Name">Jus ancien</td><td>Boutique (Achat)</td><td>Buff : Force.</td></tr>
-        <tr><td data-key="AncientCobbler.Name">Cobbler ancien</td><td>Recette secrète</td><td>Buff : Energie max.</td></tr>
-        <tr><td data-key="MushroomPizza.Name">Pizza aux champignons</td><td>Recette</td><td>Buff : <strong>Régénération</strong> (Santé sur le temps).</td></tr>
-        <tr><td data-key="OmniBurger.Name">Omni burger</td><td>Boutique (Recette)</td><td>Buff : Défense ++.</td></tr>
+    <!-- CATEGORIE 3: PRODUITS ANIMAUX (Série du Néant) -->
+    <h2 data-key="sec_produce_void">🐄 Produits Animaux <span class="badge bg-void">Série du Néant</span></h2>
+    <table class="void-series">
+        <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Source</th><th data-key="usage_label">Usage / Description</th></tr>
+        <tr><td data-key="Milk_V.Name">Lait du Néant</td><td data-key="Void_Cow">Vache du Néant</td><td data-key="Milk_V.Description">Un pichet de lait de vache du Néant.</td></tr>
+        <tr><td data-key="LargeMilk_V.Name">Lait du Néant (L)</td><td data-key="Void_Cow">Vache du Néant</td><td data-key="LargeMilk_V.Description">Un grand pichet de lait de vache du Néant.</td></tr>
+        <tr><td data-key="GoatMilk_V.Name">Lait de chèvre du Néant</td><td data-key="Void_Goat">Chèvre du Néant</td><td data-key="GoatMilk_V.Description">Le lait d'une chèvre du Néant.</td></tr>
+        <tr><td data-key="LargeGoatMilk_V.Name">Lait de chèvre du Néant (L)</td><td data-key="Void_Goat">Chèvre du Néant</td><td data-key="LargeGoatMilk_V.Description">Un gallon de lait de chèvre sombre et crémeux.</td></tr>
+        <tr><td data-key="Cheese_V.Name">Fromage du Néant</td><td data-key="Cheese_V.Name">Fromage du Néant</td><td data-key="Cheese_V.Description">Un fromage classique, mais qui sent les cheveux brûlés.</td></tr>
+        <tr><td data-key="GoatCheese_V.Name">Fromage de chèvre du Néant</td><td data-key="GoatCheese_V.Name">Fromage de chèvre du Néant</td><td data-key="GoatCheese_V.Description">Fromage frais à base de lait de chèvre.</td></tr>
+        <tr><td data-key="Wool_V.Name">Laine du Néant</td><td data-key="Void_Sheep">Mouton du Néant</td><td data-key="Wool_V.Description">Sa texture est un peu rêche.</td></tr>
+        <tr><td data-key="Yarn_V.Name">Fil du Néant</td><td data-key="Yarn_V.Name">Fil du Néant</td><td data-key="Yarn_V.Description">Ce fil est rêche sur les bords, mais difficile à casser.</td></tr>
+        <tr><td data-key="DuckMayo_V.Name">Mayonnaise de canard du Néant</td><td data-key="DuckMayo_V.Name">Mayonnaise de canard du Néant</td><td data-key="DuckMayo_V.Description">C'est une pâte noire et riche.</td></tr>
+        <tr><td data-key="DinoMayo_V.Name">Mayonnaise de dinosaure du Néant</td><td data-key="DinoMayo_V.Name">Mayonnaise de dinosaure du Néant</td><td data-key="DinoMayo_V.Description">Épaisse et crémeuse, avec des points rouges vifs. Elle sent les cheveux brûlés et le cuir.</td></tr>
+        <tr><td data-key="DinoEgg_V.Name">Œuf de dinosaure du Néant</td><td data-key="Void_Dinosaur">Dinosaure du Néant</td><td data-key="DinoEgg_V.Description">Un œuf de dinosaure géant... Il a l'air différent des autres.</td></tr>
+        <tr><td data-key="OstrichEgg_V.Name">Œuf d'autruche du Néant</td><td data-key="Void_Ostrich">Autruche du Néant</td><td data-key="OstrichEgg_V.Description">C'est peut-être le plus grand œuf du monde, mais pas le plus étrange.</td></tr>
+        <tr><td data-key="DuckEgg_V.Name">Œuf de canard du Néant</td><td data-key="Void_Duck">Canard du Néant</td><td data-key="DuckEgg_V.Description">Un œuf noir d'encre avec des taches rouges. Il est encore chaud.</td></tr>
     </table>
 
-    <!-- CATEGORIE 4: ARTEFACTS -->
-    <h2 data-key="sec_artifacts">🏛️ Artefacts & Musée</h2>
-    <table>
-        <tr><th data-key="name_label">Artefact</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Utilité</th></tr>
-        <tr><td data-key="PearlNecklace.Name">Collier de perles</td><td>Abysses (Forage)</td><td>Musée, Cadeau (Birdie/Javi).</td></tr>
-        <tr><td data-key="AncientTablet.Name">Tablette ancienne</td><td>Pêche profonde</td><td>Musée, Lore de l'île.</td></tr>
-        <tr><td data-key="WaterOrb.Name">Orbe d'eau</td><td>Épave Engloutie</td><td>Musée, Artisanat magique.</td></tr>
-        <tr><td data-key="FishFlute.Name">Flûte-poisson</td><td>Forage sous-marin</td><td>Musée, Cadeau adoré (Javi).</td></tr>
-        <tr><td data-key="LumiRose.Name">Rose lumineuse</td><td>Forage Abysses</td><td>Musée, Décoration.</td></tr>
-        <tr><td data-key="DeepClam.Name">Palourde omnisciente</td><td>Abysses (Rare)</td><td>Musée, Vente.</td></tr>
+    <!-- CATEGORIE 4: PRODUITS ANIMAUX (Exotiques & Iridium) -->
+    <h2 data-key="sec_produce_exotic">🐄 Produits Animaux <span class="badge bg-iridium">Exotiques & Iridium</span></h2>
+    <table class="iridium-series">
+        <tr><th data-key="name_label">Nom</th><th data-key="how_to_get_label">Source</th><th data-key="usage_label">Usage / Description</th></tr>
+        <tr><td data-key="Milk_B.Name">Lait de banane</td><td data-key="Banana_Cow">Vache banane</td><td data-key="Milk_B.Name">Lait de banane</td></tr>
+        <tr><td data-key="LargeMilk_B.Name">Grand lait de banane</td><td data-key="Banana_Cow">Vache banane</td><td data-key="LargeMilk_B.Name">Grand lait de banane</td></tr>
+        <tr><td data-key="Milk_C.Name">Lait de coco</td><td data-key="Coconut_Cow">Vache coco</td><td data-key="Milk_C.Name">Lait de coco</td></tr>
+        <tr><td data-key="LargeMilk_C.Name">Grand lait de coco</td><td data-key="Coconut_Cow">Vache coco</td><td data-key="LargeMilk_C.Name">Grand lait de coco</td></tr>
+        <tr><td data-key="Milk_M.Name">Lait de mangue</td><td data-key="Mango_Cow">Vache mangue</td><td data-key="Milk_M.Name">Lait de mangue</td></tr>
+        <tr><td data-key="LargeMilk_M.Name">Grand lait de mangue</td><td data-key="Mango_Cow">Vache mangue</td><td data-key="LargeMilk_M.Name">Grand lait de mangue</td></tr>
+        <tr><td data-key="IridiumEgg.Name">Œuf en iridium</td><td data-key="Iridium_Chicken">Poulet en iridium</td><td data-key="IridiumEgg.Description">Un œuf très rare et spécial doté d'une coquille solide en iridium.</td></tr>
     </table>
 
-    <!-- CATEGORIE 5: OUTILS & EQUIPEMENT -->
-    <h2 data-key="sec_tools">🛠️ Outils & Équipement Spécial</h2>
+    <!-- CATEGORIE 5: CUISINE EXOTIQUE -->
+    <h2 data-key="sec_cooking">🍲 Cuisine Exotique</h2>
     <table>
-        <tr><th data-key="name_label">Outil</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Utilité</th></tr>
-        <tr><td data-key="LumiRod.Name">Canne lumineuse</td><td>Statue Narval (99 Éclats)</td><td>Permet de pêcher dans les Abysses sombres.</td></tr>
-        <tr><td data-key="AncientKey.Name">Clé ancienne</td><td>Événement Javi (10 cœurs)</td><td>Ouvre la salle du capitaine (Épave).</td></tr>
-        <tr><td data-key="LumiBait.Name">Appât lumineux</td><td>Craft / Boutique</td><td>Attire les poissons abyssaux.</td></tr>
-        <tr><td data-key="FlameSword.Name">Épée de flammes</td><td>Lot de Combat</td><td>Arme infligeant des dégâts de feu.</td></tr>
-        <tr><td data-key="IslandScepter.Name">Sceptre de l'île</td><td>Boutique (Rare)</td><td>Téléportation instantanée vers Ginger Island.</td></tr>
-        <tr><td data-key="FireRing.Name">Anneau de feu</td><td>Récompense Temple</td><td>Immunité totale contre le feu et la lave.</td></tr>
+        <tr><th data-key="name_label">Plat</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Description / Effets</th></tr>
+        <tr><td data-key="ShrimpMangoSalad.Name">Salade crevettes-mangue</td><td data-key="how_recipe">Recette</td><td data-key="ShrimpMangoSalad.Description">Une salade contenant des crevettes.</td></tr>
+        <tr><td data-key="CoconutCheesecakeBars.Name">Barres de cheesecake à la noix de coco</td><td data-key="how_recipe">Recette</td><td data-key="CoconutCheesecakeBars.Description">Un incontournable pour les amateurs de noix de coco.</td></tr>
+        <tr><td data-key="GingerbreadMan.Name">Bonhomme en pain d'épices</td><td data-key="how_recipe">Recette</td><td data-key="GingerbreadMan.Description">Un petit bonhomme en pain d'épices.</td></tr>
+        <tr><td data-key="StardropCake.Name">Gâteau Stardrop</td><td data-key="how_bundle">Lot (Cuisine)</td><td data-key="StardropCake.Description">Un gâteau préparé avec des graines de Stardrop.</td></tr>
+        <tr><td data-key="CoconutPineappleSpritz.Name">Spritz coco-ananas</td><td data-key="how_recipe">Recette</td><td data-key="CoconutPineappleSpritz.Description">Une gorgée de ce spritz coco-ananas transportera votre esprit directement sur l'île de Ginger Island.</td></tr>
+        <tr><td data-key="FriedCoconutShrimp.Name">Crevettes frites à la noix de coco</td><td data-key="how_recipe">Recette</td><td data-key="FriedCoconutShrimp.Description">Ce plat peut être un parfait amuse-bouche de dernière minute.</td></tr>
+        <tr><td data-key="SweetSauce.Name">Sauce sucrée</td><td data-key="how_recipe">Recette</td><td data-key="SweetSauce.Description">Une sauce si sucrée qu'elle ferait douter les plus gourmands.</td></tr>
+        <tr><td data-key="MagicIceCream.Name">Glace magique</td><td data-key="how_shop_rec">Boutique (Recette)</td><td data-key="MagicIceCream.Description">Comme un bonbon magique, mais mieux adapté à la chaleur du désert.</td></tr>
+        <tr><td data-key="MangoMilk.Name">Lait de mangue</td><td data-key="how_recipe">Recette</td><td data-key="MangoMilk.Description">Une gourmandise parfaite pour la chaleur estivale.</td></tr>
+        <tr><td data-key="AncientJuice.Name">Jus ancien</td><td data-key="how_shop">Boutique (Achat)</td><td data-key="AncientJuice.Description">Fabriqué à partir de fruits anciens, son goût est inconnu de beaucoup.</td></tr>
+        <tr><td data-key="AncientCobbler.Name">Cobbler ancien</td><td data-key="how_recipe">Recette secrète</td><td data-key="AncientCobbler.Description">Préparé avec des ingrédients anciens. Quel goût aura-t-il ?</td></tr>
+        <tr><td data-key="PineappleCoconutCake.Name">Gâteau ananas-noix de coco</td><td data-key="how_recipe">Recette</td><td data-key="PineappleCoconutCake.Description">Ce gâteau moelleux à la noix de coco est garni d'un crémeux à l'ananas.</td></tr>
+        <tr><td data-key="SeaPlate.Name">Truite à l'ail et aux chanterelles</td><td data-key="how_recipe">Recette</td><td data-key="SeaPlate.Description">Un mélange de champignons fins et de poisson.</td></tr>
+        <tr><td data-key="TilapiaWithMangoSalsa.Name">Tilapia à la salsa de mangue</td><td data-key="how_recipe">Recette</td><td data-key="TilapiaWithMangoSalsa.Description">Ce tilapia obtient une touche croquante grâce à la semoule de maïs dans l'assaisonnement.</td></tr>
+        <tr><td data-key="CoconutCurryFishStew.Name">Ragoût de poisson au curry et coco</td><td data-key="how_recipe">Recette</td><td data-key="CoconutCurryFishStew.Description">Un délicieux mélange de saveurs, associant du poisson tendre à une base crémeuse de lait de coco.</td></tr>
+        <tr><td data-key="EggRolls.Name">Rouleaux aux œufs</td><td data-key="how_recipe">Recette</td><td data-key="EggRolls.Description">Ils vous rappellent l'île.</td></tr>
+        <tr><td data-key="MushroomPizza.Name">Pizza aux champignons</td><td data-key="how_recipe">Recette</td><td data-key="MushroomPizza.Description">Une pizza préparée avec des champignons aux propriétés curatives.</td></tr>
+        <tr><td data-key="SalmonWithMangoCitrusSalsa.Name">Saumon à la salsa mangue-agrumes</td><td data-key="how_recipe">Recette</td><td data-key="SalmonWithMangoCitrusSalsa.Description">La combinaison mangue-agrumes se marie parfaitement avec le saumon.</td></tr>
+        <tr><td data-key="OmniBurger.Name">Omni burger</td><td data-key="how_shop_rec">Boutique (Recette)</td><td data-key="OmniBurger.Description">C'est un burger bien croustillant.</td></tr>
     </table>
 
-    <!-- CATEGORIE 6: RESSOURCES -->
-    <h2 data-key="sec_resources">💎 Ressources de Base</h2>
+    <!-- CATEGORIE 6: ARTEFACTS & MUSEE -->
+    <h2 data-key="sec_artifacts">🏛️ Artéfacts & Musée</h2>
     <table>
-        <tr><th data-key="name_label">Ressource</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Utilité</th></tr>
-        <tr><td data-key="LumiShard.Name">Éclat lumineux</td><td>Abysses (Minerais)</td><td>Échange Statue Narval, Cadeau Javi.</td></tr>
-        <tr><td data-key="FireEssence.Name">Essence de feu</td><td>Monstres (Antre/Volcan)</td><td>Craft Alchimique, Lots du Temple.</td></tr>
-        <tr><td data-key="VoidShard.Name">Éclat du Néant</td><td>Abysses / Épave</td><td>Craft de la Poussière du Néant.</td></tr>
-        <tr><td data-key="LavaSnail.Name">Escargot de lave</td><td>Antre Éteint (Forage)</td><td>Cuisine, Vente.</td></tr>
-        <tr><td data-key="StarDropSeeds.Name">Graines de Stardrop</td><td>Boutique (Vendredi)</td><td>Objet mystérieux (très rare).</td></tr>
+        <tr><th data-key="name_label">Artéfact</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Description / Utilité</th></tr>
+        <tr><td data-key="PearlNecklace.Name">Collier de perles</td><td data-key="how_dig">Forage</td><td data-key="PearlNecklace.Description">Ils étaient portés il y a longtemps.</td></tr>
+        <tr><td data-key="AncientKey.Name">Clé ancienne</td><td data-key="how_javi">Événement Javi</td><td data-key="AncientKey.Description">Elle permet d'ouvrir une porte quelque part.</td></tr>
+        <tr><td data-key="OldBottle.Name">Vieille bouteille</td><td data-key="how_dig">Forage</td><td data-key="OldBottle.Description">Quelles histoires racontera-t-elle ?</td></tr>
+        <tr><td data-key="FishFossil.Name">Étrange fossile</td><td data-key="how_dig">Forage</td><td data-key="FishFossil.Description">Le fossile d'un poisson ancien, complètement intact.</td></tr>
+        <tr><td data-key="GoldWatch.Name">Montre en or</td><td data-key="how_dig">Forage</td><td data-key="GoldWatch.Description">D'une époque où les téléphones n'existaient pas.</td></tr>
+        <tr><td data-key="Compass.Name">Boussole</td><td data-key="how_dig">Forage</td><td data-key="Compass.Description">Elle indique les points cardinaux utilisés pour la navigation.</td></tr>
+        <tr><td data-key="FishFlute.Name">Flûte-poisson</td><td data-key="how_dig">Forage</td><td data-key="FishFlute.Description">Utilisée par les pêcheurs pour porter chance en mer.</td></tr>
+        <tr><td data-key="LumiRose.Name">Rose lumineuse</td><td data-key="how_dig">Forage</td><td data-key="LumiRose.Description">Parfois, des éclats lumineux convergent pour former une forme semblable à une rose.</td></tr>
+        <tr><td data-key="DeepClam.Name">Palourde omnisciente</td><td data-key="how_dig">Forage (Abysses)</td><td data-key="DeepClam.Description">Elle sait tout. Pourtant, elle préfère rester dans les profondeurs.</td></tr>
+        <tr><td data-key="Fossil.Name">Fossile</td><td data-key="how_dig">Forage (Abysses)</td><td data-key="Fossil.Description">Provenant des profondeurs sous-marines.</td></tr>
+        <tr><td data-key="AncientTablet.Name">Tablette ancienne</td><td data-key="how_fish">Pêche</td><td data-key="AncientTablet.Description">On se demande quelle civilisation a créé ceci...</td></tr>
+        <tr><td data-key="StrangeScale.Name">Écaille étrange</td><td data-key="how_dig">Forage</td><td data-key="StrangeScale.Description">Si l'écaille est aussi grande, imaginez la taille de l'animal !</td></tr>
+        <tr><td data-key="WaterOrb.Name">Orbe d'eau</td><td data-key="how_shipwreck">Épave</td><td data-key="WaterOrb.Description">L'énergie de l'élément eau.</td></tr>
+        <tr><td data-key="PirateHook.Name">Crochet de pirate</td><td data-key="how_shipwreck">Épave</td><td data-key="PirateHook.Description">Arr !</td></tr>
     </table>
+
+    <!-- CATEGORIE 7: OUTILS & RESSOURCES SPECIALES -->
+    <h2 data-key="sec_tools">🛠️ Outils & Ressources Spéciales</h2>
+    <table>
+        <tr><th data-key="name_label">Objet</th><th data-key="how_to_get_label">Obtention</th><th data-key="usage_label">Description / Utilité</th></tr>
+        <tr><td data-key="LumiRod.Name">Canne lumineuse</td><td data-key="how_narwhal">Statue Narval</td><td data-key="LumiRod.Name">Canne lumineuse</td></tr>
+        <tr><td data-key="VoidShard.Name">Éclat du Néant</td><td data-key="how_dig">Forage (Abysses)</td><td data-key="VoidShard.Description">Un éclat récupéré des profondeurs du Néant.</td></tr>
+        <tr><td data-key="LumiShard.Name">Éclat lumineux</td><td data-key="how_dig">Forage (Abysses)</td><td data-key="LumiShard.Description">Un éclat lumineux qui pousse près des récifs coralliens.</td></tr>
+        <tr><td data-key="FlameSword.Name">Épée de flammes</td><td data-key="how_bundle">Lot (Combat)</td><td data-key="FlameSword.Description">Elle est chaude au toucher, mais ne brûlera pas son porteur.</td></tr>
+        <tr><td data-key="IslandScepter.Name">Sceptre de l'île</td><td data-key="how_shop">Boutique (Rare)</td><td data-key="IslandScepter.Description">La poignée en argent vibre d'un potentiel brut. Lève ce sceptre vers le ciel et retourne sur l'île à volonté.</td></tr>
+        <tr><td data-key="FireEssence.Name">Essence de feu</td><td data-key="how_monster">Monstres</td><td data-key="FireEssence.Description">L'essence propre aux créatures de feu.</td></tr>
+        <tr><td data-key="StarDropSeeds.Name">Graines de Stardrop</td><td data-key="how_shop">Boutique</td><td data-key="StarDropSeeds.Description">Des graines incroyablement puissantes. Personne n'a découvert comment les faire pousser.</td></tr>
+        <tr><td data-key="IslandTrophy.Name">Trophée de l'île</td><td data-key="how_complete">Complétion</td><td data-key="IslandTrophy.Name">Trophée de l'île</td></tr>
+        <tr><td data-key="LavaDragonEgg.Name">Œuf de dragon de lave</td><td data-key="how_rare">Rare</td><td data-key="LavaDragonEgg.Description">Un œuf d'un dragon disparu depuis longtemps... Peut-il encore éclore ?</td></tr>
+        <tr><td data-key="LumiBait.Name">Appât lumineux</td><td data-key="how_craft">Artisanat / Boutique</td><td data-key="LumiBait.Description">Assez brillant pour attirer les poissons des profondeurs.</td></tr>
+        <tr><td data-key="LumiTackle.Name">Leurre lumineux</td><td data-key="how_craft">Artisanat / Boutique</td><td data-key="LumiTackle.Description">Utilisé pour pêcher dans les zones les plus sombres.</td></tr>
+        <tr><td data-key="HugeBanana.Name">Banane géante</td><td data-key="how_rare">Rare</td><td data-key="HugeFruit.Description">Adoré par les vaches !</td></tr>
+        <tr><td data-key="HugeCoconut.Name">Noix de coco géante</td><td data-key="how_rare">Rare</td><td data-key="HugeFruit.Description">Adoré par les vaches !</td></tr>
+        <tr><td data-key="HugeMango.Name">Mangue géante</td><td data-key="how_rare">Rare</td><td data-key="HugeFruit.Description">Adoré par les vaches !</td></tr>
+        <tr><td data-key="PaintBrush.Name">Pinceau</td><td data-key="how_shop">Boutique</td><td data-key="PaintBrush.Description">Il contient de l'encre de calmar !</td></tr>
+        <tr><td data-key="Wand">Baguette</td><td data-key="how_shop">Boutique</td><td data-key="Wand">Baguette</td></tr>
+        <tr><td data-key="FireRing.Name">Anneau de feu</td><td data-key="how_bundle">Lot (Temple)</td><td data-key="FireRing.Description">Vous rend immunisé au feu.</td></tr>
+    </table>
+
 </main>
 <script>
     const translations = {
         fr: {
             "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Accueil", "nav-lieux": "🗺️ Nouvelles Zones", "nav-pnj": "👤 Javi (PNJ)", "nav-bundles": "🏛️ Lots du Temple", "nav-animaux": "🐄 Nouveaux Animaux", "nav-peche": "🐠 Guide de Pêche", "nav-outils": "🛠️ Outils & Équipement", "nav-objets": "✨ Objets & Ressources", "nav-boutiques": "💰 Boutiques", "nav-secrets": "🤫 Secrets",
             "name_label": "Nom", "how_to_get_label": "Obtention", "usage_label": "Usage / Utilité",
-            "sec_magic": "✨ Objets Magiques (Alchimie)", "sec_produce": "🐄 Produits Animaux Spéciaux", "sec_cooking": "🍲 Plats & Boissons Exotiques", "sec_artifacts": "🏛️ Artefacts & Musée", "sec_tools": "🛠️ Outils & Équipement Spécial", "sec_resources": "💎 Ressources de Base",
-            "GoldDust.Name": "Poussière d'or", "VoidDust.Name": "Poussière du Néant", "PurifyDust.Name": "Poussière purifiante", "GrowDust.Name": "Poussière de croissance", "RevivalDust.Name": "Poussière de résurrection",
-            "use_gold_dust": "Transforme un animal en version Dorée.", "use_void_dust": "Transforme un animal en version du Néant.", "use_purify": "Retour à la forme normale.", "use_grow": "Mûrit les cultures instantanément.", "use_revive": "Réanime les cultures mortes.",
-            "golden_variants_title": "Série Dorée", "void_variants_title": "Série du Néant", "iridium_chicken_desc": "Série Iridium & Fruits",
-            "Milk_G.Name": "Lait doré", "GoatMilk_G.Name": "Lait de chèvre doré", "Wool_G.Name": "Laine dorée", "DinoEgg_G.Name": "Œuf de dinosaure doré", "DuckEgg_G.Name": "Œuf de canard doré",
-            "Milk_V.Name": "Lait du Néant", "GoatMilk_V.Name": "Lait de chèvre du Néant", "Wool_V.Name": "Laine du Néant", "DuckEgg_V.Name": "Œuf de canard du Néant",
-            "IridiumEgg.Name": "Œuf en iridium", "Milk_B.Name": "Lait de banane", "Milk_C.Name": "Lait de coco", "Milk_M.Name": "Lait de mangue",
-            "MagicIceCream.Name": "Glace magique", "StardropCake.Name": "Gâteau Stardrop", "AncientJuice.Name": "Jus ancien", "AncientCobbler.Name": "Cobbler ancien", "MushroomPizza.Name": "Pizza aux champignons", "OmniBurger.Name": "Omni burger",
-            "PearlNecklace.Name": "Collier de perles", "AncientTablet.Name": "Tablette ancienne", "WaterOrb.Name": "Orbe d'eau", "FishFlute.Name": "Flûte-poisson", "LumiRose.Name": "Rose lumineuse", "DeepClam.Name": "Palourde omnisciente",
-            "LumiRod.Name": "Canne lumineuse", "AncientKey.Name": "Clé ancienne", "LumiBait.Name": "Appât lumineux", "FlameSword.Name": "Épée de flammes", "IslandScepter.Name": "Sceptre de l'île", "FireRing.Name": "Anneau de feu",
-            "LumiShard.Name": "Éclat lumineux", "FireEssence.Name": "Essence de feu", "VoidShard.Name": "Éclat du Néant", "LavaSnail.Name": "Escargot de lave", "StarDropSeeds.Name": "Graines de Stardrop",
-            "how_shop_rec": "Boutique (Recette)", "how_shop": "Boutique (Achat)", "how_abyss": "Abysses (Forage)", "how_lava": "Antre / Volcan (Drops)", "how_narval": "Statue Narval (99 Éclats)", "how_javi": "Événement Javi (10 cœurs)"
+            "sec_alchemy": "✨ Alchimie & Poussières", "sec_produce_gold": "🐄 Produits Animaux (Série Dorée)", "sec_produce_void": "🐄 Produits Animaux (Série du Néant)", "sec_produce_exotic": "🐄 Produits Animaux (Exotiques & Iridium)", "sec_cooking": "🍲 Cuisine Exotique", "sec_artifacts": "🏛️ Artéfacts & Musée", "sec_tools": "🛠️ Outils & Ressources Spéciales",
+            "how_shop_rec": "Boutique (Recette)", "how_shop": "Boutique (Achat)", "how_recipe": "Recette de cuisine", "how_bundle": "Récompense de lot", "how_monster": "Butin de monstre", "how_dig": "Forage (Sable/Abysses)", "how_fish": "Pêche", "how_shipwreck": "Épave engloutie", "how_javi": "Événement de cœur", "how_narwhal": "Statue Narval (99 Éclats)", "how_craft": "Artisanat", "how_complete": "Complétion du mod", "how_rare": "Trouvaille rare",
+            // Alchemy
+            "GoldDust.Name": "Poussière d'or", "GoldDust.Description": "Une poussière mystérieuse qui transforme certains animaux.",
+            "VoidDust.Name": "Poussière du Néant", "VoidDust.Description": "Une poussière mystérieuse qui transforme certains animaux.",
+            "PurifyDust.Name": "Poussière purifiante", "PurifyDust.Description": "Une poussière mystérieuse. Elle révélera la véritable forme d'un animal.",
+            "GrowDust.Name": "Poussière de croissance", "GrowDust.Description": "Fait pousser les cultures à maturité.",
+            "RevivalDust.Name": "Poussière de résurrection", "RevivalDust.Description": "Réanime les cultures mortes.",
+            // Animals & Produce
+            "Golden_Cow": "Vache dorée", "Golden_Goat": "Chèvre dorée", "Golden_Sheep": "Mouton doré", "Golden_Ostrich": "Autruche dorée", "Golden_Dinosaur": "Dinosaure doré", "Golden_Duck": "Canard doré",
+            "Void_Cow": "Vache du Néant", "Void_Goat": "Chèvre du Néant", "Void_Sheep": "Mouton du Néant", "Void_Ostrich": "Autruche du Néant", "Void_Dinosaur": "Dinosaure du Néant", "Void_Duck": "Canard du Néant",
+            "Iridium_Chicken": "Poulet en iridium", "Banana_Cow": "Vache banane", "Coconut_Cow": "Vache coco", "Mango_Cow": "Vache mangue",
+            "Milk_G.Name": "Lait doré", "Milk_G.Description": "Un pichet de lait provenant d'une vache très spéciale.",
+            "LargeMilk_G.Name": "Lait doré (L)", "LargeMilk_G.Description": "Un grand pichet de lait rare.",
+            "GoatMilk_G.Name": "Lait de chèvre doré", "GoatMilk_G.Description": "Le lait d'une chèvre très spéciale.",
+            "LargeGoatMilk_G.Name": "Lait de chèvre doré (L)", "LargeGoatMilk_G.Description": "Un gallon de lait crémeux et brillant provenant d'une chèvre dorée.",
+            "Cheese_G.Name": "Fromage doré", "Cheese_G.Description": "Son apparence dorée pourrait vous faire croire que c'est une statue.",
+            "GoatCheese_G.Name": "Fromage de chèvre doré", "GoatCheese_G.Description": "Ce fromage est si brillant qu'il ressemble à un minerai d'or.",
+            "Wool_G.Name": "Laine dorée", "Wool_G.Description": "Une laine extra douce et moelleuse.",
+            "Yarn_G.Name": "Fil doré", "Yarn_G.Description": "Une pelote de fil brillante.",
+            "DinoEgg_G.Name": "Œuf de dinosaure doré", "DinoEgg_G.Description": "Un œuf de dinosaure géant... il est plus brillant et plus robuste que les autres.",
+            "OstrichEgg_G.Name": "Œuf d'autruche doré", "OstrichEgg_G.Description": "Un gros œuf, brillant comme le soleil.",
+            "DuckEgg_G.Name": "Œuf de canard doré", "DuckEgg_G.Description": "Un œuf de canard très rare.",
+            "Milk_V.Name": "Lait du Néant", "Milk_V.Description": "Un pichet de lait de vache du Néant.",
+            "LargeMilk_V.Name": "Lait du Néant (L)", "LargeMilk_V.Description": "Un grand pichet de lait de vache du Néant.",
+            "GoatMilk_V.Name": "Lait de chèvre du Néant", "GoatMilk_V.Description": "Le lait d'une chèvre du Néant.",
+            "LargeGoatMilk_V.Name": "Lait de chèvre du Néant (L)", "LargeGoatMilk_V.Description": "Un gallon de lait de chèvre sombre et crémeux.",
+            "Cheese_V.Name": "Fromage du Néant", "Cheese_V.Description": "Un fromage classique, mais qui sent les cheveux brûlés.",
+            "GoatCheese_V.Name": "Fromage de chèvre du Néant", "GoatCheese_V.Description": "Fromage frais à base de lait de chèvre.",
+            "Wool_V.Name": "Laine du Néant", "Wool_V.Description": "Sa texture est un peu rêche.",
+            "Yarn_V.Name": "Fil du Néant", "Yarn_V.Description": "Ce fil est rêche sur les bords, mais difficile à casser.",
+            "DuckMayo_V.Name": "Mayonnaise de canard du Néant", "DuckMayo_V.Description": "C'est une pâte noire et riche.",
+            "DinoMayo_V.Name": "Mayonnaise de dinosaure du Néant", "DinoMayo_V.Description": "Épaisse et crémeuse, avec des points rouges vifs. Elle sent les cheveux brûlés et le cuir.",
+            "DinoEgg_V.Name": "Œuf de dinosaure du Néant", "DinoEgg_V.Description": "Un œuf de dinosaure géant... Il a l'air différent des autres.",
+            "OstrichEgg_V.Name": "Œuf d'autruche du Néant", "OstrichEgg_V.Description": "C'est peut-être le plus grand œuf du monde, mais pas le plus étrange.",
+            "DuckEgg_V.Name": "Œuf de canard du Néant", "DuckEgg_V.Description": "Un œuf noir d'encre avec des taches rouges. Il est encore chaud.",
+            "IridiumEgg.Name": "Œuf en iridium", "IridiumEgg.Description": "Un œuf très rare et spécial doté d'une coquille solide en iridium.",
+            "Milk_B.Name": "Lait de banane", "LargeMilk_B.Name": "Grand lait de banane",
+            "Milk_C.Name": "Lait de coco", "LargeMilk_C.Name": "Grand lait de coco",
+            "Milk_M.Name": "Lait de mangue", "LargeMilk_M.Name": "Grand lait de mangue",
+            // Cooking
+            "ShrimpMangoSalad.Name": "Salade crevettes-mangue", "ShrimpMangoSalad.Description": "Une salade contenant des crevettes.",
+            "CoconutCheesecakeBars.Name": "Barres de cheesecake à la noix de coco", "CoconutCheesecakeBars.Description": "Un incontournable pour les amateurs de noix de coco.",
+            "GingerbreadMan.Name": "Bonhomme en pain d'épices", "GingerbreadMan.Description": "Un petit bonhomme en pain d'épices.",
+            "StardropCake.Name": "Gâteau Stardrop", "StardropCake.Description": "Un gâteau préparé avec des graines de Stardrop.",
+            "CoconutPineappleSpritz.Name": "Spritz coco-ananas", "CoconutPineappleSpritz.Description": "Une gorgée de ce spritz coco-ananas transportera votre esprit directement sur l'île de Ginger Island.",
+            "FriedCoconutShrimp.Name": "Crevettes frites à la noix de coco", "FriedCoconutShrimp.Description": "Ce plat peut être un parfait amuse-bouche de dernière minute.",
+            "SweetSauce.Name": "Sauce sucrée", "SweetSauce.Description": "Une sauce si sucrée qu'elle ferait douter les plus gourmands.",
+            "MagicIceCream.Name": "Glace magique", "MagicIceCream.Description": "Comme un bonbon magique, mais mieux adapté à la chaleur du désert.",
+            "MangoMilk.Name": "Lait de mangue", "MangoMilk.Description": "Une gourmandise parfaite pour la chaleur estivale.",
+            "AncientJuice.Name": "Jus ancien", "AncientJuice.Description": "Fabriqué à partir de fruits anciens, son goût est inconnu de beaucoup.",
+            "AncientCobbler.Name": "Cobbler ancien", "AncientCobbler.Description": "Préparé avec des ingrédients anciens. Quel goût aura-t-il ?",
+            "PineappleCoconutCake.Name": "Gâteau ananas-noix de coco", "PineappleCoconutCake.Description": "Ce gâteau moelleux à la noix de coco est garni d'un crémeux à l'ananas.",
+            "SeaPlate.Name": "Truite à l'ail et aux chanterelles", "SeaPlate.Description": "Un mélange de champignons fins et de poisson.",
+            "TilapiaWithMangoSalsa.Name": "Tilapia à la salsa de mangue", "TilapiaWithMangoSalsa.Description": "Ce tilapia obtient une touche croquante grâce à la semoule de maïs dans l'assaisonnement.",
+            "CoconutCurryFishStew.Name": "Ragoût de poisson au curry et coco", "CoconutCurryFishStew.Description": "Un délicieux mélange de saveurs, associant du poisson tendre à une base crémeuse de lait de coco.",
+            "EggRolls.Name": "Rouleaux aux œufs", "EggRolls.Description": "Ils vous rappellent l'île.",
+            "MushroomPizza.Name": "Pizza aux champignons", "MushroomPizza.Description": "Une pizza préparée avec des champignons aux propriétés curatives.",
+            "SalmonWithMangoCitrusSalsa.Name": "Saumon à la salsa mangue-agrumes", "SalmonWithMangoCitrusSalsa.Description": "La combinaison mangue-agrumes se marie parfaitement avec le saumon.",
+            "OmniBurger.Name": "Omni burger", "OmniBurger.Description": "C'est un burger bien croustillant.",
+            // Artifacts
+            "PearlNecklace.Name": "Collier de perles", "PearlNecklace.Description": "Ils étaient portés il y a longtemps.",
+            "AncientKey.Name": "Clé ancienne", "AncientKey.Description": "Elle permet d'ouvrir une porte quelque part.",
+            "OldBottle.Name": "Vieille bouteille", "OldBottle.Description": "Quelles histoires racontera-t-elle ?",
+            "FishFossil.Name": "Étrange fossile", "FishFossil.Description": "Le fossile d'un poisson ancien, complètement intact.",
+            "GoldWatch.Name": "Montre en or", "GoldWatch.Description": "D'une époque où les téléphones n'existaient pas.",
+            "Compass.Name": "Boussole", "Compass.Description": "Elle indique les points cardinaux utilisés pour la navigation.",
+            "FishFlute.Name": "Flûte-poisson", "FishFlute.Description": "Utilisée par les pêcheurs pour porter chance en mer.",
+            "LumiRose.Name": "Rose lumineuse", "LumiRose.Description": "Parfois, des éclats lumineux convergent pour former une forme semblable à une rose.",
+            "DeepClam.Name": "Palourde omnisciente", "DeepClam.Description": "Elle sait tout. Pourtant, elle préfère rester dans les profondeurs.",
+            "Fossil.Name": "Fossile", "Fossil.Description": "Provenant des profondeurs sous-marines.",
+            "AncientTablet.Name": "Tablette ancienne", "AncientTablet.Description": "On se demande quelle civilisation a créé ceci...",
+            "StrangeScale.Name": "Écaille étrange", "StrangeScale.Description": "Si l'écaille est aussi grande, imaginez la taille de l'animal !",
+            "WaterOrb.Name": "Orbe d'eau", "WaterOrb.Description": "L'énergie de l'élément eau.",
+            "PirateHook.Name": "Crochet de pirate", "PirateHook.Description": "Arr !",
+            // Special
+            "IslandScepter.Name": "Sceptre de l'île", "IslandScepter.Description": "La poignée en argent vibre d'un potentiel brut. Lève ce sceptre vers le ciel et retourne sur l'île à volonté.",
+            "FireEssence.Name": "Essence de feu", "FireEssence.Description": "L'essence propre aux créatures de feu.",
+            "StarDropSeeds.Name": "Graines de Stardrop", "StarDropSeeds.Description": "Des graines incroyablement puissantes. Personne n'a découvert comment les faire pousser.",
+            "IslandTrophy.Name": "Trophée de l'île", "LavaDragonEgg.Name": "Œuf de dragon de lave", "LavaDragonEgg.Description": "Un œuf d'un dragon disparu depuis longtemps... Peut-il encore éclore ?",
+            "VoidShard.Name": "Éclat du Néant", "VoidShard.Description": "Un éclat récupéré des profondeurs du Néant.",
+            "LumiShard.Name": "Éclat lumineux", "LumiShard.Description": "Un éclat lumineux qui pousse près des récifs coralliens.",
+            "LumiBait.Name": "Appât lumineux", "LumiBait.Description": "Assez brillant pour attirer les poissons des profondeurs.",
+            "LumiTackle.Name": "Leurre lumineux", "LumiTackle.Description": "Utilisé pour pêcher dans les zones les plus sombres.",
+            "HugeBanana.Name": "Banane géante", "HugeCoconut.Name": "Noix de coco géante", "HugeMango.Name": "Mangue géante", "HugeFruit.Description": "Adoré par les vaches !",
+            "FlameSword.Name": "Épée de flammes", "FlameSword.Description": "Elle est chaude au toucher, mais ne brûlera pas son porteur.",
+            "PaintBrush.Name": "Pinceau", "PaintBrush.Description": "Il contient de l'encre de calmar !",
+            "LumiRod.Name": "Canne lumineuse", "Wand": "Baguette",
+            "FireRing.Name": "Anneau de feu", "FireRing.Description": "Vous rend immunisé au feu."
         },
         en: {
             "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Home", "nav-lieux": "🗺️ New Zones", "nav-pnj": "👤 Javi (NPC)", "nav-bundles": "🏛️ Temple Bundles", "nav-animaux": "🐄 New Animals", "nav-peche": "🐠 Fishing Guide", "nav-outils": "🛠️ Tools & Equipment", "nav-objets": "✨ Items & Resources", "nav-boutiques": "💰 Shops", "nav-secrets": "🤫 Secrets",
             "name_label": "Name", "how_to_get_label": "Obtainment", "usage_label": "Usage / Utility",
-            "sec_magic": "✨ Magic Items (Alchemy)", "sec_produce": "🐄 Special Animal Produce", "sec_cooking": "🍲 Exotic Dishes & Drinks", "sec_artifacts": "🏛️ Artifacts & Museum", "sec_tools": "🛠️ Special Tools & Equipment", "sec_resources": "💎 Base Resources",
-            "GoldDust.Name": "Gold Dust", "VoidDust.Name": "Void Dust", "PurifyDust.Name": "Purifying Dust", "GrowDust.Name": "Growing Dust", "RevivalDust.Name": "Revival Dust",
-            "use_gold_dust": "Transforms animal into Golden version.", "use_void_dust": "Transforms animal into Void version.", "use_purify": "Returns to normal form.", "use_grow": "Matures crops instantly.", "use_revive": "Revives dead crops.",
-            "golden_variants_title": "Golden Series", "void_variants_title": "Void Series", "iridium_chicken_desc": "Iridium & Fruit Series",
-            "Milk_G.Name": "Golden milk", "GoatMilk_G.Name": "Golden goat milk", "Wool_G.Name": "Golden wool", "DinoEgg_G.Name": "Golden dinosaur egg", "DuckEgg_G.Name": "Golden duck egg",
-            "Milk_V.Name": "Void milk", "GoatMilk_V.Name": "Void goat milk", "Wool_V.Name": "Void wool", "DuckEgg_V.Name": "Void duck egg",
-            "IridiumEgg.Name": "Iridium egg", "Milk_B.Name": "Banana milk", "Milk_C.Name": "Coconut milk", "Milk_M.Name": "Mango milk",
-            "MagicIceCream.Name": "Magic ice cream", "StardropCake.Name": "Stardrop cake", "AncientJuice.Name": "Ancient juice", "AncientCobbler.Name": "Ancient cobbler", "MushroomPizza.Name": "Mushroom pizza", "OmniBurger.Name": "Omni burger",
-            "PearlNecklace.Name": "Pearl necklace", "AncientTablet.Name": "Ancient tablet", "WaterOrb.Name": "Water orb", "FishFlute.Name": "Fish flute", "LumiRose.Name": "Luminous rose", "DeepClam.Name": "Omniscient clam",
-            "LumiRod.Name": "Luminous rod", "AncientKey.Name": "Ancient key", "LumiBait.Name": "Luminous bait", "FlameSword.Name": "Flame sword", "IslandScepter.Name": "Island scepter", "FireRing.Name": "Fire ring",
-            "LumiShard.Name": "Luminous shard", "FireEssence.Name": "Fire essence", "VoidShard.Name": "Void shard", "LavaSnail.Name": "Lava snail", "StarDropSeeds.Name": "Stardrop seeds",
-            "how_shop_rec": "Shop (Recipe)", "how_shop": "Shop (Purchase)", "how_abyss": "Abyss (Drilling)", "how_lava": "Lair / Volcano (Drops)", "how_narval": "Narwhal Statue (99 Shards)", "how_javi": "Javi Event (10 hearts)"
+            "sec_alchemy": "✨ Alchemy & Dusts", "sec_produce_gold": "🐄 Animal Produce (Golden Series)", "sec_produce_void": "🐄 Animal Produce (Void Series)", "sec_produce_exotic": "🐄 Animal Produce (Exotic & Iridium)", "sec_cooking": "🍲 Exotic Cooking", "sec_artifacts": "🏛️ Artifacts & Museum", "sec_tools": "🛠️ Special Tools & Resources",
+            "how_shop_rec": "Shop (Recipe)", "how_shop": "Shop (Purchase)", "how_recipe": "Cooking Recipe", "how_bundle": "Bundle Reward", "how_monster": "Monster Drop", "how_dig": "Digging (Sand/Abyss)", "how_fish": "Fishing", "how_shipwreck": "Sunken Shipwreck", "how_javi": "Heart Event", "how_narwhal": "Narwhal Statue (99 Shards)", "how_craft": "Crafting", "how_complete": "Mod Completion", "how_rare": "Rare Find",
+            // Alchemy
+            "GoldDust.Name": "Gold dust", "GoldDust.Description": "A mysterious dust which transforms certain animals.",
+            "VoidDust.Name": "Void dust", "VoidDust.Description": "A mysterious dust which transforms certain animals.",
+            "PurifyDust.Name": "Purifying dust", "PurifyDust.Description": "A mysterious dust. It will show an animal's true form.",
+            "GrowDust.Name": "Growing dust", "GrowDust.Description": "Grows crops to fullness.",
+            "RevivalDust.Name": "Revival dust", "RevivalDust.Description": "Revives dead crops.",
+            // Animals & Produce
+            "Golden_Cow": "Golden cow", "Golden_Goat": "Golden goat", "Golden_Sheep": "Golden sheep", "Golden_Ostrich": "Golden ostrich", "Golden_Dinosaur": "Golden dinosaur", "Golden_Duck": "Golden duck",
+            "Void_Cow": "Void cow", "Void_Goat": "Void goat", "Void_Sheep": "Void sheep", "Void_Ostrich": "Void ostrich", "Void_Dinosaur": "Void dinosaur", "Void_Duck": "Void duck",
+            "Iridium_Chicken": "Iridium chicken", "Banana_Cow": "Banana cow", "Coconut_Cow": "Coconut cow", "Mango_Cow": "Mango cow",
+            "Milk_G.Name": "Golden milk", "Milk_G.Description": "A jug of milk from a very special cow.",
+            "LargeMilk_G.Name": "Golden milk (L)", "LargeMilk_G.Description": "A rare, large jug of milk.",
+            "GoatMilk_G.Name": "Golden goat milk", "GoatMilk_G.Description": "The milk from a very special goat.",
+            "LargeGoatMilk_G.Name": "Golden goat milk (L)", "LargeGoatMilk_G.Description": "A gallon of creamy, shiny milk from a golden goat.",
+            "Cheese_G.Name": "Golden cheese", "Cheese_G.Description": "Its gold appearance would make you think it's a statue.",
+            "GoatCheese_G.Name": "Golden goat cheese", "GoatCheese_G.Description": "This cheese is so shiny, it looks like gold ore.",
+            "Wool_G.Name": "Golden wool", "Wool_G.Description": "Extra soft, fluffy wool.",
+            "Yarn_G.Name": "Golden yarn", "Yarn_G.Description": "A shiny ball of yarn.",
+            "DinoEgg_G.Name": "Golden dinosaur egg", "DinoEgg_G.Description": "A giant dino egg...it's shinier and sturdier than the rest.",
+            "OstrichEgg_G.Name": "Golden ostrich egg", "OstrichEgg_G.Description": "A big egg, shining bright like the sun.",
+            "DuckEgg_G.Name": "Golden duck egg", "DuckEgg_G.Description": "A very rare duck egg.",
+            "Milk_V.Name": "Void milk", "Milk_V.Description": "A jug of void cow's milk.",
+            "LargeMilk_V.Name": "Void milk (L)", "LargeMilk_V.Description": "A large jug of void cow's milk.",
+            "GoatMilk_V.Name": "Void goat milk", "GoatMilk_V.Description": "The milk of a void goat.",
+            "LargeGoatMilk_V.Name": "Void goat milk (L)", "LargeGoatMilk_V.Description": "A gallon of dark, creamy goat's milk.",
+            "Cheese_V.Name": "Void cheese", "Cheese_V.Description": "It's your basic cheese, but smelling like burnt hair.",
+            "GoatCheese_V.Name": "Void goat cheese", "GoatCheese_V.Description": "Soft cheese made from goat's milk.",
+            "Wool_V.Name": "Void wool", "Wool_V.Description": "Its texture is a bit rough.",
+            "Yarn_V.Name": "Void yarn", "Yarn_V.Description": "This yarn is rough at the edges, yet hard to break.",
+            "DuckMayo_V.Name": "Void duck mayo", "DuckMayo_V.Description": "It's a rich, black paste.",
+            "DinoMayo_V.Name": "Void dinosaur mayo", "DinoMayo_V.Description": "It's thick and creamy, with vivid red dots. It smells like burnt hair and leather.",
+            "DinoEgg_V.Name": "Void dinosaur egg", "DinoEgg_V.Description": "A giant dino egg... It looks different from the rest.",
+            "OstrichEgg_V.Name": "Void ostrich egg", "OstrichEgg_V.Description": "It may be the world's largest egg, but not the strangest.",
+            "DuckEgg_V.Name": "Void duck egg", "DuckEgg_V.Description": "A jet-black egg with red flecks. It's still warm.",
+            "IridiumEgg.Name": "Iridium egg", "IridiumEgg.Description": "A very rare and special egg with a solid iridium shell.",
+            "Milk_B.Name": "Banana milk", "LargeMilk_B.Name": "Large banana milk",
+            "Milk_C.Name": "Coconut milk", "LargeMilk_C.Name": "Large coconut milk",
+            "Milk_M.Name": "Mango milk", "LargeMilk_M.Name": "Large mango milk",
+            // Cooking
+            "ShrimpMangoSalad.Name": "Shrimp mango salad", "ShrimpMangoSalad.Description": "A salad containing shrimp.",
+            "CoconutCheesecakeBars.Name": "Coconut cheesecake bars", "CoconutCheesecakeBars.Description": "A must for coconut lovers.",
+            "GingerbreadMan.Name": "Gingerbread man", "GingerbreadMan.Description": "A small gingerbread man.",
+            "StardropCake.Name": "Stardrop cake", "StardropCake.Description": "A cake made with stardrop seeds.",
+            "CoconutPineappleSpritz.Name": "Coconut-pineapple spritz", "CoconutPineappleSpritz.Description": "One sip of this coconut and pineapple spritz will transport your mind right to Ginger Island.",
+            "FriedCoconutShrimp.Name": "Fried coconut shrimp", "FriedCoconutShrimp.Description": "This dish can be a perfect last-minute appetizer.",
+            "SweetSauce.Name": "Sweet sauce", "SweetSauce.Description": "A sauce so sweet, it makes people with a sweet tooth reconsider.",
+            "MagicIceCream.Name": "Magic ice cream", "MagicIceCream.Description": "It's like magic rock candy, but better fit for the desert's heat.",
+            "MangoMilk.Name": "Mango milk", "MangoMilk.Description": "A perfect treat for the summer heat.",
+            "AncientJuice.Name": "Ancient juice", "AncientJuice.Description": "Made from ancient fruit, it's taste is unknown to many.",
+            "AncientCobbler.Name": "Ancient cobbler", "AncientCobbler.Description": "Made with ancient ingredients. How will it taste?",
+            "PineappleCoconutCake.Name": "Pineapple coconut cake", "PineappleCoconutCake.Description": "This fluffy coconut cake is filled with an easy pineapple curd.",
+            "SeaPlate.Name": "Trout with garlic and chanterelle", "SeaPlate.Description": "A mix of fine shrooms and fish.",
+            "TilapiaWithMangoSalsa.Name": "Tilapia with mango salsa", "TilapiaWithMangoSalsa.Description": "This tilapia gets a hint of crunch from the cornmeal in the seasoning.",
+            "CoconutCurryFishStew.Name": "Coconut curry fish stew", "CoconutCurryFishStew.Description": "A delightful blend of flavors, combining tender fish with a creamy coconut milk base.",
+            "EggRolls.Name": "Egg rolls", "EggRolls.Description": "These remind you of the island.",
+            "MushroomPizza.Name": "Mushroom pizza", "MushroomPizza.Description": "A pizza made with healing mushrooms.",
+            "SalmonWithMangoCitrusSalsa.Name": "Salmon with Mango-Citrus Salsa", "SalmonWithMangoCitrusSalsa.Description": "The mango-citrus combination mixes nicely with salmon.",
+            "OmniBurger.Name": "Omni burger", "OmniBurger.Description": "This is one crunchy burger.",
+            // Artifacts
+            "PearlNecklace.Name": "Pearl necklace", "PearlNecklace.Description": "Those were worn long ago.",
+            "AncientKey.Name": "Ancient key", "AncientKey.Description": "It lets you open a door somewhere.",
+            "OldBottle.Name": "Old bottle", "OldBottle.Description": "What stories will this tell?",
+            "FishFossil.Name": "Strange fossil", "FishFossil.Description": "An ancient fish's fossil, completely intact.",
+            "GoldWatch.Name": "Gold watch", "GoldWatch.Description": "From when phones didn't exist.",
+            "Compass.Name": "Compass", "Compass.Description": "It shows the cardinal directions used for navigation.",
+            "FishFlute.Name": "Fish flute", "FishFlute.Description": "Used by fishermen for good luck at sea.",
+            "LumiRose.Name": "Luminous rose", "LumiRose.Description": "Sometimes, luminous shards will converge into a rose-like shape.",
+            "DeepClam.Name": "Omniscient clam", "DeepClam.Description": "It knows it all. Yet, it prefers staying deep underwater.",
+            "Fossil.Name": "Fossil", "Fossil.Description": "From somewhere deep underwater.",
+            "AncientTablet.Name": "Ancient tablet", "AncientTablet.Description": "Wonder which civilization made this...",
+            "StrangeScale.Name": "Strange scale", "StrangeScale.Description": "If the scale is this big, imagine the animal's size!",
+            "WaterOrb.Name": "Water orb", "WaterOrb.Description": "The energy of the water element.",
+            "PirateHook.Name": "Pirate hook", "PirateHook.Description": "Arr!",
+            // Special
+            "IslandScepter.Name": "Island Scepter", "IslandScepter.Description": "The silver handle quivers with raw potential. Hold this scepter to the sky and return to the island at will.",
+            "FireEssence.Name": "Fire essence", "FireEssence.Description": "The essence innate to fire creatures.",
+            "StarDropSeeds.Name": "Stardrop seeds", "StarDropSeeds.Description": "Incredibly powerful seeds. Nobody has discovered how to make them grow.",
+            "IslandTrophy.Name": "Island Trophy", "LavaDragonEgg.Name": "Lava dragon egg", "LavaDragonEgg.Description": "An egg from a long extinct dragon...Can it still hatch?",
+            "VoidShard.Name": "Void shard", "VoidShard.Description": "A shard rescued from the void's depths.",
+            "LumiShard.Name": "Luminous shard", "LumiShard.Description": "A luminous shard which grows near coral reefs.",
+            "LumiBait.Name": "Luminous bait", "LumiBait.Description": "Bright enough to attract deep sea fishes.",
+            "LumiTackle.Name": "Luminous tackle", "LumiTackle.Description": "Used to fish in the darkest zones.",
+            "HugeBanana.Name": "Huge banana", "HugeCoconut.Name": "Huge coconut", "HugeMango.Name": "Huge mango", "HugeFruit.Description": "Loved by cows!",
+            "FlameSword.Name": "Flame sword", "FlameSword.Description": "It's hot to the touch, but it won't burn its wielder.",
+            "PaintBrush.Name": "Paint brush", "PaintBrush.Description": "It has squid ink!",
+            "LumiRod.Name": "Luminous rod", "Wand": "Wand",
+            "FireRing.Name": "Fire Ring", "FireRing.Description": "Makes you immune to fire."
         }
     };
     function setLanguage(lang) {
@@ -179,17 +393,12 @@
             const key = el.getAttribute('data-key');
             if (translations[lang][key]) el.innerHTML = translations[lang][key];
         });
-        document.getElementById('nav-title').innerHTML = translations[lang]['nav-title'];
-        document.getElementById('nav-accueil').innerHTML = translations[lang]['nav-accueil'];
-        document.getElementById('nav-lieux').innerHTML = translations[lang]['nav-lieux'];
-        document.getElementById('nav-pnj').innerHTML = translations[lang]['nav-pnj'];
-        document.getElementById('nav-bundles').innerHTML = translations[lang]['nav-bundles'];
-        document.getElementById('nav-animaux').innerHTML = translations[lang]['nav-animaux'];
-        document.getElementById('nav-peche').innerHTML = translations[lang]['nav-peche'];
-        document.getElementById('nav-outils').innerHTML = translations[lang]['nav-outils'];
-        document.getElementById('nav-objets').innerHTML = translations[lang]['nav-objets'];
-        document.getElementById('nav-boutiques').innerHTML = translations[lang]['nav-boutiques'];
-        document.getElementById('nav-secrets').innerHTML = translations[lang]['nav-secrets'];
+        // Update nav and other fixed elements
+        const navKeys = ["nav-title", "nav-accueil", "nav-lieux", "nav-pnj", "nav-bundles", "nav-animaux", "nav-peche", "nav-outils", "nav-objets", "nav-boutiques", "nav-secrets"];
+        navKeys.forEach(key => {
+            const el = document.getElementById(key);
+            if (el && translations[lang][key]) el.innerHTML = translations[lang][key];
+        });
     }
     const savedLang = localStorage.getItem('giex_wiki_lang') || 'fr';
     setLanguage(savedLang);
