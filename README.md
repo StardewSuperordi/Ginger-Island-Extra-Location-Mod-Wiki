@@ -9,6 +9,9 @@
 
 ## [EN] English Version
 
+### 🚀 Access the Wiki
+👉 **[CLICK HERE TO VIEW THE WIKI ONLINE](https://stardewsuperordi.github.io/Ginger-Island-Extra-Location-Mod-Wiki/index.html)**
+
 Welcome to the unofficial wiki for **Ginger Island Extra Locations (GiEX)**. This project aims to document every detail of this massive expansion for Ginger Island.
 
 ### 🔍 Why this Wiki?
@@ -21,8 +24,6 @@ All data provided is extracted directly from the mod's technical files (`Objects
 * **Temple Bundles** - Detailed solutions to repair the island and unlock secret areas.
 * **Alchemy** - How to use Magic Dusts (Gold, Void, Revival Dust) for transformations.
 
-### 🚀 Access the Wiki
-👉 **[CLICK HERE TO VIEW THE WIKI ONLINE](https://github.com/StardewSuperordi/Ginger-Island-Extra-Location-Mod-Wiki/)**
 
 ---
 
@@ -38,6 +39,9 @@ All data provided is extracted directly from the mod's technical files (`Objects
 
 ## [FR] Version Française
 
+### 🚀 Accéder au Wiki
+👉 **[CLIQUEZ ICI POUR CONSULTER LE WIKI EN LIGNE]([https://github.com/StardewSuperordi/Ginger-Island-Extra-Location-Mod-Wiki/](https://stardewsuperordi.github.io/Ginger-Island-Extra-Location-Mod-Wiki/index.html))**
+
 Bienvenue sur le wiki non-officiel de **Ginger Island Extra Locations (GiEX)**. Ce projet a pour but de documenter chaque aspect de cette extension massive de l'Île Gingembre.
 
 ### 🔍 Pourquoi ce Wiki ?
@@ -49,6 +53,3 @@ Toutes les données présentées ici sont extraites directement des fichiers tec
 * **PNJ Javi** - Guide complet des cadeaux adorés et des événements de cœur.
 * **Lots du Temple** - Solutions détaillées pour réparer l'île et débloquer les zones secrètes.
 * **Alchimie** - Guide d'utilisation des Poussières Magiques (Gold, Void, Revival Dust).
-
-### 🚀 Accéder au Wiki
-👉 **[CLIQUEZ ICI POUR CONSULTER LE WIKI EN LIGNE](https://github.com/StardewSuperordi/Ginger-Island-Extra-Location-Mod-Wiki/)**
