@@ -35,12 +35,54 @@
         th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         th { background-color: var(--sd-light-green); color: var(--sd-green); }
         tr:nth-child(even) { background-color: #f9f9f9; }
-    </style>
-</head>
-<body>
-<nav>
-    <h2 id="nav-title">GiEX REDUX WIKI</h2>
-    <ul>
+
+        /* Sprite Styles */
+        .animal-icon {
+            image-rendering: pixelated;
+            object-fit: none;
+            object-position: 0 0;
+            display: inline-block;
+            vertical-align: middle;
+            transform-origin: center;
+        }
+
+        /* Container to keep everything aligned */
+        .icon-box {
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f0f0;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            margin-right: 12px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        /* Zoom 2x for standalone cards */
+        .icon-small { transform: scale(2); }
+        .icon-med { transform: scale(2); }
+
+        /* Zoom 1.5x for small animals in lists */
+        .list-zoom { transform: scale(1.5); }
+
+        /* Specific sizes based on Animals.json */
+        .size-32 { width: 32px; height: 32px; }
+        .size-16 { width: 16px; height: 16px; }
+        .size-18 { width: 18px; height: 18px; }
+        .size-24x16 { width: 24px; height: 16px; }
+
+        .animal-container { display: flex; align-items: center; gap: 10px; }
+        .variant-list { list-style: none; padding: 0; }
+        .variant-item { display: flex; align-items: center; margin-bottom: 12px; }
+        </style>
+        </head>
+        <body>
+        <nav>
+        <h2 id="nav-title">GiEX REDUX WIKI</h2>
+        <ul>
         <li><a href="index.html" id="nav-accueil">🏠 Accueil</a></li>
         <li><a href="wiki_lieux.html" id="nav-lieux">🗺️ Nouvelles Zones</a></li>
         <li><a href="wiki_javi.html" id="nav-pnj">👤 Javi (PNJ)</a></li>
@@ -51,84 +93,133 @@
         <li><a href="wiki_objets.html" id="nav-objets">✨ Objets & Ressources</a></li>
         <li><a href="wiki_boutiques.html" id="nav-boutiques">💰 Boutiques</a></li>
         <li><a href="wiki_secrets.html" id="nav-secrets">🤫 Secrets</a></li>
-    </ul>
-</nav>
-<main>
-    <div class="lang-switch">
+        </ul>
+        </nav>
+        <main>
+        <div class="lang-switch">
         <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
         <button class="lang-btn" onclick="setLanguage('en')">EN</button>
-    </div>
-    <h1 data-key="nav-animaux">Nouveaux Animaux</h1>
-    
-    <h2 data-key="lava_dragon_title">Mini Dragon de Lave</h2>
-    <div class="card" style="border-left: 5px solid #ff5722;">
-        <p data-key="lava_dragon_guide"><strong>Obtention :</strong> Récompense du Lot de Combat du Temple. Une fois débloqué, achetable pour 50 000g à la Boutique Mystérieuse.<br>
-        <strong>Production :</strong> Rubis, Quartz de feu, Obsidienne, Éclat de cendre.</p>
-    </div>
-
-    <h2 data-key="fruit_cows_title">Vaches à Fruits</h2>
-    <p data-key="fruit_cows_desc">Ces vaches exotiques se nourrissent des fruits de l'île. Elles sont achetables à la Boutique Mystérieuse après avoir complété le lot d'Agriculture.</p>
-    <table>
-        <tr><th data-key="animal_label">Animal</th><th data-key="produce_label">Production</th><th data-key="usage_label">Usage / Recette</th></tr>
-        <tr><td><strong>Vache Banane</strong></td><td data-key="Milk_B.Name">Lait de banane</td><td>Pudding à la banane, Vente</td></tr>
-        <tr><td><strong>Vache Coco</strong></td><td data-key="Milk_C.Name">Lait de coco</td><td>Curry tropical, Piña Colada</td></tr>
-        <tr><td><strong>Vache Mangue</strong></td><td data-key="Milk_M.Name">Lait de mangue</td><td>Salade mangue-crevette, Vente</td></tr>
-    </table>
-
-    <h2 data-key="transformation_title">Variantes Dorées & du Néant</h2>
-    <p data-key="trans_desc">Utilisez la <strong>Poussière d'Or</strong> ou la <strong>Poussière du Néant</strong> pour transformer vos animaux adultes.</p>
-    <div class="grid">
-        <div class="card gold">
-            <h3 class="badge bg-gold" data-key="golden_variants_title">Variantes Dorées</h3>
-            <ul>
-                <li><strong>Vache Dorée</strong> (Blanche ou Brune)</li>
-                <li><strong>Chèvre Dorée</strong></li>
-                <li><strong>Mouton Doré</strong></li>
-                <li><strong>Canard Doré</strong></li>
-                <li><strong>Dinosaure Doré</strong></li>
-                <li><strong>Autruche Doré</strong></li>
-            </ul>
         </div>
-        <div class="card void">
-            <h3 class="badge bg-void" data-key="void_variants_title">Variantes du Néant</h3>
-            <ul>
-                <li><strong>Vache du Néant</strong> (Blanche ou Brune)</li>
-                <li><strong>Chèvre du Néant</strong></li>
-                <li><strong>Mouton du Néant</strong></li>
-                <li><strong>Lapin du Néant</strong></li>
-                <li><strong>Canard du Néant</strong></li>
-                <li><strong>Dinosaure du Néant</strong></li>
-                <li><strong>Autruche du Néant</strong></li>
-            </ul>
-        </div>
-    </div>
+        <h1 data-key="nav-animaux">Nouveaux Animaux</h1>
 
-    <h2 class="badge bg-iridium" data-key="iridium_chicken_title">Poulet d'Iridium</h2>
-    <div class="card iridium">
-        <p data-key="iridium_chicken_desc">Un poulet d'élite produisant des œufs d'iridium. Déblocable uniquement si le mode <strong>Perfectionniste</strong> est activé ou en fin de partie.</p>
-    </div>
-</main>
-<script>
-    const translations = {
-        fr: {
-            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Accueil", "nav-lieux": "🗺️ Nouvelles Zones", "nav-pnj": "👤 Javi (PNJ)", "nav-bundles": "🏛️ Lots du Temple", "nav-animaux": "🐄 Nouveaux Animaux", "nav-peche": "🐠 Guide de Pêche", "nav-outils": "🛠️ Outils & Équipement", "nav-objets": "✨ Objets & Ressources", "nav-boutiques": "💰 Boutiques", "nav-secrets": "🤫 Secrets",
-            "lava_dragon_title": "Mini Dragon de Lave", "lava_dragon_guide": "Obtention : Récompense du Lot de Combat du Temple. Une fois débloqué, achetable pour 50 000g à la Boutique Mystérieuse. Production : Rubis, Quartz de feu, Obsidienne, Éclat de cendre.",
-            "fruit_cows_title": "Vaches à Fruits", "fruit_cows_desc": "Ces vaches exotiques se nourrissent des fruits de l'île. Elles sont achetables à la Boutique Mystérieuse après avoir complété le lot d'Agriculture.",
-            "animal_label": "Animal", "produce_label": "Production", "usage_label": "Usage / Recette",
-            "transformation_title": "Variantes Dorées & du Néant", "trans_desc": "Utilisez la Poussière d'Or ou la Poussière du Néant pour transformer vos animaux adultes.",
-            "golden_variants_title": "Variantes Dorées", "void_variants_title": "Variantes du Néant",
-            "iridium_chicken_title": "Poulet d'Iridium", "iridium_chicken_desc": "Un poulet d'élite produisant des œufs d'iridium. Déblocable uniquement si le mode Perfectionniste est activé ou en fin de partie."
-        },
-        en: {
-            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Home", "nav-lieux": "🗺️ New Zones", "nav-pnj": "👤 Javi (NPC)", "nav-bundles": "🏛️ Temple Bundles", "nav-animaux": "🐄 New Animals", "nav-peche": "🐠 Fishing Guide", "nav-outils": "🛠️ Tools & Equipment", "nav-objets": "✨ Items & Resources", "nav-boutiques": "💰 Shops", "nav-secrets": "🤫 Secrets",
-            "lava_dragon_title": "Mini Lava Dragon", "lava_dragon_guide": "Obtainment: Combat Bundle reward. Once unlocked, buy for 50,000g at Mysterious Store. Production: Ruby, Fire Quartz, Obsidian, Cinder Shard.",
-            "fruit_cows_title": "Fruit Cows", "fruit_cows_desc": "These exotic cows feed on island fruits. Purchasable at Mysterious Store after Farming bundle.",
-            "animal_label": "Animal", "produce_label": "Production", "usage_label": "Usage / Recipe",
-            "transformation_title": "Golden & Void Variants", "trans_desc": "Use Golden Dust or Void Dust to transform your adult animals.",
-            "golden_variants_title": "Golden Variants", "void_variants_title": "Void Variants",
-            "iridium_chicken_title": "Iridium Chicken", "iridium_chicken_desc": "An elite chicken producing iridium eggs. Unlocked only if Perfectionist mode is enabled or in late game."
-        }
-    };
+        <h2 data-key="lava_dragon_title">Mini Dragon de Lave</h2>
+        <div class="card" style="border-left: 5px solid #ff5722;">
+        <div class="animal-container">
+            <div class="icon-box" style="width: 60px; height: 40px;">
+                <img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/MiniLavaDragon.png" class="animal-icon size-24x16 icon-med" alt="Mini Lava Dragon">
+            </div>
+            <p data-key="lava_dragon_guide"><strong>Obtention :</strong> Récompense du Lot de Combat du Temple. Une fois débloqué, achetable pour 50 000g à la Boutique Mystérieuse.<br>
+            <strong>Production :</strong> Rubis, Quartz de feu, Obsidienne, Éclat de cendre.</p>
+        </div>
+        </div>
+
+        <h2 data-key="fruit_cows_title">Vaches à Fruits</h2>
+        <p data-key="fruit_cows_desc">Ces vaches exotiques se nourrissent des fruits de l'île. Elles sont achetables à la Boutique Mystérieuse après avoir complété le lot d'Agriculture.</p>
+        <table>
+            <tr><th data-key="animal_label">Animal</th><th data-key="produce_label">Production</th><th data-key="usage_label">Usage / Recette</th></tr>
+            <tr>
+                <td>
+                    <div class="animal-container">
+                        <div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/BananaCow.png" class="animal-icon size-32" alt="Banana Cow"></div>
+                        <strong data-key="cow_banana">Vache Banane</strong>
+                    </div>
+                </td>
+                <td data-key="milk_banana">Lait de banane</td>
+                <td data-key="usage_banana">Pudding à la banane, Vente</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="animal-container">
+                        <div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/CoconutCow.png" class="animal-icon size-32" alt="Coconut Cow"></div>
+                        <strong data-key="cow_coconut">Vache Coco</strong>
+                    </div>
+                </td>
+                <td data-key="milk_coconut">Lait de coco</td>
+                <td data-key="usage_coconut">Curry tropical, Piña Colada</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="animal-container">
+                        <div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/MangoCow.png" class="animal-icon size-32" alt="Mango Cow"></div>
+                        <strong data-key="cow_mango">Vache Mangue</strong>
+                    </div>
+                </td>
+                <td data-key="milk_mango">Lait de mangue</td>
+                <td data-key="usage_mango">Salade mangue-crevette, Vente</td>
+            </tr>
+        </table>
+
+        <h2 data-key="transformation_title">Variantes Dorées & du Néant</h2>
+        <p data-key="trans_desc">Utilisez la <strong>Poussière d'Or</strong> ou la <strong>Poussière du Néant</strong> pour transformer vos animaux adultes.</p>
+        <div class="grid">
+            <div class="card gold">
+                <h3 class="badge bg-gold" data-key="golden_variants_title">Variantes Dorées</h3>
+                <ul class="variant-list">
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/GoldenWhiteCow.png" class="animal-icon size-32" alt="Golden Cow"></div> <span data-key="gold_cow_white"><strong>Vache Dorée</strong> (Blanche)</span></li>
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/GoldenBrownCow.png" class="animal-icon size-32" alt="Golden Cow"></div> <span data-key="gold_cow_brown"><strong>Vache Dorée</strong> (Brune)</span></li>
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/GoldenGoat.png" class="animal-icon size-32" alt="Golden Goat"></div> <strong data-key="gold_goat">Chèvre Dorée</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/GoldenSheep.png" class="animal-icon size-32" alt="Golden Sheep"></div> <strong data-key="gold_sheep">Mouton Doré</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/GoldenDuck.png" class="animal-icon size-16 list-zoom" alt="Golden Duck"></div> <strong data-key="gold_duck">Canard Doré</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/GoldenDinosaur.png" class="animal-icon size-16 list-zoom" alt="Golden Dino"></div> <strong data-key="gold_dino">Dinosaure Doré</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/GoldenOstrich.png" class="animal-icon size-32" alt="Golden Ostrich"></div> <strong data-key="gold_ostrich">Autruche Dorée</strong></li>
+                </ul>
+            </div>
+            <div class="card void">
+                <h3 class="badge bg-void" data-key="void_variants_title">Variantes du Néant</h3>
+                <ul class="variant-list">
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/VoidWhiteCow.png" class="animal-icon size-32" alt="Void Cow"></div> <span data-key="void_cow_white"><strong>Vache du Néant</strong> (Blanche)</span></li>
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/VoidBrownCow.png" class="animal-icon size-32" alt="Void Cow"></div> <span data-key="void_cow_brown"><strong>Vache du Néant</strong> (Brune)</span></li>
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/VoidGoat.png" class="animal-icon size-32" alt="Void Goat"></div> <strong data-key="void_goat">Chèvre du Néant</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/VoidSheep.png" class="animal-icon size-32" alt="Void Sheep"></div> <strong data-key="void_sheep">Mouton du Néant</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/VoidRabbit.png" class="animal-icon size-16 list-zoom" alt="Void Rabbit"></div> <strong data-key="void_rabbit">Lapin du Néant</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/VoidDuck.png" class="animal-icon size-16 list-zoom" alt="Void Duck"></div> <strong data-key="void_duck">Canard du Néant</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/VoidDinosaur.png" class="animal-icon size-16 list-zoom" alt="Void Dino"></div> <strong data-key="void_dino">Dinosaure du Néant</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/VoidOstrich.png" class="animal-icon size-32" alt="Void Ostrich"></div> <strong data-key="void_ostrich">Autruche du Néant</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="badge bg-iridium" data-key="iridium_chicken_title">Poulet d'Iridium</h2>
+        <div class="card iridium">
+            <div class="animal-container">
+                <div class="icon-box" style="width: 50px; height: 50px;">
+                    <img src="./%5BCP%5D%20GiEX%20redux/assets/Animals/IridiumChicken.png" class="animal-icon size-18 icon-med" alt="Iridium Chicken">
+                </div>
+                <p data-key="iridium_chicken_desc">Un poulet d'élite produisant des œufs d'iridium. Déblocable uniquement si le mode <strong>Perfectionniste</strong> est activé ou en fin de partie.</p>
+            </div>
+        </div>
+        </main>
+        <script>
+        const translations = {
+            fr: {
+                "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Accueil", "nav-lieux": "🗺️ Nouvelles Zones", "nav-pnj": "👤 Javi (PNJ)", "nav-bundles": "🏛️ Lots du Temple", "nav-animaux": "🐄 Nouveaux Animaux", "nav-peche": "🐠 Guide de Pêche", "nav-outils": "🛠️ Outils & Équipement", "nav-objets": "✨ Objets & Ressources", "nav-boutiques": "💰 Boutiques", "nav-secrets": "🤫 Secrets",
+                "lava_dragon_title": "Mini Dragon de Lave", "lava_dragon_guide": "Obtention : Récompense du Lot de Combat du Temple. Une fois débloqué, achetable pour 50 000g à la Boutique Mystérieuse. Production : Rubis, Quartz de feu, Obsidienne, Éclat de cendre.",
+                "fruit_cows_title": "Vaches à Fruits", "fruit_cows_desc": "Ces vaches exotiques se nourrissent des fruits de l'île. Elles sont achetables à la Boutique Mystérieuse après avoir complété le lot d'Agriculture.",
+                "animal_label": "Animal", "produce_label": "Production", "usage_label": "Usage / Recette",
+                "cow_banana": "Vache Banane", "milk_banana": "Lait de banane", "usage_banana": "Pudding à la banane, Vente",
+                "cow_coconut": "Vache Coco", "milk_coconut": "Lait de coco", "usage_coconut": "Curry tropical, Piña Colada",
+                "cow_mango": "Vache Mangue", "milk_mango": "Lait de mangue", "usage_mango": "Salade mangue-crevette, Vente",
+                "transformation_title": "Variantes Dorées & du Néant", "trans_desc": "Utilisez la Poussière d'Or ou la Poussière du Néant pour transformer vos animaux adultes.",
+                "golden_variants_title": "Variantes Dorées", "void_variants_title": "Variantes du Néant",
+                "gold_cow_white": "<strong>Vache Dorée</strong> (Blanche)", "gold_cow_brown": "<strong>Vache Dorée</strong> (Brune)", "gold_goat": "Chèvre Dorée", "gold_sheep": "Mouton Doré", "gold_duck": "Canard Doré", "gold_dino": "Dinosaure Doré", "gold_ostrich": "Autruche Dorée",
+                "void_cow_white": "<strong>Vache du Néant</strong> (Blanche)", "void_cow_brown": "<strong>Vache du Néant</strong> (Brune)", "void_goat": "Chèvre du Néant", "void_sheep": "Mouton du Néant", "void_rabbit": "Lapin du Néant", "void_duck": "Canard du Néant", "void_dino": "Dinosaure du Néant", "void_ostrich": "Autruche du Néant",
+                "iridium_chicken_title": "Poulet d'Iridium", "iridium_chicken_desc": "Un poulet d'élite produisant des œufs d'iridium. Déblocable uniquement si le mode Perfectionniste est activé ou en fin de partie."
+            },
+            en: {
+                "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Home", "nav-lieux": "🗺️ New Zones", "nav-pnj": "👤 Javi (NPC)", "nav-bundles": "🏛️ Temple Bundles", "nav-animaux": "🐄 New Animals", "nav-peche": "🐠 Fishing Guide", "nav-outils": "🛠️ Tools & Equipment", "nav-objets": "✨ Items & Resources", "nav-boutiques": "💰 Shops", "nav-secrets": "🤫 Secrets",
+                "lava_dragon_title": "Mini Lava Dragon", "lava_dragon_guide": "Obtainment: Combat Bundle reward. Once unlocked, buy for 50,000g at Mysterious Store. Production: Ruby, Fire Quartz, Obsidian, Cinder Shard.",
+                "fruit_cows_title": "Fruit Cows", "fruit_cows_desc": "These exotic cows feed on island fruits. Purchasable at Mysterious Store after Farming bundle.",
+                "animal_label": "Animal", "produce_label": "Production", "usage_label": "Usage / Recipe",
+                "cow_banana": "Banana Cow", "milk_banana": "Banana Milk", "usage_banana": "Banana Pudding, Sale",
+                "cow_coconut": "Coconut Cow", "milk_coconut": "Coconut Milk", "usage_coconut": "Tropical Curry, Piña Colada",
+                "cow_mango": "Mango Cow", "milk_mango": "Mango Milk", "usage_mango": "Mango-Shrimp Salad, Sale",
+                "transformation_title": "Golden & Void Variants", "trans_desc": "Use Golden Dust or Void Dust to transform your adult animals.",
+                "golden_variants_title": "Golden Variants", "void_variants_title": "Void Variants",
+                "gold_cow_white": "<strong>Golden Cow</strong> (White)", "gold_cow_brown": "<strong>Golden Cow</strong> (Brown)", "gold_goat": "Golden Goat", "gold_sheep": "Golden Sheep", "gold_duck": "Golden Duck", "gold_dino": "Golden Dinosaur", "gold_ostrich": "Golden Ostrich",
+                "void_cow_white": "<strong>Void Cow</strong> (White)", "void_cow_brown": "<strong>Void Cow</strong> (Brown)", "void_goat": "Void Goat", "void_sheep": "Void Sheep", "void_rabbit": "Void Rabbit", "void_duck": "Void Duck", "void_dino": "Void Dinosaur", "void_ostrich": "Void Ostrich",
+                "iridium_chicken_title": "Iridium Chicken", "iridium_chicken_desc": "An elite chicken producing iridium eggs. Unlocked only if Perfectionist mode is enabled or in late game."
+            }
+        };
     function setLanguage(lang) {
         localStorage.setItem('giex_wiki_lang', lang);
         document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
