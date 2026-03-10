@@ -26,7 +26,6 @@
         .bg-void { background: #1a1a1a; border: 2px solid #000; color: #eee; }
         .bg-iridium { background: #b000ff; border: 2px solid #4a148c; color: white; }
 
-        /* Card Series Styles */
         .card.gold { border: 3px solid #fbc02d; box-shadow: 0 4px 10px rgba(251, 192, 45, 0.1); }
         .card.void { border: 3px solid #000; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
         .card.iridium { border: 3px solid #b000ff; box-shadow: 0 4px 10px rgba(176, 0, 255, 0.1); }
@@ -36,7 +35,6 @@
         th { background-color: var(--sd-light-green); color: var(--sd-green); }
         tr:nth-child(even) { background-color: #f9f9f9; }
 
-        /* Sprite Styles */
         .animal-icon {
             image-rendering: pixelated;
             object-fit: none;
@@ -46,7 +44,6 @@
             transform-origin: center;
         }
 
-        /* Container to keep everything aligned */
         .icon-box {
             width: 34px;
             height: 34px;
@@ -61,14 +58,10 @@
             flex-shrink: 0;
         }
 
-        /* Zoom 2x for standalone cards */
         .icon-small { transform: scale(2); }
         .icon-med { transform: scale(2); }
-
-        /* Zoom 1.5x for small animals in lists */
         .list-zoom { transform: scale(1.5); }
 
-        /* Specific sizes based on Animals.json */
         .size-32 { width: 32px; height: 32px; }
         .size-16 { width: 16px; height: 16px; }
         .size-18 { width: 18px; height: 18px; }
@@ -77,40 +70,40 @@
         .animal-container { display: flex; align-items: center; gap: 10px; }
         .variant-list { list-style: none; padding: 0; }
         .variant-item { display: flex; align-items: center; margin-bottom: 12px; }
-        </style>
-        </head>
-        <body>
-        <nav>
+    </style>
+</head>
+<body>
+    <nav>
         <h2 id="nav-title">GiEX REDUX WIKI</h2>
         <ul>
-        <li><a href="index.html" id="nav-accueil">🏠 Accueil</a></li>
-        <li><a href="wiki_lieux.html" id="nav-lieux">🗺️ Nouvelles Zones</a></li>
-        <li><a href="wiki_javi.html" id="nav-pnj">👤 Javi (PNJ)</a></li>
-        <li><a href="wiki_bundles.html" id="nav-bundles">🏛️ Lots du Temple</a></li>
-        <li><a href="wiki_animaux.html" class="active" id="nav-animaux">🐄 Nouveaux Animaux</a></li>
-        <li><a href="wiki_peche.html" id="nav-peche">🐠 Guide de Pêche</a></li>
-        <li><a href="wiki_outils.html" id="nav-outils">🛠️ Outils & Équipement</a></li>
-        <li><a href="wiki_objets.html" id="nav-objets">✨ Objets & Ressources</a></li>
-        <li><a href="wiki_boutiques.html" id="nav-boutiques">💰 Boutiques</a></li>
-        <li><a href="wiki_secrets.html" id="nav-secrets">🤫 Secrets</a></li>
+            <li><a href="index.html" id="nav-accueil">🏠 Accueil</a></li>
+            <li><a href="wiki_lieux.html" id="nav-lieux">🗺️ Nouvelles Zones</a></li>
+            <li><a href="wiki_javi.html" id="nav-pnj">👤 Javi (PNJ)</a></li>
+            <li><a href="wiki_bundles.html" id="nav-bundles">🏛️ Lots du Temple</a></li>
+            <li><a href="wiki_animaux.html" class="active" id="nav-animaux">🐄 Nouveaux Animaux</a></li>
+            <li><a href="wiki_peche.html" id="nav-peche">🐠 Guide de Pêche</a></li>
+            <li><a href="wiki_outils.html" id="nav-outils">🛠️ Outils & Équipement</a></li>
+            <li><a href="wiki_objets.html" id="nav-objets">✨ Objets & Ressources</a></li>
+            <li><a href="wiki_boutiques.html" id="nav-boutiques">💰 Boutiques</a></li>
+            <li><a href="wiki_secrets.html" id="nav-secrets">🤫 Secrets</a></li>
         </ul>
-        </nav>
-        <main>
+    </nav>
+    <main>
         <div class="lang-switch">
-        <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
-        <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
+            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
         </div>
         <h1 data-key="nav-animaux">Nouveaux Animaux</h1>
 
         <h2 data-key="lava_dragon_title">Mini Dragon de Lave</h2>
         <div class="card" style="border-left: 5px solid #ff5722;">
-        <div class="animal-container">
-            <div class="icon-box" style="width: 60px; height: 40px;">
-                <img src="wiki_images/MiniLavaDragon.png" class="animal-icon size-24x16 icon-med" alt="Mini Lava Dragon">
+            <div class="animal-container">
+                <div class="icon-box" style="width: 60px; height: 40px;">
+                    <img src="MiniLavaDragon.png" class="animal-icon size-24x16 icon-med" alt="Mini Lava Dragon">
+                </div>
+                <p data-key="lava_dragon_guide"><strong>Obtention :</strong> Récompense du Lot de Combat du Temple. Une fois débloqué, achetable pour 50 000g à la Boutique Mystérieuse.<br>
+                <strong>Production :</strong> Rubis, Quartz de feu, Obsidienne, Éclat de cendre.</p>
             </div>
-            <p data-key="lava_dragon_guide"><strong>Obtention :</strong> Récompense du Lot de Combat du Temple. Une fois débloqué, achetable pour 50 000g à la Boutique Mystérieuse.<br>
-            <strong>Production :</strong> Rubis, Quartz de feu, Obsidienne, Éclat de cendre.</p>
-        </div>
         </div>
 
         <h2 data-key="fruit_cows_title">Vaches à Fruits</h2>
@@ -120,7 +113,7 @@
             <tr>
                 <td>
                     <div class="animal-container">
-                        <div class="icon-box"><img src="wiki_images/BananaCow.png" class="animal-icon size-32" alt="Banana Cow"></div>
+                        <div class="icon-box"><img src="BananaCow.png" class="animal-icon size-32" alt="Banana Cow"></div>
                         <strong data-key="cow_banana">Vache Banane</strong>
                     </div>
                 </td>
@@ -130,7 +123,7 @@
             <tr>
                 <td>
                     <div class="animal-container">
-                        <div class="icon-box"><img src="wiki_images/CoconutCow.png" class="animal-icon size-32" alt="Coconut Cow"></div>
+                        <div class="icon-box"><img src="CoconutCow.png" class="animal-icon size-32" alt="Coconut Cow"></div>
                         <strong data-key="cow_coconut">Vache Coco</strong>
                     </div>
                 </td>
@@ -140,7 +133,7 @@
             <tr>
                 <td>
                     <div class="animal-container">
-                        <div class="icon-box"><img src="wiki_images/MangoCow.png" class="animal-icon size-32" alt="Mango Cow"></div>
+                        <div class="icon-box"><img src="MangoCow.png" class="animal-icon size-32" alt="Mango Cow"></div>
                         <strong data-key="cow_mango">Vache Mangue</strong>
                     </div>
                 </td>
@@ -155,26 +148,26 @@
             <div class="card gold">
                 <h3 class="badge bg-gold" data-key="golden_variants_title">Variantes Dorées</h3>
                 <ul class="variant-list">
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/GoldenWhiteCow.png" class="animal-icon size-32" alt="Golden Cow"></div> <span data-key="gold_cow_white"><strong>Vache Dorée</strong> (Blanche)</span></li>
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/GoldenBrownCow.png" class="animal-icon size-32" alt="Golden Cow"></div> <span data-key="gold_cow_brown"><strong>Vache Dorée</strong> (Brune)</span></li>
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/GoldenGoat.png" class="animal-icon size-32" alt="Golden Goat"></div> <strong data-key="gold_goat">Chèvre Dorée</strong></li>
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/GoldenSheep.png" class="animal-icon size-32" alt="Golden Sheep"></div> <strong data-key="gold_sheep">Mouton Doré</strong></li>
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/GoldenDuck.png" class="animal-icon size-16 list-zoom" alt="Golden Duck"></div> <strong data-key="gold_duck">Canard Doré</strong></li>
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/GoldenDinosaur.png" class="animal-icon size-16 list-zoom" alt="Golden Dino"></div> <strong data-key="gold_dino">Dinosaure Doré</strong></li>
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/GoldenOstrich.png" class="animal-icon size-32" alt="Golden Ostrich"></div> <strong data-key="gold_ostrich">Autruche Dorée</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="GoldenWhiteCow.png" class="animal-icon size-32" alt="Golden Cow"></div> <span data-key="gold_cow_white"><strong>Vache Dorée</strong> (Blanche)</span></li>
+                    <li class="variant-item"><div class="icon-box"><img src="GoldenBrownCow.png" class="animal-icon size-32" alt="Golden Cow"></div> <span data-key="gold_cow_brown"><strong>Vache Dorée</strong> (Brune)</span></li>
+                    <li class="variant-item"><div class="icon-box"><img src="GoldenGoat.png" class="animal-icon size-32" alt="Golden Goat"></div> <strong data-key="gold_goat">Chèvre Dorée</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="GoldenSheep.png" class="animal-icon size-32" alt="Golden Sheep"></div> <strong data-key="gold_sheep">Mouton Doré</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="GoldenDuck.png" class="animal-icon size-16 list-zoom" alt="Golden Duck"></div> <strong data-key="gold_duck">Canard Doré</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="GoldenDinosaur.png" class="animal-icon size-16 list-zoom" alt="Golden Dino"></div> <strong data-key="gold_dino">Dinosaure Doré</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="GoldenOstrich.png" class="animal-icon size-32" alt="Golden Ostrich"></div> <strong data-key="gold_ostrich">Autruche Dorée</strong></li>
                 </ul>
             </div>
             <div class="card void">
                 <h3 class="badge bg-void" data-key="void_variants_title">Variantes du Néant</h3>
                 <ul class="variant-list">
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/VoidWhiteCow.png" class="animal-icon size-32" alt="Void Cow"></div> <span data-key="void_cow_white"><strong>Vache du Néant</strong> (Blanche)</span></li>
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/VoidBrownCow.png" class="animal-icon size-32" alt="Void Cow"></div> <span data-key="void_cow_brown"><strong>Vache du Néant</strong> (Brune)</span></li>
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/VoidGoat.png" class="animal-icon size-32" alt="Void Goat"></div> <strong data-key="void_goat">Chèvre du Néant</strong></li>
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/VoidSheep.png" class="animal-icon size-32" alt="Void Sheep"></div> <strong data-key="void_sheep">Mouton du Néant</strong></li>
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/VoidRabbit.png" class="animal-icon size-16 list-zoom" alt="Void Rabbit"></div> <strong data-key="void_rabbit">Lapin du Néant</strong></li>
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/VoidDuck.png" class="animal-icon size-16 list-zoom" alt="Void Duck"></div> <strong data-key="void_duck">Canard du Néant</strong></li>
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/VoidDinosaur.png" class="animal-icon size-16 list-zoom" alt="Void Dino"></div> <strong data-key="void_dino">Dinosaure du Néant</strong></li>
-                    <li class="variant-item"><div class="icon-box"><img src="wiki_images/VoidOstrich.png" class="animal-icon size-32" alt="Void Ostrich"></div> <strong data-key="void_ostrich">Autruche du Néant</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="VoidWhiteCow.png" class="animal-icon size-32" alt="Void Cow"></div> <span data-key="void_cow_white"><strong>Vache du Néant</strong> (Blanche)</span></li>
+                    <li class="variant-item"><div class="icon-box"><img src="VoidBrownCow.png" class="animal-icon size-32" alt="Void Cow"></div> <span data-key="void_cow_brown"><strong>Vache du Néant</strong> (Brune)</span></li>
+                    <li class="variant-item"><div class="icon-box"><img src="VoidGoat.png" class="animal-icon size-32" alt="Void Goat"></div> <strong data-key="void_goat">Chèvre du Néant</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="VoidSheep.png" class="animal-icon size-32" alt="Void Sheep"></div> <strong data-key="void_sheep">Mouton du Néant</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="VoidRabbit.png" class="animal-icon size-16 list-zoom" alt="Void Rabbit"></div> <strong data-key="void_rabbit">Lapin du Néant</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="VoidDuck.png" class="animal-icon size-16 list-zoom" alt="Void Duck"></div> <strong data-key="void_duck">Canard du Néant</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="VoidDinosaur.png" class="animal-icon size-16 list-zoom" alt="Void Dino"></div> <strong data-key="void_dino">Dinosaure du Néant</strong></li>
+                    <li class="variant-item"><div class="icon-box"><img src="VoidOstrich.png" class="animal-icon size-32" alt="Void Ostrich"></div> <strong data-key="void_ostrich">Autruche du Néant</strong></li>
                 </ul>
             </div>
         </div>
@@ -183,13 +176,13 @@
         <div class="card iridium">
             <div class="animal-container">
                 <div class="icon-box" style="width: 50px; height: 50px;">
-                    <img src="wiki_images/IridiumChicken.png" class="animal-icon size-18 icon-med" alt="Iridium Chicken">
+                    <img src="IridiumChicken.png" class="animal-icon size-18 icon-med" alt="Iridium Chicken">
                 </div>
                 <p data-key="iridium_chicken_desc">Un poulet d'élite produisant des œufs d'iridium. Déblocable uniquement si le mode <strong>Perfectionniste</strong> est activé ou en fin de partie.</p>
             </div>
         </div>
-        </main>
-        <script>
+    </main>
+    <script>
         const translations = {
             fr: {
                 "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Accueil", "nav-lieux": "🗺️ Nouvelles Zones", "nav-pnj": "👤 Javi (PNJ)", "nav-bundles": "🏛️ Lots du Temple", "nav-animaux": "🐄 Nouveaux Animaux", "nav-peche": "🐠 Guide de Pêche", "nav-outils": "🛠️ Outils & Équipement", "nav-objets": "✨ Objets & Ressources", "nav-boutiques": "💰 Boutiques", "nav-secrets": "🤫 Secrets",
@@ -220,28 +213,33 @@
                 "iridium_chicken_title": "Iridium Chicken", "iridium_chicken_desc": "An elite chicken producing iridium eggs. Unlocked only if Perfectionist mode is enabled or in late game."
             }
         };
-    function setLanguage(lang) {
-        localStorage.setItem('giex_wiki_lang', lang);
-        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-        document.querySelector(`.lang-btn[onclick="setLanguage('${lang}')"]`).classList.add('active');
-        document.querySelectorAll('[data-key]').forEach(el => {
-            const key = el.getAttribute('data-key');
-            if (translations[lang][key]) el.innerHTML = translations[lang][key];
-        });
-        document.getElementById('nav-title').innerHTML = translations[lang]['nav-title'];
-        document.getElementById('nav-accueil').innerHTML = translations[lang]['nav-accueil'];
-        document.getElementById('nav-lieux').innerHTML = translations[lang]['nav-lieux'];
-        document.getElementById('nav-pnj').innerHTML = translations[lang]['nav-pnj'];
-        document.getElementById('nav-bundles').innerHTML = translations[lang]['nav-bundles'];
-        document.getElementById('nav-animaux').innerHTML = translations[lang]['nav-animaux'];
-        document.getElementById('nav-peche').innerHTML = translations[lang]['nav-peche'];
-        document.getElementById('nav-outils').innerHTML = translations[lang]['nav-outils'];
-        document.getElementById('nav-objets').innerHTML = translations[lang]['nav-objets'];
-        document.getElementById('nav-boutiques').innerHTML = translations[lang]['nav-boutiques'];
-        document.getElementById('nav-secrets').innerHTML = translations[lang]['nav-secrets'];
-    }
-    const savedLang = localStorage.getItem('giex_wiki_lang') || 'fr';
-    setLanguage(savedLang);
-</script>
+
+        function setLanguage(lang) {
+            localStorage.setItem('giex_wiki_lang', lang);
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            const btn = document.querySelector(`.lang-btn[onclick="setLanguage('${lang}')"]`);
+            if (btn) btn.classList.add('active');
+
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[lang][key]) el.innerHTML = translations[lang][key];
+            });
+
+            document.getElementById('nav-title').innerHTML = translations[lang]['nav-title'];
+            document.getElementById('nav-accueil').innerHTML = translations[lang]['nav-accueil'];
+            document.getElementById('nav-lieux').innerHTML = translations[lang]['nav-lieux'];
+            document.getElementById('nav-pnj').innerHTML = translations[lang]['nav-pnj'];
+            document.getElementById('nav-bundles').innerHTML = translations[lang]['nav-bundles'];
+            document.getElementById('nav-animaux').innerHTML = translations[lang]['nav-animaux'];
+            document.getElementById('nav-peche').innerHTML = translations[lang]['nav-peche'];
+            document.getElementById('nav-outils').innerHTML = translations[lang]['nav-outils'];
+            document.getElementById('nav-objets').innerHTML = translations[lang]['nav-objets'];
+            document.getElementById('nav-boutiques').innerHTML = translations[lang]['nav-boutiques'];
+            document.getElementById('nav-secrets').innerHTML = translations[lang]['nav-secrets'];
+        }
+
+        const savedLang = localStorage.getItem('giex_wiki_lang') || 'fr';
+        setLanguage(savedLang);
+    </script>
 </body>
 </html>
