@@ -63,6 +63,7 @@
     <div class="lang-switch">
         <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
         <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="setLanguage('pt')">PT</button>
     </div>
     <h1 data-key="nav-lieux">Guide des Nouvelles Zones</h1>
 
@@ -210,6 +211,24 @@
             "loot_ship_1": "Water Orb (Loot)", "loot_ship_2": "Old Bottle", "loot_ship_3": "Gold Watch (Ghosts)",
             "loot_nw_1": "Radioactive Ore (Level 10)", "loot_nw_2": "Omni & Iridium Geodes", "loot_nw_3": "Various Fossils",
             "monster_nw_1": "<strong>Radioactive Crab:</strong> Iridium, Radioactive Ore", "monster_nw_2": "<strong>Omni Crab:</strong> Omni Geodes"
+            },
+            pt: {
+            "nav-title": "GiEX REDUX WIKI", "nav-accueil": "🏠 Início", "nav-lieux": "🗺️ Novas Áreas", "nav-pnj": "👤 Javi (NPC)", "nav-bundles": "🏛️ Conjuntos do Templo", "nav-animaux": "🐄 Novos Animais", "nav-peche": "🐠 Guia de Pesca", "nav-outils": "🛠️ Ferramentas e Equipamentos", "nav-objets": "✨ Itens e Recursos", "nav-boutiques": "💰 Lojas", "nav-secrets": "🤫 Segredos",
+            "loc_temple_title": "O Templo da Ilha", "req_temple": "Acesso: Imediato (Passagem a Leste do Vulcão).", "loc_temple_desc": "O coração do mod. Progrida completando os quatro altares mágicos.",
+            "locations.ExtinctLair": "Covil Extinto (Lair)", "req_lair": "Acesso: Complete o Conjunto de Combate no Templo.", "lair_long_desc": "Uma caverna vulcânica majestosa onde dragões residiam. Único lugar para encontrar o Mini Dragão de Lava.",
+            "deep_sea_title": "O Mar Profundo (Subaquático)", "req_abyss": "Acesso: Complete o Conjunto de Pesca. Requer Capacete de Mergulho.", "abyss_long_desc": "Uma vasta zona subaquática escura. Clique na água nos pontos de mergulho para entrar.",
+            "warning_diving": "Mecânica: A velocidade subaquática é reduzida. A pesca é impossível sem equipamento luminoso (Vara ou Isca).",
+            "sunken_ship_title": "Navio Naufragado e Sala Secreta", "req_ship": "Acesso: Via o Abismo. Sala selada: requer Chave Antiga.", "ship_long_desc": "O navio assombrado de Javi. Contém artefatos únicos e fantasmas agressivos.",
+            "locations.NorthWest": "Floresta e Lagoa da Pedreira", "req_nw": "Acesso: Complete qualquer Conjunto do Templo.", "nw_long_desc": "Uma zona rica em minérios raros e fósseis, ideal para mineradores de alto nível.",
+            "loot_label": "Recursos e Coleta:", "monsters_label": "Monstros e Saques:", "features_label": "Pontos de Interesse:", "artifacts_label": "Itens Únicos:",
+            "feat_altars": "Altares do Templo (Conjuntos)", "feat_hidden_path": "Caminho secreto para o Noroeste",
+            "loot_lair_1": "Dentes de Dragão (Coleta no Chão)", "loot_lair_2": "Fragmentos de Cinza (Mineração)", "loot_lair_3": "Caracóis de Lava (Covos)",
+            "monster_lair_1": "<strong>Dragão de Lava:</strong> Ovo de Dragão de Lava (Raro)", "monster_lair_2": "<strong>Espírito de Magma:</strong> Essência de Fogo",
+            "loot_abyss_1": "Fragmentos Luminosos (Pedras Lumi)", "loot_abyss_2": "Cobre e Ferro Subaquático",
+            "monster_abyss_1": "<strong>Lula Azul:</strong> Orbe de Água", "monster_abyss_2": "<strong>Fantasma de Pirata:</strong> Gancho, Chave Antiga, Garrafa Velha",
+            "loot_ship_1": "Orbe de Água (Saque)", "loot_ship_2": "Garrafa Velha", "loot_ship_3": "Relógio de Ouro (Fantasmas)",
+            "loot_nw_1": "Minério Radioativo (Nível 10)", "loot_nw_2": "Geodos Omni e de Irídio", "loot_nw_3": "Vários Fósseis",
+            "monster_nw_1": "<strong>Caranguejo Radioativo:</strong> Irídio, Minério Radioativo", "monster_nw_2": "<strong>Caranguejo Omni:</strong> Geodos Omni"
             }
     };
     function setLanguage(lang) {
@@ -220,17 +239,11 @@
             const key = el.getAttribute('data-key');
             if (translations[lang][key]) el.innerHTML = translations[lang][key];
         });
-        document.getElementById('nav-title').innerHTML = translations[lang]['nav-title'];
-        document.getElementById('nav-accueil').innerHTML = translations[lang]['nav-accueil'];
-        document.getElementById('nav-lieux').innerHTML = translations[lang]['nav-lieux'];
-        document.getElementById('nav-pnj').innerHTML = translations[lang]['nav-pnj'];
-        document.getElementById('nav-bundles').innerHTML = translations[lang]['nav-bundles'];
-        document.getElementById('nav-animaux').innerHTML = translations[lang]['nav-animaux'];
-        document.getElementById('nav-peche').innerHTML = translations[lang]['nav-peche'];
-        document.getElementById('nav-outils').innerHTML = translations[lang]['nav-outils'];
-        document.getElementById('nav-objets').innerHTML = translations[lang]['nav-objets'];
-        document.getElementById('nav-boutiques').innerHTML = translations[lang]['nav-boutiques'];
-        document.getElementById('nav-secrets').innerHTML = translations[lang]['nav-secrets'];
+        const navKeys = ["nav-title", "nav-accueil", "nav-lieux", "nav-pnj", "nav-bundles", "nav-animaux", "nav-peche", "nav-outils", "nav-objets", "nav-boutiques", "nav-secrets"];
+        navKeys.forEach(key => {
+            const el = document.getElementById(key);
+            if (el && translations[lang][key]) el.innerHTML = translations[lang][key];
+        });
     }
     const savedLang = localStorage.getItem('giex_wiki_lang') || 'fr';
     setLanguage(savedLang);

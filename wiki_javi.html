@@ -55,6 +55,7 @@
     <div class="lang-switch">
         <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
         <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="setLanguage('pt')">PT</button>
     </div>
     <h1 data-key="nav-pnj">Javi (PNJ)</h1>
     
@@ -148,7 +149,54 @@
             "good_how": "Advise them to tell the truth to Birdie.", "good_consequences": "Javi stays on the island and finds peace.",
             "bad_how": "Advise them to stay hidden or judge their crimes.", "bad_consequences": "Javi leaves the island and disappears forever."
         }
-    };
+    ,
+        pt: {
+            "nav-title": "GiEX REDUX WIKI",
+            "nav-accueil": "🏠 Início",
+            "nav-lieux": "🗺️ Novas Áreas",
+            "nav-pnj": "👤 Javi (NPC)",
+            "nav-bundles": "🏛️ Conjuntos do Templo",
+            "nav-animaux": "🐄 Novos Animais",
+            "nav-peche": "🐠 Guia de Pesca",
+            "nav-outils": "🛠️ Ferramentas e Equipamentos",
+            "nav-objets": "✨ Itens e Recursos",
+            "nav-boutiques": "💰 Lojas",
+            "nav-secrets": "🤫 Segredos",
+            "identity_card": "Identity Card",
+            "birthday_label": "Birthday:",
+            "gender_label": "Gender:",
+            "location_label": "Local",
+            "loved_gifts": "🎁 Loved Gifts",
+            "loved_list": "Beer, Wine, Mead, Ginger Ale, Piña Colada, Curiosity Lure, Luminous Tackle, Meat, Dragon Tooth, Luminous Shard",
+            "liked_gifts": "👍 Liked Gifts",
+            "liked_list": "Truffle, Truffle Oil, Seafoam Pudding, Dressed Spinner, Barbed Hook, Quality Bobber",
+            "hated_gifts": "❌ Hated Gifts",
+            "hated_list": "Rusty Wheel, Pirate Hook, Ancient Sword, Red Mushroom, Anchor",
+            "javi_history_title": "Javi's History",
+            "javi_history_desc1": "Former solitary pirate. Past linked to the wreck.",
+            "javi_history_desc2": "Pressed into the Navy, mutiny, piracy.",
+            "javi_history_desc3": "Sole survivor of the wreck, lives in hiding due to guilt.",
+            "javi_events_detail": "Heart Events Guide",
+            "ev0_title": "0 Hearts: Encounter",
+            "ev0_desc": "Meeting at the Volcano.",
+            "choice_label": "Choice Consequences:",
+            "ev0_cA": "Thank Javi (+10)",
+            "ev0_cB": "Be suspicious (-20)",
+            "ev0_cC": "Stay silent (0)",
+            "ev2_title": "2 Hearts: Youth",
+            "ev2_long": "Pirate Cove (Evening). Story of their past life.",
+            "ev4_title": "4 Hearts: The Journal",
+            "ev4_long": "Javi's Hut. Discovery of secrets.",
+            "ev10_title": "10 Hearts: Destiny",
+            "ev10_long": "South Beach. The irreversible final choice.",
+            "javi_endings_title": "Javi's Endings",
+            "good_end_label": "🌟 Good Ending",
+            "bad_end_label": "💀 Bad Ending",
+            "good_how": "Advise them to tell the truth to Birdie.",
+            "good_consequences": "Javi stays on the island and finds peace.",
+            "bad_how": "Advise them to stay hidden or judge their crimes.",
+            "bad_consequences": "Javi leaves the island and disappears forever."
+        }};
     function setLanguage(lang) {
         localStorage.setItem('giex_wiki_lang', lang);
         document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
@@ -157,17 +205,11 @@
             const key = el.getAttribute('data-key');
             if (translations[lang][key]) el.innerHTML = translations[lang][key];
         });
-        document.getElementById('nav-title').innerHTML = translations[lang]['nav-title'];
-        document.getElementById('nav-accueil').innerHTML = translations[lang]['nav-accueil'];
-        document.getElementById('nav-lieux').innerHTML = translations[lang]['nav-lieux'];
-        document.getElementById('nav-pnj').innerHTML = translations[lang]['nav-pnj'];
-        document.getElementById('nav-bundles').innerHTML = translations[lang]['nav-bundles'];
-        document.getElementById('nav-animaux').innerHTML = translations[lang]['nav-animaux'];
-        document.getElementById('nav-peche').innerHTML = translations[lang]['nav-peche'];
-        document.getElementById('nav-outils').innerHTML = translations[lang]['nav-outils'];
-        document.getElementById('nav-objets').innerHTML = translations[lang]['nav-objets'];
-        document.getElementById('nav-boutiques').innerHTML = translations[lang]['nav-boutiques'];
-        document.getElementById('nav-secrets').innerHTML = translations[lang]['nav-secrets'];
+        const navKeys = ["nav-title", "nav-accueil", "nav-lieux", "nav-pnj", "nav-bundles", "nav-animaux", "nav-peche", "nav-outils", "nav-objets", "nav-boutiques", "nav-secrets"];
+        navKeys.forEach(key => {
+            const el = document.getElementById(key);
+            if (el && translations[lang][key]) el.innerHTML = translations[lang][key];
+        });
     }
     const savedLang = localStorage.getItem('giex_wiki_lang') || 'fr';
     setLanguage(savedLang);

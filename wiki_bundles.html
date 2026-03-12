@@ -8,7 +8,16 @@
         :root { --sd-brown: #3d2b1f; --sd-yellow: #ffcc00; --sd-green: #2e7d32; --sd-light-green: #e8f5e9; --sd-accent: #fbc02d; --sd-bg: #f4f1ea; }
         body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 1400px; margin: 0 auto; display: flex; background: var(--sd-bg); }
         nav { width: 280px; background: var(--sd-brown); color: white; padding: 20px; height: 100vh; position: sticky; top: 0; box-shadow: 2px 0 10px rgba(0,0,0,0.3); overflow-y: auto; }
-        nav h2 { color: var(--sd-yellow); font-size: 1.4em; border-bottom: 2px solid #5d4037; padding-bottom: 10px; text-align: center; }
+        nav h2 {
+            color: var(--sd-yellow);
+            font-size: 1.4em;
+            border-bottom: 2px solid #5d4037;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-top: 19px;             /* Petit espace équilibré en haut */
+            border-left: none !important;  /* Toujours pas de truc vert */
+            padding-left: 0 !important;    /* Toujours bien centré */
+        }
         nav ul { list-style: none; padding: 0; }
         nav li { margin: 10px 0; }
         nav a { color: #ddd; text-decoration: none; transition: 0.3s; display: block; padding: 8px; border-radius: 4px; }
@@ -63,6 +72,7 @@
     <div class="lang-switch">
         <button class="lang-btn active" onclick="setLanguage('fr')">FR</button>
         <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="setLanguage('pt')">PT</button>
     </div>
     <h1 data-key="bundles_title">Lots du Temple (Bundles)</h1>
     <p data-key="bundles_desc">Compléter ces lots au Temple est essentiel pour débloquer le contenu du mod. Ils sont accessibles au nord de l'île.</p>
@@ -244,7 +254,73 @@
             "bundle_aqua_2_1": "Atolla Jellyfish (Silver+)", "bundle_aqua_2_2": "Faceless Fish (Silver+)", "bundle_aqua_2_3": "Cosmic Jelly (Silver+)", "bundle_aqua_2_4": "Harp Sponge (Silver+)", "bundle_aqua_2_5": "Hadal Fish (Silver+)",
             "rew_aqua_2": "Lumi Bait (10)"
         }
-    };
+    ,
+        pt: {
+            "nav-title": "GiEX REDUX WIKI",
+            "nav-accueil": "🏠 Início",
+            "nav-lieux": "🗺️ Novas Áreas",
+            "nav-pnj": "👤 Javi (NPC)",
+            "nav-bundles": "🏛️ Conjuntos do Templo",
+            "nav-animaux": "🐄 Novos Animais",
+            "nav-peche": "🐠 Guia de Pesca",
+            "nav-outils": "🛠️ Ferramentas e Equipamentos",
+            "nav-objets": "✨ Itens e Recursos",
+            "nav-boutiques": "💰 Lojas",
+            "nav-secrets": "🤫 Segredos",
+            "bundles_title": "Temple Bundles",
+            "bundles_desc": "Completing these bundles at the Temple is essential to unlock mod content. They are located at the north of the island.",
+            "diff_note": "Quantities shown correspond to <strong>Normal</strong> difficulty. They may vary if you have the mod configured to Easy or Hard.",
+            "sec_temple_bundles": "🏛️ Temple Altars",
+            "sec_aquarium_bundles": "🐠 Aquarium Tanks",
+            "aquarium_desc": "Once the Aquarium is unlocked, you can restore each tank to get fishing rewards.",
+            "Fishing": "Fishing",
+            "Farming": "Farming",
+            "Mining": "Mining",
+            "Combat": "Combat",
+            "Cooking": "Cooking",
+            "Reward": "Reward",
+            "rew_fishing_full": "Diving System, Diving Helmet, Lumi Recipes (Bait & Tackle)",
+            "rew_farming_full": "Mysterious Store Restoration, Farm Computer, Mini-Shipping Bin",
+            "rew_mining_full": "Volcano Elevator (fast access to forge), Radioactive Bars & Ore",
+            "rew_combat_full": "Access to Extinct Lair, Flame Sword",
+            "rew_cooking_full": "Qi Seasoning, Pack of 19 Exotic Recipes",
+            "bundle_fish_1": "Blue Discus",
+            "bundle_fish_2": "Stingray",
+            "bundle_fish_3": "Lionfish",
+            "bundle_fish_4": "Super Cucumber",
+            "bundle_fish_5": "Pufferfish",
+            "bundle_farm_1": "Banana",
+            "bundle_farm_2": "Mango",
+            "bundle_farm_3": "Taro Root",
+            "bundle_farm_4": "Coconut",
+            "bundle_farm_5": "Ginger",
+            "bundle_mine_1": "Dragon Tooth",
+            "bundle_mine_2": "Cinder Shard",
+            "bundle_mine_3": "Omni Geode",
+            "bundle_mine_4": "Iridium Bar",
+            "bundle_mine_5": "Coal",
+            "bundle_combat_1": "Void Essence",
+            "bundle_combat_2": "Solar Essence",
+            "bundle_combat_3": "Bat Wing",
+            "bundle_combat_4": "Slime",
+            "bundle_combat_5": "Fire Essence",
+            "bundle_cook_1": "Piña Colada",
+            "bundle_cook_2": "Tropical Curry",
+            "bundle_cook_3": "Ginger Ale",
+            "bundle_cook_4": "Banana Pudding",
+            "bundle_cook_5": "Seafoam Pudding",
+            "bundle_cook_6": "Truffle Oil",
+            "bundle_aqua_title_1": "Pirate Cove",
+            "bundle_aqua_title_2": "Deep Sea",
+            "bundle_aqua_1_1": "Stingray (Silver+)",
+            "rew_aqua_1": "Wild Bait (10)",
+            "bundle_aqua_2_1": "Atolla Jellyfish (Silver+)",
+            "bundle_aqua_2_2": "Faceless Fish (Silver+)",
+            "bundle_aqua_2_3": "Cosmic Jelly (Silver+)",
+            "bundle_aqua_2_4": "Harp Sponge (Silver+)",
+            "bundle_aqua_2_5": "Hadal Fish (Silver+)",
+            "rew_aqua_2": "Lumi Bait (10)"
+        }};
     function setLanguage(lang) {
         localStorage.setItem('giex_wiki_lang', lang);
         document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
@@ -253,17 +329,11 @@
             const key = el.getAttribute('data-key');
             if (translations[lang][key]) el.innerHTML = translations[lang][key];
         });
-        document.getElementById('nav-title').innerHTML = translations[lang]['nav-title'];
-        document.getElementById('nav-accueil').innerHTML = translations[lang]['nav-accueil'];
-        document.getElementById('nav-lieux').innerHTML = translations[lang]['nav-lieux'];
-        document.getElementById('nav-pnj').innerHTML = translations[lang]['nav-pnj'];
-        document.getElementById('nav-bundles').innerHTML = translations[lang]['nav-bundles'];
-        document.getElementById('nav-animaux').innerHTML = translations[lang]['nav-animaux'];
-        document.getElementById('nav-peche').innerHTML = translations[lang]['nav-peche'];
-        document.getElementById('nav-outils').innerHTML = translations[lang]['nav-outils'];
-        document.getElementById('nav-objets').innerHTML = translations[lang]['nav-objets'];
-        document.getElementById('nav-boutiques').innerHTML = translations[lang]['nav-boutiques'];
-        document.getElementById('nav-secrets').innerHTML = translations[lang]['nav-secrets'];
+        const navKeys = ["nav-title", "nav-accueil", "nav-lieux", "nav-pnj", "nav-bundles", "nav-animaux", "nav-peche", "nav-outils", "nav-objets", "nav-boutiques", "nav-secrets"];
+        navKeys.forEach(key => {
+            const el = document.getElementById(key);
+            if (el && translations[lang][key]) el.innerHTML = translations[lang][key];
+        });
     }
     const savedLang = localStorage.getItem('giex_wiki_lang') || 'fr';
     setLanguage(savedLang);
