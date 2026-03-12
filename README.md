@@ -1,4 +1,5 @@
 # 🌴 Ginger Island Extra Locations (GiEX) Mod Wiki
+
 > **Comprehensive Guide & Database for the Stardew Valley Expansion Mod**
 
 [![Language: French](https://img.shields.io/badge/Language-French-blue.svg)](#fr-version-française) 
